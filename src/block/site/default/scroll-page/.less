@@ -63,7 +63,11 @@
 			width:50%;
 			left:-50%;
 			z-index: 2 !important;
-			
+			&.active{				
+				.scroll-page__mouse{
+				    transform: translateX(100%);
+				}
+			}
 			._ipc__slider-left {
 				width:100%;
 			}
@@ -174,9 +178,16 @@
 @media @media-screen{
 	.scroll-page__mouse{
 	    position: absolute;
-	    background: rgba(0,0,0,0.25);
-	    top: 0;
-	    left: 100%;
+	    bottom: 0;
+	    right: 0%;
+	    z-index: 2;
+        transform: translateX(0%);    	
+		animation-duration: 1s;
+		animation-fill-mode: both;
+		animation-iteration-count: infinite;
+		animation-name: animated-mouse-bg;
+		transform-origin: center;
+		transition: @transition-site;
 	    &:before{
 	    	content: '';
 	    	display: block;
@@ -184,13 +195,13 @@
 		    background-repeat: no-repeat;
 		    background-position: center;
 		    width: 120px;
-		    height: 120px;
-		    animation-duration: 1s;
-		    animation-fill-mode: both;
-		    animation-iteration-count: infinite;
-		    animation-name: animated-mouse;
-		    transform-origin: center;
-		    transition: @transition-site;
+		    height: 120px;  	
+			animation-duration: 1s;
+			animation-fill-mode: both;
+			animation-iteration-count: infinite;
+			animation-name: animated-mouse;
+			transform-origin: center;
+			transition: @transition-site;
 		    @media @media-size-lg{
 		    	width: 80px;
 		    	height: 80px;
@@ -203,15 +214,29 @@
 		    }
 	    }
 	}
-	@keyframes animated-mouse {	
+	@keyframes animated-mouse-bg {	
 		from {
-			transform: scale(1);
+			background: fadeout(@black, 70%);
 		}
 		50%{
-			transform: scale(1.05);
+			background: fadeout(@black, 60%);
 		}
 		to{
-			transform: scale(1);
+			background: fadeout(@black, 70%); 
+		}
+	}
+	@keyframes animated-mouse {	
+		from {
+			//transform: scale(1);
+			transform: translateY(0px);
+		}
+		50%{
+			//transform: scale(1.05);
+			transform: translateY(5px);
+		}
+		to{
+			//transform: scale(1);
+			transform: translateY(0px);
 		}
 	}
 }

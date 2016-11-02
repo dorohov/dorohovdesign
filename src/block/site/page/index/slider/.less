@@ -167,10 +167,12 @@
 	}
 	.carousel-control{
 		position: absolute;
-		bottom: 0px;
+		top: 0px;
 		left: 50%;
 		height: 60px;
 		width: 60px;
+		background: fadeout(@black, 80%);
+		transition: 0.3s all linear;
 		overflow: hidden;
 		&:before{
 			font-family: @icon;
@@ -180,26 +182,41 @@
 			text-align: center;
 			color: @white;
 			font-size: 14px;
-			background: fadeout(@black, 80%);
 			transition: 0.3s all linear;
-			transform-origin: center;
+			transform-origin: center;		
+			animation-duration: 1s;
+			animation-fill-mode: both;
+			animation-iteration-count: infinite;
 		}
 		&:hover{
+			background: fadeout(@black, 50%);
 			&:before{
-				background: fadeout(@black, 50%);
 				transform: scale(1.5);
+				animation-name: none!important;
 			}
 		}
 		&.left{
 			&:before{
-				content: @icon-left;
+				content: @icon-left;			
+				animation-name: animated-control-left;
 			}
 		}
 		&.right{
 			transform: translateX(60px);
 			&:before{
 				content: @icon-right;
+				animation-name: animated-control-right;
 			}
 		}
 	}
+}
+@keyframes animated-control-left {	
+	from {transform: translateX(0px);}
+	50%{transform: translateX(-3px);}
+	to{transform: translateX(0px);}
+}
+@keyframes animated-control-right {	
+	from {transform: translateX(0px);}
+	50%{transform: translateX(3px);}
+	to{transform: translateX(0px);}
 }

@@ -1,4 +1,4 @@
-(function(){
+/*(function(){
 	
 	setTimeout(function(){
 		
@@ -17,4 +17,4 @@
 		
 	}, 7000);
 	
-})();
+})();*/

@@ -1840,7 +1840,11 @@ textarea._frms__form-control{
 			width:50%;
 			left:-50%;
 			z-index: 2 !important;
-			
+			&.active{				
+				.scroll-page__mouse{
+				    transform: translateX(100%);
+				}
+			}
 			._ipc__slider-left {
 				width:100%;
 			}
@@ -1951,9 +1955,16 @@ textarea._frms__form-control{
 @media @media-screen{
 	.scroll-page__mouse{
 	    position: absolute;
-	    background: rgba(0,0,0,0.25);
-	    top: 0;
-	    left: 100%;
+	    bottom: 0;
+	    right: 0%;
+	    z-index: 2;
+        transform: translateX(0%);    	
+		animation-duration: 1s;
+		animation-fill-mode: both;
+		animation-iteration-count: infinite;
+		animation-name: animated-mouse-bg;
+		transform-origin: center;
+		transition: @transition-site;
 	    &:before{
 	    	content: '';
 	    	display: block;
@@ -1961,13 +1972,13 @@ textarea._frms__form-control{
 		    background-repeat: no-repeat;
 		    background-position: center;
 		    width: 120px;
-		    height: 120px;
-		    animation-duration: 1s;
-		    animation-fill-mode: both;
-		    animation-iteration-count: infinite;
-		    animation-name: animated-mouse;
-		    transform-origin: center;
-		    transition: @transition-site;
+		    height: 120px;  	
+			animation-duration: 1s;
+			animation-fill-mode: both;
+			animation-iteration-count: infinite;
+			animation-name: animated-mouse;
+			transform-origin: center;
+			transition: @transition-site;
 		    @media @media-size-lg{
 		    	width: 80px;
 		    	height: 80px;
@@ -1980,15 +1991,29 @@ textarea._frms__form-control{
 		    }
 	    }
 	}
-	@keyframes animated-mouse {	
+	@keyframes animated-mouse-bg {	
 		from {
-			transform: scale(1);
+			background: fadeout(@black, 70%);
 		}
 		50%{
-			transform: scale(1.05);
+			background: fadeout(@black, 60%);
 		}
 		to{
-			transform: scale(1);
+			background: fadeout(@black, 70%); 
+		}
+	}
+	@keyframes animated-mouse {	
+		from {
+			//transform: scale(1);
+			transform: translateY(0px);
+		}
+		50%{
+			//transform: scale(1.05);
+			transform: translateY(5px);
+		}
+		to{
+			//transform: scale(1);
+			transform: translateY(0px);
 		}
 	}
 }
@@ -3157,10 +3182,12 @@ textarea._frms__form-control{
 	}
 	.carousel-control{
 		position: absolute;
-		bottom: 0px;
+		top: 0px;
 		left: 50%;
 		height: 60px;
 		width: 60px;
+		background: fadeout(@black, 80%);
+		transition: 0.3s all linear;
 		overflow: hidden;
 		&:before{
 			font-family: @icon;
@@ -3170,30 +3197,44 @@ textarea._frms__form-control{
 			text-align: center;
 			color: @white;
 			font-size: 14px;
-			background: fadeout(@black, 80%);
 			transition: 0.3s all linear;
-			transform-origin: center;
+			transform-origin: center;		
+			animation-duration: 1s;
+			animation-fill-mode: both;
+			animation-iteration-count: infinite;
 		}
 		&:hover{
+			background: fadeout(@black, 50%);
 			&:before{
-				background: fadeout(@black, 50%);
 				transform: scale(1.5);
+				animation-name: none!important;
 			}
 		}
 		&.left{
 			&:before{
-				content: @icon-left;
+				content: @icon-left;			
+				animation-name: animated-control-left;
 			}
 		}
 		&.right{
 			transform: translateX(60px);
 			&:before{
 				content: @icon-right;
+				animation-name: animated-control-right;
 			}
 		}
 	}
 }
-
+@keyframes animated-control-left {	
+	from {transform: translateX(0px);}
+	50%{transform: translateX(-3px);}
+	to{transform: translateX(0px);}
+}
+@keyframes animated-control-right {	
+	from {transform: translateX(0px);}
+	50%{transform: translateX(3px);}
+	to{transform: translateX(0px);}
+}
 .portfolio-item-page-content{
 	background: @b-gradient-invers;
 	//opacity: 0.7;
