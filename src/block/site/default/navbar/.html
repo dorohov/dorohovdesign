@@ -1,0 +1,64 @@
+<nav class="navbar {{class}}">
+	<div class="container-fluid navbar-container-fluid">
+		<div class="row navbar__row">
+			<div class="cols navbar__cols-left">				
+				<div class="navbar-header">
+					<div class="row navbar-header__row ">
+						<div class="cols navbar-brand__cols">
+							<a class="navbar-brand" href="/">
+								<img src="/img/default/logotip-black.png" data-rjs="2" alt="" class="main">
+								<img src="/img/default/logotip-black-hover.png" alt="" class="hover">
+							</a>
+						</div>
+				        <div class="cols navbar-hamburger__cols">
+							<button class="hamburger hamburger--emphatic" data-toggle="collapse" data-target="#bs-navbar-collapse" aria-expanded="false" data-toggle-nav=".navbar-site">
+								<span class="hamburger-box">
+									<span class="hamburger-inner"></span>
+								</span>
+							</button>					
+				        </div>
+
+			        </div>
+		        </div>		
+		    </div>	
+			<div class="cols navbar__cols-right">
+				<div class="navbar-collapse-box">		
+			        <div class="cols navbar-scroll__cols">
+						<button class="hamburger hamburger--emphatic"  data-collapse-nav=".navbar-site">
+							<span class="hamburger-box">
+								<span class="hamburger-inner"></span>
+							</span>
+						</button>					
+			        </div>			
+					<div class="collapse navbar-collapse" id="bs-navbar-collapse">
+						<div class="row navbar-collapse__row">
+							<div class="cols navbar-contacts__cols ">
+								<div class="row navbar-contacts__row">
+									<div class="cols navbar-contacts__cols-tel">
+										<div class="navbar-contacts__icon icon-tel"><a href="tel:{{contacts.phone_tel}}">{{contacts.phone}}</a></div>
+									</div>
+									<div class="cols navbar-contacts__cols-mailto">
+										<div class="navbar-contacts__icon icon-mailto"><a href="mailto:{{contacts.email}}">{{contacts.email}}</a></div>
+									</div>
+								</div>
+							</div>
+							<div class="cols navbar-nav__cols">
+								<ul class="nav navbar-nav">						
+									<li><a href="/">Главная</a></li>
+									<li><a href="/portfolio.html">Портфолио</a></li>
+									<li><a href="/services.html">Услуги и цены</a></li>
+									<li><a href="/about.html">О нас</a></li>
+									<li><a href="/blog.html">Блог</a></li>
+									<li><a href="/contacts.html">Контакты</a></li>
+								</ul>
+							</div>	
+							<div class="cols navbar-btn__cols">
+								<button type="button" class="btn-site btn-gradient" data-toggle="modal" data-target="#modal-servises-reviews">Заказать</button>
+							</div>			
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</nav>

@@ -1,0 +1,29 @@
+<div class="{{class}}">
+	<div class="_cpc__block">
+		<h1 class="heading-site white min">
+			Мы готовы к плодотворному сотрудничеству!
+		</h1>
+		<div class="_cpc__contacts">
+			<div class="_cpc__contacts-item icon-map">{{contacts.address}}</div>
+			<div class="_cpc__contacts-item icon-tel">
+				<div><a href="tel:{{contacts.phone_tel}}">{{contacts.phone}}</a></div>
+				<div><a href="tel:{{contacts.phone_mob_tel}}">{{contacts.phone_mob}}</a></div>
+			</div>
+			<div class="_cpc__contacts-item icon-mailto"><a href="mailto:{{contacts.email}}">{{contacts.email}}</a></div>
+
+		</div>
+		<div class="_cpc__form">
+			<h4 class="_cpc__form-heading">Напишите нам!</h4>
+			[[azbntple tpl="/src/block/site/default/form/fio+tel-note.html" class="contacts"]]
+		</div>
+		<div class="_cpc__soc">		
+			<a href="{{soc.behance}}" target="_blank" class="round-soc-site icon-be"></a>
+			<a href="{{soc.vk}}" target="_blank" class="round-soc-site icon-vk"></a>
+			<!-- <a href="#" target="_blank" class="round-soc-site icon-drb"></a> -->
+			<a href="{{soc.fb}}" target="_blank" class="round-soc-site icon-fb"></a>
+			<a href="{{soc.tw}}" target="_blank" class="round-soc-site icon-tw"></a>
+			<a href="{{soc.instagram}}" target="_blank" class="round-soc-site icon-igm"></a> 
+		</div>
+	</div>
+	<div class="map-google-block" id="map-google"></div>
+</div>

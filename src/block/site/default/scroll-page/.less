@@ -1,0 +1,217 @@
+.scroll-page{	
+	@top-val: 100px;
+	//opacity: @opacity;
+	@media @media-screen{
+		position: fixed;
+		top: @top-val;
+		left: 0px;
+		width: 100%;
+		height: ~"calc(100% - " @top-val ~")"!important;
+		z-index: 1;		
+	}
+}
+@trs-time: 			1s;
+@trs-time-active: 	1s;
+.scroll-page__slide{	
+	@media @media-screen{
+		position: absolute;
+		top: 100%;
+		left: 0px;
+		width: 100%;
+		height: 100%;
+		//opacity: 0;
+		z-index: 1;
+		transition: @trs-time-active all ease;
+		.scroll-page[data-slide-id="1"] &[data-slide-id="0"],
+		.scroll-page[data-slide-id="2"] &[data-slide-id="1"]{
+			opacity: 1;
+			z-index: 1;
+			top: 0%;
+			transition: @trs-time-active all ease;
+			//top: -100%;
+			&.active{
+				top: 0%;
+			}
+		}
+		.scroll-page[data-slide-id="3"] &[data-slide-id="3"]{
+			opacity: 1;
+			z-index: 2;
+			top: 0%;
+		}
+		.scroll-page[data-slide-id="3"] &[data-slide-id="2"],
+		.scroll-page[data-slide-id="4"] &[data-slide-id="3"],
+		.scroll-page[data-slide-id="5"] &[data-slide-id="4"],
+		.scroll-page[data-slide-id="6"] &[data-slide-id="5"],
+		.scroll-page[data-slide-id="7"] &[data-slide-id="6"],
+		.scroll-page[data-slide-id="8"] &[data-slide-id="7"],
+		.scroll-page[data-slide-id="9"] &[data-slide-id="8"],
+		.scroll-page[data-slide-id="10"] &[data-slide-id="9"]{
+			opacity: 1;
+			z-index: 1;
+			top: 0%;
+			transition: @trs-time-active all ease;
+		}
+		&.active{
+			opacity: 1;
+			z-index: 1;
+			top: 0%;
+		}
+		&.inactive-prev{top: -100%;}
+		
+		
+		.page-id-1 .index-page-content.scroll-page &[data-slide-id="0"]{
+			width:50%;
+			left:-50%;
+			z-index: 2 !important;
+			
+			._ipc__slider-left {
+				width:100%;
+			}
+		}
+		.page-id-1 .index-page-content.scroll-page[data-slide-id="0"] &[data-slide-id="0"]{
+			z-index: 2;
+			left:0%;
+		}
+		.page-id-1 .index-page-content.scroll-page[data-slide-id="0"] &[data-slide-id="1"]{
+			top: 0%;
+			z-index: 0;
+		}
+		
+		
+	}
+}
+.scroll-page__dots{
+	position: fixed;
+	top: 50%;	
+	z-index: 20;
+	transform: translateY(-50%);
+	&.left{left: 0px;}
+	&.right{right: 0px;}
+	background: @cyan-dark;
+	width: 25px;
+	padding: 15px 0;
+	//box-shadow: -1px 1px 4px fadeout(@black, 90%);
+	@media @media-device{display: none;}
+	&.cyan{
+		background: @cyan-dark;
+		.scroll-page__dot{
+			border-color: @white;
+			&.active{
+				background: @white;
+			}
+		}
+	}
+	&.white{
+		background: @white;
+		.scroll-page__dot{
+			border-color: @cyan-dark;
+			&.active{
+				background: @cyan-dark;
+			}
+		}		
+	}
+	&.orchid{
+		background: @orchid-dark;
+		.scroll-page__dot{
+			border-color: @white;
+			&.active{
+				background: @white;
+			}
+		}		
+	}
+	&.black50{
+		background: fadeout(@black, 50%);
+		.scroll-page__dot{
+			border-color: @white;
+			&.active{
+				background: @white;
+			}
+		}		
+	}
+}
+.scroll-page__dot{
+	border: 1px solid;
+	width: 8px;
+	height: 8px;
+	cursor: pointer;
+	border-radius: 50%;
+	//margin-bottom: 15px;
+	margin: 0 auto 12px;
+	background: none;
+	outline: none;
+	display: block;
+	&:last-child{margin-bottom: 0;}
+	&.active{
+		//background: @white;
+		cursor: default;
+	}
+}
+/*
+.scroll-page__lines{
+	position: fixed;
+	top: 100px;	
+	z-index: 20;
+	&.left{left: 0px;}
+	&.right{right: 0px;}
+	height: 15px;
+	width: 100%;
+	display: flex;
+	//flex-direction: column;
+	justify-content: space-between;
+	background: fadeout(@black, 50%);
+	padding: 5px 0;
+}
+.scroll-page__line{
+		background: fadeout(@white, 50%);
+    width: 100%;
+    margin: 0 5px 0;
+    cursor: pointer;
+	&.active{
+		cursor: default;
+    background: @white;
+	}
+}*/
+@media @media-screen{
+	.scroll-page__mouse{
+	    position: absolute;
+	    background: rgba(0,0,0,0.25);
+	    top: 0;
+	    left: 100%;
+	    &:before{
+	    	content: '';
+	    	display: block;
+		    background-image: url("@{url-path-img}/default/scroll-icon.png");
+		    background-repeat: no-repeat;
+		    background-position: center;
+		    width: 120px;
+		    height: 120px;
+		    animation-duration: 1s;
+		    animation-fill-mode: both;
+		    animation-iteration-count: infinite;
+		    animation-name: animated-mouse;
+		    transform-origin: center;
+		    transition: @transition-site;
+		    @media @media-size-lg{
+		    	width: 80px;
+		    	height: 80px;
+		    	background-size: 20px auto; 
+		    }
+		    @media @media-size-xl{
+		    	width: 100px;
+		    	height: 100px;
+		    	background-size: 25px auto; 
+		    }
+	    }
+	}
+	@keyframes animated-mouse {	
+		from {
+			transform: scale(1);
+		}
+		50%{
+			transform: scale(1.05);
+		}
+		to{
+			transform: scale(1);
+		}
+	}
+}
