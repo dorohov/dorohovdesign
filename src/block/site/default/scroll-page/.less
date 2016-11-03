@@ -65,7 +65,7 @@
 			z-index: 2 !important;
 			&.active{				
 				.scroll-page__mouse{
-				    transform: translateX(100%);
+				    //transform: translateX(100%);
 				}
 			}
 			._ipc__slider-left {
@@ -181,36 +181,63 @@
 	    bottom: 0;
 	    right: 0%;
 	    z-index: 2;
-        transform: translateX(0%);    	
-		animation-duration: 1s;
-		animation-fill-mode: both;
-		animation-iteration-count: infinite;
-		animation-name: animated-mouse-bg;
-		transform-origin: center;
+        transform: translateX(0%);
+	    width: 120px;
+	    height: 120px;
+	    text-align: center;    	
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
 		transition: @transition-site;
+	    @media @media-size-lg{
+	    	width: 80px;
+	    	height: 80px; 
+	    }
+	    @media @media-size-xl{
+	    	width: 100px;
+	    	height: 100px;
+	    }
+    	color: @white;
+	    &.black{
+	    	color: @white;
+	    }
 	    &:before{
-	    	content: '';
+	    	font-family: @icon;
+	    	content: @icon-mouse;
+	    	font-size: 45px;
+	    	line-height: 45px;
 	    	display: block;
-		    background-image: url("@{url-path-img}/default/scroll-icon.png");
-		    background-repeat: no-repeat;
-		    background-position: center;
-		    width: 120px;
-		    height: 120px;  	
-			animation-duration: 1s;
+		    @media @media-size-lg{
+		    	font-size: 35px;
+	    		line-height: 35px;
+		    }
+		    @media @media-size-xl{
+		    	font-size: 40px;
+	    		line-height: 40px;
+		    }
+	    }
+	    &:before,
+	    &:after{	    	
+			animation-duration: 0.8s;
 			animation-fill-mode: both;
 			animation-iteration-count: infinite;
 			animation-name: animated-mouse;
 			transform-origin: center;
-			transition: @transition-site;
+	    }
+	    &:after{
+	    	font-family: @icon;
+	    	content: @icon-mouse-down;
+	    	display: block;
+	    	font-size: 20px;
+    		line-height: 20px;
 		    @media @media-size-lg{
-		    	width: 80px;
-		    	height: 80px;
-		    	background-size: 20px auto; 
+		    	font-size: 16px;
+	    		line-height: 16px;
 		    }
 		    @media @media-size-xl{
-		    	width: 100px;
-		    	height: 100px;
-		    	background-size: 25px auto; 
+		    	font-size: 18px;
+	    		line-height: 18px;
 		    }
 	    }
 	}
