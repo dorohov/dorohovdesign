@@ -18,3 +18,24 @@
 	}, 7000);
 	
 })();*/
+
+(function(){
+	
+	var block = $('.scroll-page__mouse');
+	
+	if(SS) {
+		
+		var viewed = SS.get('scroll-page__mouse_viewed');
+		
+		if(viewed) {
+			block
+				.empty()
+				.remove()
+			;
+		} else {
+			SS.set('scroll-page__mouse_viewed', 1);
+		}
+		
+	}
+	
+})();
