@@ -1860,6 +1860,20 @@ textarea._frms__form-control{
 		
 		
 	}
+	@media @media-size-sm {
+		&:nth-child(2) {
+			._ipc__slider {
+				height: 100%;
+			}
+			
+			.portrait & {
+				height: 40%;
+			}
+			.landscape & {
+				height: 100%;
+			}
+		}
+	}
 }
 .scroll-page__dots{
 	position: fixed;
@@ -3049,10 +3063,17 @@ textarea._frms__form-control{
 	padding: 120px 40px;
 	z-index: 2;
 	//opacity: @opacity;
+	
 	@media @media-size-xs{
 		width: 100%;
 		padding: 40px 20px;
 	}
+	
+	@media @media-size-sm{
+		width: 100%;
+		
+	}
+	
 	@media @media-screen{
 		position: absolute;
 		top: 0px;
@@ -3206,6 +3227,12 @@ textarea._frms__form-control{
 				text-shadow: 1px 1px fadeout(@black, 50%);
 			}
 		}
+		
+		@media @media-size-sm {
+			padding-left:20px;
+			padding-right:20px;
+			text-align:center;
+		}
 	}
 	.carousel-control{
 		position: absolute;
@@ -3216,6 +3243,20 @@ textarea._frms__form-control{
 		background: fadeout(@black, 80%);
 		transition: 0.3s all linear;
 		overflow: hidden;
+		
+		@media @media-size-sm {
+			& {
+				left: inherit;
+				top: inherit;
+				right:50%;
+				bottom:0px;
+				
+				&.right {
+					transform:translateX(60px);
+				}
+			}
+		}
+		
 		&:before{
 			font-family: @icon;
 			display: block;

@@ -83,6 +83,20 @@
 		
 		
 	}
+	@media @media-size-sm {
+		&:nth-child(2) {
+			._ipc__slider {
+				height: 100%;
+			}
+			
+			.portrait & {
+				height: 40%;
+			}
+			.landscape & {
+				height: 100%;
+			}
+		}
+	}
 }
 .scroll-page__dots{
 	position: fixed;
