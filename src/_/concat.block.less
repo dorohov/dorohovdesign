@@ -2489,7 +2489,25 @@ textarea._frms__form-control{
 	}
 	.text-block{
 		max-width: 660px;
-		margin-bottom: 40px;
+		margin-bottom: 20px;
+		@media @media-screen{
+			ul{
+				&.ul-site{
+					padding-top: 0;
+					li{
+						margin-bottom: 5px;
+					}
+				}
+			}
+			h2 {
+				font-size: 30px;
+				line-height: 36px;
+			}
+			h3{
+				font-size: 24px;
+				line-height: 30px;
+			}
+		}
 		@media @media-size-sml{
 			margin-bottom: 20px;
 		}
@@ -2498,7 +2516,8 @@ textarea._frms__form-control{
 			line-height: @b-lh - 2px; //22px;
 		}
 		@media @media-size-xxl{
-			line-height: @b-lh + 6px; //30px
+			max-width: 750px;
+			line-height: @b-lh + 2px; //26px
 		}
 	}
 }
@@ -2667,18 +2686,16 @@ textarea._frms__form-control{
 }
 ._spc__cost{
 	font-family: @proxima;
-	margin-bottom: 40px;
+	margin-bottom: 20px;
 	font-size: @b-fs + 19px; //35px;
 	line-height: @b-lh + 16px; //58px; 36
 	@media @media-size-xs{
 		font-size: @b-fs + 4px; //20px;
 		line-height: @b-lh + 4px; //38px;
-		margin-bottom: 20px;
 	}
 	@media @media-size-sml{
 		font-size: @b-fs + 10px; //26px;
 		line-height: @b-lh + 10px; //34px;
-		margin-bottom: 20px;
 	}
 	@media @media-size-xl{
 		font-size: @b-fs + 18px; //34px;
