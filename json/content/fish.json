@@ -15,6 +15,7 @@
 		"instagram":"https://www.instagram.com/dorohovdesign/",
 		"behance":"https://www.behance.net/hello8640"
 	},
-	"wp-theme": "/wp-content/themes/azbnbasetheme/",
+	"url-path-img": "/wp-content/themes/azbnbasetheme/img",
+	"url-path-img": "/img",
 	"wp-theme": ""
 }

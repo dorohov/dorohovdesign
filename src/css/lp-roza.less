@@ -1,0 +1,1209 @@
+@site-name : "site";
+/* Подключение стилей сайта */
+@import "@{site-name}/var.less";
+
+@b-fs-roza: 				18px;
+@b-lh-roza: 				25px;
+@b-ff-roza: 				@open;
+
+@bg-roza:			#c9cbcf;
+@blue:				#11273f;
+@blue-dark:			#25476d; 
+
+@trs-time: 			1s;
+@trs-time-active: 	1s;
+
+
+@open: 				open-sans-regular;
+@open-ebold: 		open-sans-extra-bold;
+@open-sbold: 		open-sans-semi-bold;
+.include-custom-font(@family: @bebas-bold, @weight: normal, @style: normal){
+	@font-face{			
+		font-family: "@{family}";			
+		src:url('@{url-path-fonts}/@{family}.woff') format('woff');
+		font-weight: @weight;
+		font-style: @style;		
+	}
+}
+.include-custom-font(@family: @open, 		@weight: normal, @style: normal);
+.include-custom-font(@family: @open-ebold, 		@weight: normal, @style: normal);
+.include-custom-font(@family: @open-sbold, 		@weight: normal, @style: normal);
+
+.roza-page-content{
+	//opacity: 0.7; 
+	min-height: 2000px;
+	font-size: @b-fs-roza;
+	line-height: @b-lh-roza;
+	overflow: hidden;
+	font-family: @b-ff-roza;
+	@media @media-size-xs{
+		font-size: 16px;
+		line-height: 24px;
+	}
+	@media @media-size-sm{
+		font-size: 18px;
+		line-height: 24px;
+	}
+	&.padtop{
+		@media @media-screen{padding-top: 100px;}
+	}
+	
+} 
+.roza__text-block{
+	p, div{margin-bottom: 15px;}
+	ul > li, ol > li{margin-bottom: 11px;}	
+	h1,h2,h3,h4,h5,h6{
+		font-family: @open-sbold;
+	}
+	h3{
+		font-size: @b-fs-roza + 6px;
+		line-height: @b-lh-roza + 6px;
+		margin-bottom: 25px;
+	}
+}
+//====== block-header prefix ._rbh__ ======//
+._roza__block-header{
+	padding: 75px 0 10px;
+	background-position: center;
+	background-repeat: no-repeat;	
+	background-size: cover;
+	background-image: url('@{url-path-img}/lp-roza/bg-roza-block1.jpg');
+	overflow: hidden;
+	@media @media-size-xs{
+		padding: 30px 0;
+	}
+}
+._rbh__heading{	
+	text-transform: uppercase;
+	font-family: @open-ebold;
+	color: @white;
+	text-align: center;
+	letter-spacing: 0.5px;
+	position: relative;
+	z-index: 2;
+	@media @media-size-xs{
+		font-size: @b-fs-roza + 10 ; //44
+		line-height: @b-lh-roza + 14px; //60
+		margin-bottom: 20px;
+	}
+	@media @media-size-sm{
+		font-size: @b-fs-roza + 20 ; //44
+		line-height: @b-lh-roza + 24px; //60
+		margin-bottom: 20px;
+	}
+	@media @media-screen{
+		font-size: @b-fs-roza + 26 ; //44
+		line-height: @b-lh-roza + 30px; //60
+		margin-bottom: 20px;
+	}
+	@media @media-size-xxl{
+		font-size: @b-fs-roza + 36 ; //54
+		line-height: @b-lh-roza + 40px; //70
+		margin-bottom: 30px;
+	}
+}
+._rbh__link{
+	text-align: center;
+	//margin-bottom: 80px;
+	position: relative;
+	z-index: 2;
+	a{
+		color: @white;
+		font-size: @b-fs-roza + 4px ; //22
+		border-bottom: 2px solid @white;
+		transition: @transition-site;
+		&:hover{
+			border-bottom-color: fadeout(@white, 100%);
+		}
+	}
+}
+._rbh__img{
+	//transform: translateY(-60px);
+	position: relative;
+	z-index: 1;
+	background-position: center;
+	background-repeat: no-repeat;	
+	background-size: contain;
+	background-image: url('@{url-path-img}/lp-roza/roza-block1-item1.png');
+	width: 100%;
+	max-width: 1165px;
+	margin: 0 auto;
+	@media @media-size-xs{
+		height: 245px;
+	}
+	@media @media-size-sm{
+		height: 675px;
+		top: -50px;	
+	}
+	@media @media-screen{
+		height: 675px;
+		top: -50px;	
+	}
+	@media @media-size-xxl{
+		height: 975px;
+		top: -60px;	
+	}
+}
+._rbh__{}
+//====== block-plan prefix ._rbp__ ======//
+._roza__block-plan{
+	background-color: @bg-roza;
+	background-position: center bottom;
+	background-repeat: no-repeat;	
+	background-size: contain;
+	background-image: url('@{url-path-img}/lp-roza/bg-roza-block1-rect.png');
+	padding: 130px 0 110px;
+	color: @blue;
+	@media @media-device{padding: 50px 0 35px;}
+	@media @media-size-mdl{padding: 80px 0 50px;}
+	.container {
+		@media @media-size-xxl{
+			width: 1610px;
+		}
+	}
+		
+}
+._rbp__note{
+	position: relative;
+	overflow: hidden;
+	padding: 65px 75px 55px 105px;
+	margin-bottom: 120px;
+	@media @media-size-xs{
+		padding: 20px;
+		margin-bottom: 35px;
+	}
+	@media @media-size-sm{
+   		padding: 45px 25px 45px 55px;
+    	margin-bottom: 60px;
+	}
+	@media @media-size-mdl{
+		padding: 65px 35px 55px 75px;
+		margin-bottom: 70px;
+	}
+	@media @media-size-xl{margin-bottom: 50px;}
+}
+._rbp__border{
+	position: absolute;
+	left: 0px;
+	background: @blue-dark;
+	&._top{
+		width: 100%;
+		height: 2px;
+		top: 0px;
+	}
+	&._left{
+		width: 2px;
+		height: 100%;
+		top: 0px;
+	}
+	&._bottom{
+		width: 15%;
+		height: 2px;
+		bottom: 0px;
+	}
+}
+._rbp__row{
+	@media @media-device{flex-wrap: wrap;}
+	@media @media-screen{
+		margin-left: -30px;
+		margin-right: -30px;
+	}
+}
+._rbp__cols-left{ 
+	@media @media-device{width: 100%;}
+	@media @media-screen{
+		width: 46%;
+		padding-left: 30px;
+		padding-right: 30px;
+	}
+}
+._rbp__cols-right{
+	@media @media-device{width: 100%}
+	@media @media-screen{
+		width: 54%; 
+		padding-left: 30px;
+		padding-right: 30px;
+	}
+}
+._rbp__item{
+	margin-bottom: 30px;	
+}
+._rbp__preview{
+	@media @media-device{
+		//display: flex;
+		//flex-wrap: wrap;
+		//justify-content: center;
+	}
+	@media @media-screen{
+		height: 710px;
+		position: relative;
+	}
+	@media @media-size-mdl{height: 690px;}
+}
+._rbp__preview-item{
+	background-position: center;
+	background-repeat: no-repeat;	
+	background-size: contain;	
+	@media @media-device{
+		max-width: 100%;
+		margin: 0 auto 25px;
+	}
+	@media @media-screen{
+		position: absolute;	
+		left: 50%;	
+	}
+	&._flash{	
+		@media @media-device{display: none;}
+		@media @media-screen{
+			max-width: 1920px;
+			//width: 100%;
+			left: 0;
+			top: -150px;
+			z-index: 0;
+			background-size: contain;
+			background-image: url('@{url-path-img}/lp-roza/bg-roza-block1-flash.png');	
+			left: -40px;
+			right: -40px;
+			height: 825px;
+		}
+		@media @media-size-mdl{
+			left: -25px;
+			right: -25px;
+		}
+		@media @media-size-xl2{height: 925px;}
+		@media @media-size-xxl{height: 1065px;}
+	}
+	&._browser{
+		background-image: url('@{url-path-img}/lp-roza/roza-block2-browser.png');		
+		height: 400px;   
+		@media @media-size-xs{height: 180px;}
+		@media @media-screen{
+			width: 725px;
+			transform: translateX(-97%);
+			top: 195px;
+			z-index: 1;
+		}
+		@media @media-size-mdl{width: 525px;}
+		@media @media-size-xl{width: 625px;}
+	}
+	&._desctop{
+		background-image: url('@{url-path-img}/lp-roza/roza-block2-desctop.png');
+		height: 630px;
+		@media @media-size-xs{height: 220px;}
+		@media @media-screen{
+			width: 780px;
+			top: 0px;
+			transform: translateX(-37%);
+			z-index: 2;
+		}
+		@media @media-size-mdl{width: 580px;}
+		@media @media-size-xl{width: 680px;}
+	}
+	&._keyboards{
+		background-image: url('@{url-path-img}/lp-roza/roza-block2-keyboards.png');
+		height: 36px;
+		@media @media-size-xs{height: 20px;}
+		@media @media-screen{
+			width: 490px;
+			bottom: 15px;
+			transform: translateX(-57%);
+			z-index: 2;
+		}
+		@media @media-size-mdl{
+			width: 350px;
+			bottom: 55px;
+			transform: translateX(-60%);
+		}
+		@media @media-size-xl{width: 390px;}
+	}
+	&._laptop{
+		background-image: url('@{url-path-img}/lp-roza/roza-block2-laptop.png');
+		height: 320px;
+		@media @media-size-xs{height: 220px;}
+		@media @media-screen{
+			width: 510px;
+			bottom: 45px;
+			transform: translateX(-2%);
+			left: 0;
+			z-index: 3;
+		}
+		@media @media-size-mdl{width: 310px;}
+		@media @media-size-xl{width: 410px;}
+	}
+	&._macbook{
+		background-image: url('@{url-path-img}/lp-roza/roza-block2-macbook.png');
+		height: 270px;
+		@media @media-screen{
+			width: 440px;
+			bottom: 50px;
+			transform: translateX(52%);
+			z-index: 4;
+		}
+		@media @media-size-mdl{width: 300px;}
+		@media @media-size-xl{width: 340px;}
+	}
+	&._phone{
+		background-image: url('@{url-path-img}/lp-roza/roza-block2-phone.png');
+		height: 155px;
+		@media @media-screen{
+			width: 87px;
+			bottom: 75px;
+			transform: translateX(-140%);
+			left: 100%;
+			z-index: 5;
+		}
+		@media @media-size-mdl{width: 60px;}
+		@media @media-size-xl{width: 70px;}
+	}
+	&._tablects{
+		background-image: url('@{url-path-img}/lp-roza/roza-block2-tablects.png');
+		height: 300px;
+		@media @media-screen{
+			width: 270px;
+			bottom: 110px;
+			transform: translateX(215%);
+			z-index: 3;
+		}
+		@media @media-size-mdl{width: 180px;}
+		@media @media-size-xl{width: 200px;}
+	}
+}
+._rbp__{}
+//====== block-desctop prefix ._rbd__ ======//
+._roza__block-desctop{
+	background-position: center;
+	background-repeat: no-repeat;	
+	background-size: cover;
+	background-image: url('@{url-path-img}/lp-roza/bg-roza-block3.jpg');
+	color: @white;
+	position: relative;
+	@media @media-size-xs{
+		padding: 35px 0;
+	}
+	@media @media-notsmart{
+		padding: 45px 0 110px;
+		height: 960px;
+	}
+	@media @media-size-mdl{
+		padding: 45px 0 50px;
+		height: 780px;
+	}
+	@media @media-size-xl{height: 850px}
+	.container-fluid{
+		overflow: hidden;
+	}
+}
+._rbd__note{
+	position: relative;
+	@media @media-notsmart{
+		height: 504px;
+		margin: 0 0 0 130px;
+		max-width: 980px;
+		z-index: 3;
+	}
+	@media @media-size-sm{height: 550px}
+	@media @media-size-sml{margin: 0 0 0 30px;}
+	@media @media-size-xl{margin: 0 0 0 50px;}
+}
+._rbd__border{
+	position: absolute;
+	background: #d5d9e0;
+	@media @media-size-xs{display: none;}
+	&._round-start{
+		top: 12%; 
+		right: 0px;
+		width: 10px;
+		height: 10px;
+		border-radius: 50%;
+		@media @media-size-mdl{top: 22%;}
+	}
+	&._top{
+		top: 0px; 
+		left: 0px;
+		right: 4px;
+		height: 2px;
+	}
+	&._right{
+		top: 0px; 
+		right: 4px;
+		width: 2px;
+		height: 12%;
+		@media @media-size-mdl{height: 22%;}
+	}
+	&._left-start{
+		top: 0; 
+		left: 0px;
+		width: 2px;
+		height: 5%;
+	}
+	&._left-finish{
+		bottom: 4px; 
+		left: 0px;
+		width: 2px;
+		height: 40%;
+	}
+	&._bottom{
+		bottom: 4px; 
+		left: 0px;
+		width: 13%;
+		height: 2px;
+	}
+	&._round-finish{
+		bottom: 0; 
+		left: 13%;
+		width: 10px;
+		height: 10px;
+		border-radius: 50%;
+	}
+}
+._rbd__note-text{
+	@media @media-notsmart{		
+		position: absolute;
+		top: 65px;
+		left: -130px;
+		max-width: 400px;
+	}
+	@media @media-size-sm{left: -30px; max-width: 380px;}
+	@media @media-size-mdl{left: -30px; max-width: 500px;}
+	@media @media-size-xl{left: -50px;}
+}
+._rbd__preview-item{
+	background-position: center;
+	background-repeat: no-repeat;	
+	background-size: contain;
+	@media @media-notsmart{	
+		left: 50%;
+		position: absolute;	
+	}
+	&._laptop{		
+		background-image: url('@{url-path-img}/lp-roza/roza-block3-laptop.png'); 
+		@media @media-size-xs{
+			height: 250px;
+			margin-bottom: 20px;
+		}
+		@media @media-notsmart{
+			width: 690px;
+			height: 730px;  
+			top: 85px;
+			z-index: 2;
+			transform: translateX(0%);			
+		}
+		@media @media-size-sm{
+			width: 380px;
+			height: 500px;
+			left: 100%;
+			top: 85px;
+			transform: translateX(-105%);
+		}
+		@media @media-size-mdl{
+			width: 400px;
+			height: 530px;
+			top: 205px;
+			transform: translateX(30%);
+		}
+		@media @media-size-xl{
+			width: 590px;
+		}
+	}
+	&._laptop-sm{		
+		background-image: url('@{url-path-img}/lp-roza/roza-block3-laptop-sm.png');
+		@media @media-size-xs{
+			height: 250px;
+		}
+		@media @media-notsmart{
+			width: 500px;
+			height: 530px;   
+			top: 350px;
+			//left: 350px;
+			z-index: 1;
+			transform: translateX(-115%);
+		}
+		@media @media-size-sm{
+			left: 50%;
+			transform: translateX(-50%);
+			width: 300px;
+			height: 330px;
+			top: 530px;
+		}
+		@media @media-size-mdl{
+			width: 360px;
+			height: 400px;
+			top: 320px;
+		}
+		@media @media-size-xl{
+			width: 400px;
+		}
+	}
+}
+._rbd__{}
+//====== block-desctop prefix ._rbr__ ======//
+._roza__block-responsive{
+	position: relative;
+	background-color: @bg-roza;
+	background-position: left top, left bottom;
+	background-repeat: no-repeat;	
+	background-size: contain;
+	background-image: 
+		url('@{url-path-img}/lp-roza/bg-roza-block4-top.png'), 
+		url('@{url-path-img}/lp-roza/bg-roza-block4-bottom.png');
+	padding: 115px 0 110px;
+	@media @media-size-xs{
+		padding: 35px 0;
+		background: @bg-roza;
+	}
+	@media @media-size-sm{padding: 55px 0 50px;}
+	@media @media-screen{height: 1915px; }
+	@media @media-size-mdl{padding: 65px 0 110px; height: 1615px}
+	@media @media-size-xl{height: 1815px}
+	
+}
+._rbr__note{
+	position: relative;
+	color: @white;
+	//overflow: hidden;
+	@media @media-size-xs{
+		color: @blue;
+		margin-bottom: 35px;
+	}
+	@media @media-screen{
+		height: 504px;
+		margin: 0 0 0 130px;
+		max-width: 530px;
+	}
+}
+._rbr__border{
+	@media @media-device{display: none;}
+	position: absolute;
+	background: @white;
+	&._round-start{
+		top: 6%; 
+		right: 0px;
+		width: 10px;
+		height: 10px;
+		border-radius: 50%;
+	}
+	&._right{
+		top: 0px; 
+		right: 4px;
+		width: 2px;
+		height: 6%;
+	}
+	&._top{
+		top: 0px; 
+		left: 0px;
+		right: 4px;
+		height: 2px;
+	}
+	&._left-start{
+		top: 0; 
+		left: 0px;
+		width: 2px;
+		height: 21%;
+	}
+	&._left-finish{
+		bottom: 4px; 
+		left: 0px;
+		width: 2px;
+		height: 40%;
+	}
+	&._bottom{
+		bottom: 4px; 
+		left: 0px;
+		width: 13%;
+		height: 2px;
+	}
+	&._round-finish{
+		bottom: 0; 
+		left: 13%;
+		width: 10px;
+		height: 10px;
+		border-radius: 50%;
+	}
+}
+._rbr__note-text{
+	line-height: @b-lh-roza - 2px;
+	@media @media-size-sm{
+		max-width: 300px;
+		margin-bottom: 25px;
+	}
+	@media @media-screen{
+		position: absolute;
+		z-index: 3;
+		top: 150px;
+		left: -70px;
+		max-width: 350px;
+	}
+	p, div{
+		margin-bottom: 15px;
+	}
+	ul > li{
+		margin-bottom: 5px;
+	}
+}
+._rbr__owl{	
+	background-position: left top;
+	background-repeat: no-repeat;	
+	//background-size: contain;
+	background-image: url('@{url-path-img}/lp-roza/roza-block4-browser.png');
+	max-width: 1400px;
+	//height: 725px;
+	@media @media-device{
+    	margin: 0 auto 35px;
+	}
+	@media @media-size-xs{
+		max-width: 280px;
+		background-size: 280px;
+	    padding: 11px 0px 40px 26px;
+	}
+	@media @media-size-sm{
+		background-size: 700px;
+    	max-width: 700px;
+    	padding: 29px 0 60px 67px;
+	}
+	@media @media-screen{
+		position: absolute;
+		top: 175px;
+		right: 75px;
+		z-index: 2;
+		padding: 52px 122px 55px;
+	}
+	@media @media-size-mdl{
+	    max-width: 850px;
+		padding: 32px 73px 50px;
+		background-size: 779px;  
+		right: 5px;
+	}
+	@media @media-size-xl{  
+		background-size: 888px;    
+		max-width: 970px;
+		padding: 36px 85px 55px;
+		right: 15px;
+	}
+	.owl-item{
+		img{
+			@media @media-size-xl{
+				width: 800px;
+			}
+		}
+	}
+	.owl-nav{
+		div{
+			position: absolute;
+			top: 48%;    
+			transition: @transition-site;
+			transform: translateY(-50%);
+			&:before{
+				font-family: @icon;
+				display: block;
+				color: @white;
+				text-align: center;
+				border-radius: 50%;
+				font-size: 16px;
+				width: 40px;
+				line-height: 36px;
+				border: 2px solid @white;
+				transition: @transition-site;
+				@media @media-size-xs{
+					width: 36px;
+					line-height: 32px;
+					font-size: 16px;
+				}
+			}
+			&:hover{
+				&:before{
+					background: @white;
+					color: @blue;
+				}
+			}
+		}
+		.owl-prev{
+			left: 25px;
+			@media @media-size-mdl{left: 20px;}
+			&:before{
+				content: @icon-left;
+			}
+		}
+		.owl-next{
+			right: 35px;
+			@media @media-size-mdl{right: 20px;}
+			&:before{
+				content: @icon-right;
+			}
+		}
+	}
+	.owl-dots {
+		position: absolute;
+		bottom: 0px;
+		display: flex;
+		align-items: center;
+		left: 50%;
+		bottom: 4px;
+		transform: translateX(-55%);
+	}
+	.owl-dot {
+		width: 12px;
+		height: 12px;
+		margin: 0 16px;
+		border-radius: 50%;
+		//border: 2px solid fadeout(@aquamarine-mod, 0%);
+		background: fadeout(@white, 0%);
+		transition: @transition-site;
+		&.active{
+			transform: scale(1.7);
+			//background: fadeout(@aquamarine-mod, 0%);
+		}
+	}
+}
+._rbr__border-owl{
+	position: absolute;
+	top: 905px;
+	right: 335px;
+	width: 455px;
+	height: 145px;
+	z-index: 4;
+	@media @media-device{display: none;}
+	@media @media-size-mdl{
+		top: 670px;
+		right: 125px;
+		width: 315px;
+	}
+	@media @media-size-xl{
+		top: 745px;
+		right: 185px;
+		width: 225px;
+	}
+}
+._rbr__border-owl-item{
+	position: absolute;
+	background: @blue;
+	&._round-start{
+		top: 0; 
+		right: 0px;
+		width: 10px;
+		height: 10px;
+		border-radius: 50%;
+	}
+	&._right{
+		top: 10px; 
+		right: 4px;
+		width: 2px;
+		bottom: 0;
+	}
+	&._bottom{
+		bottom: 0px; 
+		right: 4px;
+		width: 100%;
+		height: 2px;
+	}
+}
+._rbr__note-text-ex{
+	color: @blue;
+	h3{
+		font-size: @b-fs-roza + 7px;
+	}
+	@media @media-screen{
+		position: absolute;
+		top: 955px;
+		left: 100px;
+		max-width: 910px;		
+	}
+	@media @media-size-mdl{
+		top: 725px;
+		max-width: 620px;
+	}
+	@media @media-size-xl{
+		top: 795px;
+		max-width: 780px;
+	}
+} 
+._rbr__smart-slider{
+	height: 835px;
+	position: relative;
+	@media @media-size-xs{height: 285px}
+	@media @media-size-sm{height: 575px;}
+	@media @media-screen{
+		position: absolute;
+		bottom: 0px;
+		left: 0px;
+		max-width: 1120px;
+		width: 100%;		
+	}
+	@media @media-size-mdl{height: 665px;}
+	@media @media-size-xl{height: 800px;}
+} 
+._rbr__slider-item{
+	background-position: center;
+	background-repeat: no-repeat;	
+	background-size: contain;
+	position: absolute;
+	&._smart{
+		background-image:  url('@{url-path-img}/lp-roza/roza-block4-phone.png');
+		width: 520px;
+		height: 835px;
+		top: 5px;
+		left: 155px;
+		@media @media-size-xs{
+			width: 170px;
+			height: 275px;
+			top: 5px;
+			left: -30px;
+		}
+		@media @media-size-sm{
+			width: 350px;
+			height: 575px;
+			top: 5px;
+			left: 5px;
+		}
+		@media @media-size-mdl{
+			width: 350px;
+			height: 575px;
+			top: 5px;
+			left: 35px;
+		}
+		@media @media-size-xl{
+			width: 400px;
+			height: 655px;
+			top: 5px;
+			left: 35px;
+		}
+	}
+	&._slide1{
+		background-image:  url('@{url-path-img}/lp-roza/roza-block4-phone-slide1.jpg');
+		width: 265px;
+		height: 470px;
+		top: 185px;
+		left: 275px;
+		@media @media-size-xs{
+			width: 90px;
+			height: 160px;
+			top: 58px;
+			left: 9px;
+		}
+		@media @media-size-sm{
+			width: 185px;
+			height: 400px;
+			top: 85px;
+			left: 85px;
+		}
+		@media @media-size-mdl{
+			width: 185px;
+			height: 400px;
+			top: 85px;
+			left: 115px;
+		}
+		@media @media-size-xl{
+			width: 215px;
+			height: 390px;
+			top: 125px;
+			left: 125px;
+		}
+	}
+	&._slide2{
+		background-image:  url('@{url-path-img}/lp-roza/roza-block4-phone-slide2.png');
+		width: 500px;
+		height: 710px;
+		top: 65px;
+		left: 405px;
+		@media @media-size-xs{
+			width: 170px;
+			height: 240px;
+			top: 20px;
+			left: 40px;
+		}
+		@media @media-size-sm{
+			left: 185px;
+			width: 350px;
+			height: 510px;
+			top: 35px;
+		}
+		@media @media-size-mdl{
+			left: 210px;
+			width: 350px;
+			height: 510px;
+			top: 35px;
+		}
+		@media @media-size-xl{
+			width: 420px;
+			height: 610px;
+			top: 20px;
+			left: 235px;
+		}
+	}
+	&._slide3{
+		background-image:  url('@{url-path-img}/lp-roza/roza-block4-phone-slide3.png');
+		width: 500px;
+		height: 710px;
+		top: 65px;
+		left: 705px;
+		@media @media-size-xs{
+			width: 180px;
+			height: 260px;
+			top: 10px;
+			left: 110px;
+		}
+		@media @media-size-sm{
+			left: 395px;
+			top: 40px;
+		    width: 350px;
+		    height: 500px;
+		}
+		@media @media-size-mdl{
+			left: 425px;
+			top: 40px;
+		    width: 350px;
+		    height: 500px;
+		}
+		@media @media-size-xl{
+			width: 430px;
+			height: 610px;
+			top: 20px;
+			left: 485px;
+		}
+	}
+} 
+._rbr__smart-text{
+	color: @blue;
+	@media @media-size-sm{
+		padding-left: 50%;
+    	padding-bottom: 100px;
+	}
+	@media @media-screen{
+		position: absolute;
+		bottom: 420px;
+		right: 105px;
+		max-width: 520px;
+	}
+	@media @media-size-mdl{
+		right: 30px;
+		max-width: 430px;
+		bottom: 350px;
+	}
+	@media @media-size-xl{
+		bottom: 460px;
+		right: 70px;
+		max-width: 390px;
+	}
+} 
+._rbr__smart-border{
+	position: absolute;
+	bottom: 265px;
+	right: 520px;
+	width: 185px;
+	height: 130px;
+	@media @media-device{display: none;}
+	@media @media-size-mdl{
+		bottom: 245px;
+		right: 290px;
+		height: 100px;
+	}
+	@media @media-size-xl{
+		bottom: 315px;
+		right: 330px;
+	}
+} 
+._rbr__smart-border-item{
+	position: absolute;
+	background: @blue;
+	&._right{
+		top: 0px; 
+		right: 0px;
+		width: 2px;
+		bottom: 4px;
+	}
+	&._bottom{
+		bottom: 4px; 
+		right: 0px;
+		left: 10px;
+		height: 2px;
+	}
+	&._round-finish{
+		bottom: 0; 
+		left: 0px;
+		width: 10px;
+		height: 10px;
+		border-radius: 50%;
+	}
+}
+._rbr__{} 
+//====== block-mac prefix ._rbm__ ======//
+._roza__block-mac{
+	position: relative;
+	height: 960px; 
+	//background-color: @bg-roza;
+	background-position: center;
+	background-repeat: no-repeat;	
+	background-size: cover;
+	background-image: url('@{url-path-img}/lp-roza/bg-roza-block5.jpg');
+	@media @media-size-xs{
+		.container-fluid{position: static;}
+	}
+	@media @media-size-xs-p{height: 400px;}
+	@media @media-size-xs-l{height: 300px;}
+	@media @media-size-sm-l{height: 680px;}
+	@media @media-size-mdl{height: 620px;}
+	@media @media-size-xl{height: 780px;}
+}
+._rbm__preview-item{
+	position: absolute;	
+	background-position: center;
+	background-repeat: no-repeat;	
+	background-size: contain;
+	&._macbook{		
+		background-image: url('@{url-path-img}/lp-roza/roza-block5-macbook.png');
+		max-width: 1420px;
+		height: 760px; 
+		width: 100%;  
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		@media @media-size-xs{
+	        max-width: 320px;
+			height: 160px;
+    	}
+		@media @media-size-sm{
+			max-width: 768px;
+			height: 500px;
+		}
+		@media @media-size-mdl{
+			height: 500px;
+		}
+		@media @media-size-xl{
+			max-width: 1130px;
+			height: 620px;
+		}
+	}
+	&._phone{		
+		background-image: url('@{url-path-img}/lp-roza/roza-block5-phone.png');
+		bottom: 70px;
+		left: 270px;   
+		width: 310px; 
+		height: 645px;
+		z-index: 2; 
+		//bottom: 50%;
+		//left: 50%;
+		z-index: 2;
+		//transform: translate(-230%, 70%);
+		bottom: 3%;
+    	left: 10%;
+		@media @media-device{
+			transform: translate(-230%, 70%);
+			bottom: 50%;
+			left: 50%;
+		}
+		@media @media-size-xs{
+	        width: 70px;
+			height: 125px;
+    	}
+		@media @media-size-sm{
+		    width: 170px;
+    		height: 365px;
+    	}
+		@media @media-size-mdl{
+			width: 200px;
+			height: 415px;
+		}
+		@media @media-size-xl{
+			width: 245px;
+			height: 515px;
+		}
+	}
+}
+._rbm__{
+	
+}
+//====== block-footer prefix ._rbf__ ======//
+._roza__block-footer{
+	position: relative;
+	//background-color: @bg-roza;
+	background-position: center;
+	background-repeat: no-repeat;	
+	background-size: cover;
+	background-image: url('@{url-path-img}/lp-roza/bg-roza-block6.jpg');
+	text-align: center;
+	color: @white;
+	padding: 115px 0;
+	font-family: @open-sbold;
+	@media @media-size-xs{padding: 45px 0}
+	a{
+		&, &:hover, &:focus{color: @white;}
+	}
+}
+._rbf__heading{
+	text-transform: uppercase;
+	font-size: @b-fs-roza + 57px; //75px;
+	line-height: @b-lh-roza + 57px; //82px;
+	margin-bottom: 25px;
+	@media @media-size-xs{
+		font-size: @b-fs-roza + 22px; //75px;
+		line-height: @b-lh-roza + 22px; //82px;
+		margin-bottom: 25px;
+	}
+}
+._rbf__link{
+	a{
+		font-size: @b-fs-roza + 26px; //44
+		line-height: @b-lh-roza + 15px; //40
+		display: inline-block;
+		color: @white;
+		border-bottom: 2px solid @white;
+		transition: @transition-site;
+		@media @media-size-xs{
+			font-size: @b-fs-roza + 6px; //44
+			line-height: @b-lh-roza + 5px; //40
+		}
+		&:hover{
+			border-bottom-color: fadeout(@white, 100%);
+		}
+	}
+}
+
+@keyframes scaleInVertical{
+	0%{transform: scale(1, 0); visibility:visible}
+	to{transform: scale(1, 1);}
+}
+@keyframes scaleInHorizontal{
+	0%{transform: scale(0, 1); visibility:visible}
+	to{transform: scale(1, 1);}
+}
+@keyframes smartInRight0{
+	0%{transform: translate(0, 0); visibility:visible; opacity: 0;}
+	to{transform: translate(0, 0); opacity: 1;}
+}
+@keyframes smartInRight1{
+	0%{transform: translate(-240px, 0); visibility:visible; }
+	to{transform: translate(0px, 0); }
+}
+@media @media-size-mdl{
+	@keyframes smartInRight1{
+		0%{transform: translate(-175px, 0); visibility:visible; }
+		to{transform: translate(0px, 0); }
+	}
+}
+@keyframes smartInRight2{
+	0%{transform: translate(-540px, 0); visibility:visible; }
+	to{transform: translate(0px, 0); }
+}
+
+@media @media-size-mdl{
+	@keyframes smartInRight2{
+		0%{transform: translate(-393px, 0); visibility:visible; }
+		to{transform: translate(0px, 0); }
+	}
+}
+@keyframes slideInLeftBig{
+	0%{transform:translate3d(-200%,0,0);visibility:visible}
+	to{transform:translate3d(0%,0,0)}
+}
+@keyframes slideInRightBig{
+	0%{transform:translate3d(200%,0,0);visibility:visible}
+	to{transform:translate3d(0%,0,0)}
+}
+.scaleInUp{animation-name:scaleInVertical; transform-origin:center bottom;}
+.scaleInDown{animation-name:scaleInVertical; transform-origin: top center;}
+.scaleInLeft{animation-name:scaleInHorizontal; transform-origin: right;}
+.scaleInRight{animation-name:scaleInHorizontal; transform-origin: left;}
+.smartInRight0{animation-name:smartInRight0;}
+.smartInRight1{animation-name:smartInRight1;}
+.smartInRight2{animation-name:smartInRight2;}
+.slideInLeftBig{animation-name:slideInLeftBig;}
+.slideInRightBig{animation-name:slideInRightBig;}

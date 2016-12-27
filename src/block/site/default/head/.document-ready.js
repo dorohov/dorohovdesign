@@ -96,3 +96,23 @@ $('._sbtb__tablet-l-owl').owlCarousel({
 	nav: false,
 	dots: true
 });
+//landing-roza
+$('._rbr__owl').owlCarousel({
+	margin: 0,
+	items:1,	
+	navText: [],
+	loop: true,
+	autoplay: true,
+	autoplayTimeout: 3500,
+	smartSpeed: 500,
+	responsive:{
+	   	0:{
+			nav: false,
+			dots: true,
+	   	},
+	   	1025:{
+			nav: true,
+			dots: true,
+	   	},
+	}
+});
