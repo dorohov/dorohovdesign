@@ -651,9 +651,11 @@
     	margin: 0 auto 35px;
 	}
 	@media @media-size-xs{
-		max-width: 280px;
+		//max-width: 280px;
 		background-size: 280px;
-	    padding: 11px 0px 40px 26px;
+	    //padding: 11px 0px 40px 26px;
+	    padding: 0px 0px 40px;
+	    background: none;
 	}
 	@media @media-size-sm{
 		background-size: 700px;
@@ -817,9 +819,12 @@
 	}
 } 
 ._rbr__smart-slider{
-	height: 835px;
 	position: relative;
-	@media @media-size-xs{height: 285px}
+	//@media @media-size-xs{height: 285px}
+	@media @media-size-xs-l{
+		display: flex;
+	}
+	@media @media-notsmart{height: 835px;}
 	@media @media-size-sm{height: 575px;}
 	@media @media-screen{
 		position: absolute;
@@ -835,7 +840,14 @@
 	background-position: center;
 	background-repeat: no-repeat;	
 	background-size: contain;
-	position: absolute;
+	@media @media-notsmart{
+		position: absolute;		
+	}
+	@media @media-size-xs-l{
+		width: 33.3333%;
+		margin: 0 10px 25px!important;
+		height: 300px!important;
+	}
 	&._smart{
 		background-image:  url('@{url-path-img}/lp-roza/roza-block4-phone.png');
 		width: 520px;
@@ -847,6 +859,7 @@
 			height: 275px;
 			top: 5px;
 			left: -30px;
+			display: none;
 		}
 		@media @media-size-sm{
 			width: 350px;
@@ -869,15 +882,10 @@
 	}
 	&._slide1{
 		background-image:  url('@{url-path-img}/lp-roza/roza-block4-phone-slide1.jpg');
-		width: 265px;
-		height: 470px;
-		top: 185px;
-		left: 275px;
 		@media @media-size-xs{
-			width: 90px;
-			height: 160px;
-			top: 58px;
-			left: 9px;
+			width: 250px;
+			height: 445px;
+			margin: 0 auto 25px;
 		}
 		@media @media-size-sm{
 			width: 185px;
@@ -897,18 +905,20 @@
 			top: 125px;
 			left: 125px;
 		}
+		@media @media-size-xxl{
+			width: 265px;
+			height: 470px;
+			top: 185px;
+			left: 275px;			
+		}
 	}
 	&._slide2{
 		background-image:  url('@{url-path-img}/lp-roza/roza-block4-phone-slide2.png');
-		width: 500px;
-		height: 710px;
-		top: 65px;
-		left: 405px;
 		@media @media-size-xs{
-			width: 170px;
-			height: 240px;
-			top: 20px;
-			left: 40px;
+			width: 250px;
+			height: 445px;
+			margin: 0 auto 25px;
+			background-image:  url('@{url-path-img}/lp-roza/roza-block4-phone-slide2-xs.jpg');
 		}
 		@media @media-size-sm{
 			left: 185px;
@@ -928,18 +938,20 @@
 			top: 20px;
 			left: 235px;
 		}
+		@media @media-size-xxl{
+			width: 500px;
+			height: 710px;
+			top: 65px;
+			left: 405px;
+		}
 	}
 	&._slide3{
 		background-image:  url('@{url-path-img}/lp-roza/roza-block4-phone-slide3.png');
-		width: 500px;
-		height: 710px;
-		top: 65px;
-		left: 705px;
-		@media @media-size-xs{
-			width: 180px;
-			height: 260px;
-			top: 10px;
-			left: 110px;
+		@media @media-size-xs{			
+			width: 250px;
+			height: 445px;
+			margin: 0 auto 25px;
+			background-image:  url('@{url-path-img}/lp-roza/roza-block4-phone-slide3-xs.jpg');
 		}
 		@media @media-size-sm{
 			left: 395px;
@@ -958,6 +970,13 @@
 			height: 610px;
 			top: 20px;
 			left: 485px;
+		}
+		@media @media-size-xxl{
+			width: 500px;
+			height: 710px;
+			top: 65px;
+			left: 705px;
+
 		}
 	}
 } 
@@ -1057,12 +1076,19 @@
 		left: 50%;
 		transform: translate(-50%, -50%);
 		@media @media-size-xs{
-	        max-width: 320px;
-			height: 160px;
+	        //max-width: 320px;
+			//height: 160px;
+			max-width: 560px;
+    		height: 250px;
+    		width: 560px;
     	}
 		@media @media-size-sm{
 			max-width: 768px;
 			height: 500px;
+
+			max-width: 900px;
+			height: 600px;
+			width: 1000px;
 		}
 		@media @media-size-mdl{
 			height: 500px;
@@ -1089,6 +1115,7 @@
 			transform: translate(-230%, 70%);
 			bottom: 50%;
 			left: 50%;
+			display: none;
 		}
 		@media @media-size-xs{
 	        width: 70px;
