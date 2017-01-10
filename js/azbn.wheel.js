@@ -247,14 +247,21 @@ $(function(){
 			
 		});
 		
-		/*
+		
 		$(document.body).on('mouseleave', '.need-mouse-rotate', {}, function(event){
 			//console.log(event);
 			
 			var block = $(this);
+
+			block
+				.css({
+					'transform' : 'rotateX(' + 0 + 'deg) rotateY(' + 0 + 'deg)',
+				})
+				.attr('data-hovered', 0);
+			;
 			
 		});
-		*/
+		
 		
 	}
 	

@@ -19,7 +19,7 @@ if (device.mobile()) {
 	$('._nbr__scroller').removeClass("scroller");
 } else {
 	$('.content-site').css("min-height", h_content_index);
-	$('.index-page-content').css("height", h_content_index);
+	//$('.index-page-content').css("height", h_content_index);
 	$('.full-window').css("min-height", h_content_index);
 	$('._yarus__block-site').css("height", h_window);
 	$('._yarus__block-footer').css("height", h_content_yarus);

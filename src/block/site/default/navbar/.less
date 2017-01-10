@@ -85,6 +85,15 @@
 				background: @white;
 				transition: @transition-site;
 			}
+			.navbar-nav{	
+				> li{		
+					> a{			
+						@media @media-screen{
+							padding: 0px 0 40px;
+						}
+					}
+				}
+			}
 		}
 		&.scroll-sidebar{
 			background: none;
@@ -96,7 +105,7 @@
 				background: darken(@white, 5%);
 			}
 			.navbar-collapse{
-				top: -100%;
+				top: -105%;
 				background: darken(@white, 5%);
 			}
 			&.open-scroll-sidebar{
@@ -126,6 +135,9 @@
 		top: 0;
 		width: 100%;
 		z-index: 100;
+		/*&.scroll-sidebar{
+			background: darken(@white, 5%);
+		}*/
 	}
 }
 .navbar-container-fluid{

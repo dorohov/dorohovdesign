@@ -1,6 +1,6 @@
 $('img').addClass('img-responsive');
 $('.text-block ul').addClass('ul-site');
-var url = window.location.pathname;
+var url = window.location.href;
 $('.navbar-nav a[href="'+url+'"]').parent().addClass('active'); 
 $('._ppc__btn-block .btn-grey-light[href="'+url+'"]').addClass('active'); 
 $('._ipc__slider-carousel .item').eq(0).addClass('active');
@@ -69,6 +69,10 @@ $('._picp__owl').owlCarousel({
 	}
 });
 retinajs();
+$('._ipc__slider-carousel').carousel({
+	interval: 2500,
+	pause: null
+});
 var nsro = $('.navbar-site-right');
 if(nsro.hasClass('open')){
 	$(this).siblings('.navbar-site').toggleClass('visible');
