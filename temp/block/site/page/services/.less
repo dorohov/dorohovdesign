@@ -1,0 +1,289 @@
+.services-page-content{
+	//opacity: 0.7;
+	//height: 800px;
+	position: relative;
+	.btn-gradient-invers{
+		@media @media-size-xs{
+			background: @white;
+			font-size: 13px;
+			padding: 0 20px;
+			color: @cyan-dark;
+			&:hover{
+				color: @black;
+			}
+		}
+	}
+}
+._spc__inner{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	@media @media-size-xs{display: none;}
+}
+._spc__tabs{
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	z-index: 4;
+	padding: 120px 0 120px 140px;
+	width: 47%;
+	@media @media-size-sm-p{padding: 80px 0 80px 30px; width: 40%;}
+	@media @media-size-sm-l{padding: 60px 0 60px 30px;}
+	@media @media-size-lg{padding: 60px 0 60px 80px;}
+	@media @media-size-xl{padding: 80px 0 80px 100px;}
+}
+._spc__tab-pane-inner{
+	position: absolute;
+	z-index: 4;    
+	right: 0;
+    top: 0;
+    width: 53%;
+    height: 100%;
+    padding: 120px 45px 120px;
+    color: @white;
+	@media @media-size-sm-p{padding: 80px 30px 30px 45px; width: 60%}
+	@media @media-size-sm-l{padding: 60px 30px 60px 45px;}
+	@media @media-size-lg{padding: 60px 45px 60px;}
+	@media @media-size-xl{padding: 80px 45px 80px;}
+	.mCSB_container{
+		padding-right: 50px;
+	}
+	.text-block{
+		max-width: 660px;
+		margin-bottom: 10px;
+		margin-top: 30px;
+		@media @media-screen{
+			ul{
+				&.ul-site{
+					padding-top: 0;
+					li{
+						margin-bottom: 5px;
+					}
+				}
+			}
+			h2 {
+				font-size: 30px;
+				line-height: 36px;
+			}
+			h3{
+				font-size: 24px;
+				line-height: 30px;
+			}
+		}
+		@media @media-size-sml{
+			margin-bottom: 10px;
+			margin-top: 20px;
+		}
+		@media @media-size-lg{
+			font-size: @b-fs - 2px; //14px;
+			line-height: @b-lh - 2px; //22px;
+		}
+		@media @media-size-xxl{
+			max-width: 750px;
+			line-height: @b-lh + 2px; //26px
+		}
+	}
+}
+
+._spc__tabs-nav{
+	width: 100%;
+	height: 100%;
+	list-style: none;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	border-right: 1px solid @white;
+	padding-right: 50px;
+	@media @media-size-sm-p{padding-right: 30px}
+	> li{
+		&.active{
+			._spc__tabs-heading{
+				color: darken(@white, 15%);
+				text-shadow: 1px 1px fadeout(@black, 50%);
+				/*span{
+					transform: matrix(1, 0, 0, 1, 0, 0);
+					color: @white;
+				}
+				&:before{
+					transform: matrix(1, 0, 0, 1, 0, 70);
+				}*/
+				&:after{
+					transform: scale(1, 1);
+				}
+			}
+		}
+		&:last-child{
+			._spc__tabs-heading{
+				margin-bottom: 0;
+			}
+		}
+	}
+}
+._spc__tabs-heading{
+	color: #7f89ae;
+	display: inline-block;
+	overflow: hidden;
+	text-transform: uppercase;
+	font-family: @bender;
+	margin-bottom: 25px;
+	transition: @transition-site;
+	font-size: @b-fs + 24px; //40px;
+	line-height: @b-lh + 34px; //58px;
+	overflow: hidden;
+	position: relative;
+	/*span{
+		transform: matrix(1, 0, 0, 1, 0, 0);
+		transition: 0.4s all;
+		position: relative;
+		display: block;
+		color: #7f89ae;
+		will-change: transform;
+	}
+	&:before{
+		content: attr(data-text); 
+		position: absolute;
+		color: darken(@white, 15%);
+		transform: matrix(1, 0, 0, 1, 0, 70);
+		transition: 0.4s all;
+		will-change: transform;
+	}*/
+	@media @media-notsmart{		
+		&:after{
+			content: "";
+			display: block;
+			height: 1px;
+			width: 100%;
+			background: @white;
+			position: absolute;
+			bottom: 0;
+			transform: scale(0, 1);
+			transition: 0.6s all;
+			transform-origin: 0 0;
+			will-change: transform;
+		}
+	}
+	&:hover{
+		color: darken(@white, 15%);
+		text-shadow: 1px 1px fadeout(@black, 50%);
+		@media @media-size-xs{
+			color: @white;
+			text-shadow: none;
+		}
+		@media @media-notsmart{
+			&:before{transform: matrix(1, 0, 0, 1, 0, 0);}
+			&:after{transform: scale(1, 1);}
+			span{transform: matrix(1, 0, 0, 1, 0, -70);}
+		}
+	}
+	@media @media-size-xs{
+		font-size: @b-fs + 4px; //20px;
+		line-height: @b-lh + 4px; //38px;
+		color: @white;
+		position: relative;
+		padding-right: 30px;
+		margin-bottom: 10px;
+		&:after{
+			position: absolute;
+			right: 0;
+			top: 40%;
+			transform: translateY(-50%);
+			font-size: 12px;
+			font-family: @icon;
+		}
+		&[aria-expanded="true"]{
+			&:after{content: @icon-top;}
+		}
+		&[aria-expanded="false"]{
+			&:after{content: @icon-bottom;}
+		}
+	}
+	@media @media-size-sm{
+		font-size: @b-fs + 10px; //26px;
+		line-height: @b-lh + 10px; //44px;
+	}
+	@media @media-size-lg{
+		font-size: @b-fs + 12px; //28px;
+		line-height: @b-lh + 22px; //46px;
+		margin-bottom: 20px;
+	}
+	@media @media-size-xl{
+		font-size: @b-fs + 16px; //32px;
+		line-height: @b-lh + 26px; //50px;
+		margin-bottom: 20px;
+	}
+}
+._spc__tab-content{
+	position: relative;
+	width: 100%;
+	height: 100%;
+}
+._spc__tab-pane{
+	position: relative;
+	width: 100%;
+	height: 100%;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+    overflow: hidden;	
+	transition: background-size 0.6s, opacity 0.3s ;
+	&.fade {
+		opacity: 0;
+		background-size: 110% 110%;
+		@media @media-size-sm{background-size: cover}
+		._spc__tab-pane-inner{
+			transform: scale(1.2, 1.2);
+			transform-origin: center;
+    		transition: all 0.6s;
+			opacity: 0;	
+		}
+		&.in {
+			opacity: 1;
+			background-size: 100% 100%;
+			@media @media-size-sm{background-size: cover}
+			._spc__tab-pane-inner{
+				transform: scale(1, 1); 
+				opacity: 1;
+			}
+		}
+	}
+}
+._spc__cost{
+	font-family: @proxima;
+	margin-bottom: 20px;
+	font-size: @b-fs + 19px; //35px;
+	line-height: @b-lh + 16px; //58px; 36
+	@media @media-size-xs{
+		font-size: @b-fs + 4px; //20px;
+		line-height: @b-lh + 4px; //38px;
+	}
+	@media @media-size-sml{
+		font-size: @b-fs + 10px; //26px;
+		line-height: @b-lh + 10px; //34px;
+	}
+	@media @media-size-xl{
+		font-size: @b-fs + 18px; //34px;
+		line-height: @b-lh + 28px; //52px;
+	}
+	&:after{
+		font-family: @icon;
+		content: @icon-ruble;    
+		font-size: .7em;
+		display: inline-block;
+		transform: translateY(-2px);		
+		@media @media-notsmart{margin-left: 5px;}
+	}
+}
+
+//xs
+._spc__inner_xs{
+	@media @media-notsmart{
+		display: none;
+	}
+}
+._spc__tabs-panel{
+	margin: 0 0 20px;
+	&:last-child{margin: 0}
+	.collapse{padding-bottom: 20px;}
+}
