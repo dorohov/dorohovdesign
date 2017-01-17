@@ -70,7 +70,7 @@ $('._picp__owl').owlCarousel({
 });
 retinajs();
 $('._ipc__slider-carousel').carousel({
-	interval: 2500,
+	interval: 4500,
 	pause: null
 });
 var nsro = $('.navbar-site-right');

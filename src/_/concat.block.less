@@ -2498,10 +2498,11 @@ textarea._frms__form-control{
 	overflow: hidden;
 	&, &:hover, &:focus{color: @white;}
 	@media @media-size-xs{height: 150px;}
-	@media @media-size-sm{height: 250px;}
-	@media @media-size-mdl{height: 185px;}
-	@media @media-size-xl{height: 220px;}
-	@media @media-size-xxl{height: 265px;}
+	@media @media-size-sm{height: 200px;}
+	@media @media-size-sm-l{height: 190px;}
+	@media @media-size-mdl{height: 155px;}
+	@media @media-size-xl{height: 195px;}
+	@media @media-size-xxl{/*height: 265px;*/ height: 225px;}
 	// v.1
 	/*&::before{
 		content: attr(data-heading);
@@ -2617,7 +2618,7 @@ textarea._frms__form-control{
 	}
 	@media @media-size-mdl{padding: 20px;}
 	@media @media-size-xl{padding: 30px 20px 20px;}
-	@media @media-size-xxl{padding: 65px 50px 20px;}
+	@media @media-size-xxl{padding: 65px 70px 20px 50px;}
 	// v. 1
 	/*
 	._spc__services-item[data-item="spc-item22"] &{background: @c-logotip;}
@@ -2721,6 +2722,10 @@ textarea._frms__form-control{
 		._spc__services-item:hover &{
 			opacity: 1;
 		}
+	}
+	@media @media-size-mdl{    
+		line-height: 18px;
+		font-size: 14px;
 	}
 	//
 }

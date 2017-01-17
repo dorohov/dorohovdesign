@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="ru-RU"> 
+	<head>
+		[[azbntple tpl="/src/block/site/default/head/.html" ]] 
+		<link rel="stylesheet" type="text/css" href="/css/lp-amd.css">
+	</head>
+	<body>	
+ 		
+		[[azbntple tpl="/src/block/site/default/navbar/.html" class="navbar-site second-navbar logo-hover" ]]
+		<div class="amd-page-content padtop">
+			[[azbntple tpl="/src/block/site/page/landing/amd/.html" class="_amd__block-content" prefix="_abc__"]]  
+		</div>
+		[[azbntple tpl="/src/block/site/default/footer/landing.html" class="footer-site notop" ]]
+					
+		
+		[[azbntple tpl="/src/block/site/default/modals/servises-review.html" class="" ]]
+		
+		[[azbntple tpl="/src/block/site/default/head/script.html" ]]
+		<script src="/js/jquery.scrolly.js"></script>
+		<script>
+			$(document).ready(function(){
+				if (!device.mobile()) {
+					$('.parallax').scrolly({bgParallax: false});
+				}
+			});
+		</script>
+	</body>
+</html> 
