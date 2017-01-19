@@ -3889,17 +3889,37 @@ f376a2
 	margin-right: auto;
 	margin-bottom: 70px;
 	@media @media-size-xs{margin-bottom: 25px;}
+	*{
+		text-align: left!important;
+	}
+	* + *{margin-top: 10px;}
+	* + h2,
+	* + h3,
+	* + h4,
+	* + h5,
+	* + h6{margin-top: 30px;} 
+	a{
+		color: @white;		
+		border-bottom: 1px solid fadeout(@white, 60%);
+		transition: @transition-site;		
+		&:hover{
+			border-bottom: 1px solid fadeout(@white, 100%);
+		}
+	}
+}
+._picp__link{
+	margin-top: 20px!important;
 	a{
 		color: @white;
 		&:hover{color: @white;}
 		&[target="_blank"]{
-			font-family: @bender;
-			border-bottom: 1px solid fadeout(@white, 100%);
+			font-family: @proxima-sbold;
+			border-bottom: 1px solid fadeout(@white, 60%);
 			transition: @transition-site;
 			text-transform: uppercase;
 			letter-spacing: 0.5px;
 			&:hover{
-				border-bottom: 1px solid fadeout(@white, 60%);
+				border-bottom: 1px solid fadeout(@white, 100%);
 			}
 		}
 	}
