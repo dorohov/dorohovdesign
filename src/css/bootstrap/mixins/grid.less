@@ -27,6 +27,16 @@
 }
 
 // Generate the extra small columns
+
+.make-xs-column(@columns; @gutter: @grid-gutter-width) {
+  width: percentage((@columns / @grid-columns));
+}
+.make-sm-column(@columns; @gutter: @grid-gutter-width) {
+  @media (min-width: @screen-sm-min) {
+    width: percentage((@columns / @grid-columns));
+  }
+}
+/*
 .make-xs-column(@columns; @gutter: @grid-gutter-width) {
   position: relative;
   float: left;
@@ -35,6 +45,7 @@
   padding-left:  (@gutter / 2);
   padding-right: (@gutter / 2);
 }
+
 .make-xs-column-offset(@columns) {
   margin-left: percentage((@columns / @grid-columns));
 }
@@ -43,17 +54,17 @@
 }
 .make-xs-column-pull(@columns) {
   right: percentage((@columns / @grid-columns));
-}
+}*/
 
 // Generate the small columns
-.make-sm-column(@columns; @gutter: @grid-gutter-width) {
+/*.make-sm-column(@columns; @gutter: @grid-gutter-width) {
   position: relative;
   min-height: 1px;
   padding-left:  (@gutter / 2);
   padding-right: (@gutter / 2);
 
   @media (min-width: @screen-sm-min) {
-    float: left;
+    //float: left;
     width: percentage((@columns / @grid-columns));
   }
 }
@@ -72,7 +83,7 @@
     right: percentage((@columns / @grid-columns));
   }
 }
-
+*/
 // Generate the medium columns
 .make-md-column(@columns; @gutter: @grid-gutter-width) {
   position: relative;
