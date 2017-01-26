@@ -37,6 +37,9 @@
     @media @media-size-lg2{max-width: 694px}
     @media @media-size-xl{max-width: 694px}
 }
+._sipc__carousel-top{
+	position: relative;
+}
 ._sipc__carousel-inner{
 	height: 560px;
     @media @media-size-xs-p{height: 290px}
@@ -63,6 +66,7 @@
 ._sipc__carousel-control{
 	position: absolute;
 	top: 39%;
+	top: 45%;
 	width: 40px;
 	line-height: 40px;
 	transition: 0.3s all linear;
@@ -92,7 +96,7 @@
 			border-color: @orchid-dark;
 			color: @white
 		}
-	}
+	} 
 	&.left{
 		left: -50px;
     	@media @media-size-xxl{left: -80px;}
@@ -110,9 +114,10 @@
 }
 ._sipc__carousel-caption{
 	position: absolute;
-	bottom: 0;
+	bottom: -55px;
 	left: 0;
-	transform: translateY(140%);
+	//transform: translateY(140%);
+	height: 50px;
 	font-family: @proxima;
 	font-size: @b-fs + 4px; //20px;
 	color: #262626;
@@ -132,7 +137,7 @@
 		}
 		@media @media-notsmart{
 			line-height: 20px;
-			display: inline-block;
+			//display: inline-block;
 		}
 	}
 	&:hover{
