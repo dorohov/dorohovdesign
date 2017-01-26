@@ -13,7 +13,10 @@
 }
 ._sipc__cols-left{
 	@media @media-device{width: 100%; }
-	@media @media-screen{width: 62%;}
+	@media @media-screen{
+		//width: 62%;
+		width: 53%;
+	}
 	@media @media-size-xxl{
 		padding-left: 25px;
 		padding-right: 25px;
@@ -21,7 +24,10 @@
 }
 ._sipc__cols-right{
 	@media @media-device{width: 100%; margin-bottom: 35px; order: -1;}
-	@media @media-screen{width: 38%;}
+	@media @media-screen{
+		//width: 38%;
+		width: 47%;
+	}
 	@media @media-size-xxl{
 		padding-left: 25px;
 		padding-right: 25px;
@@ -79,9 +85,11 @@
 		width: 40px;
 		line-height: 36px;
 		border: 2px solid ;
-		border-color: @orchid-dark;
+		//border-color: @orchid-dark;
+		border-color: @white;
 		text-align: center;
-		color: @orchid-dark;
+		//color: @orchid-dark;
+		color: @white;
 		font-size: 16px;
 		border-radius: 50%;
 		transition: 0.3s all linear;
@@ -92,21 +100,26 @@
 	}
 	&:hover{
 		&:before{
-			background: @orchid-dark;
+			/*background: @orchid-dark;
 			border-color: @orchid-dark;
-			color: @white
+			color: @white;*/
+			background: @white;
+			border-color: @white;
+			color: @orchid-dark;
 		}
 	} 
 	&.left{
-		left: -50px;
-    	@media @media-size-xxl{left: -80px;}
+		/*left: -50px;
+    	@media @media-size-xxl{left: -80px;}*/
+    	left: 20px;
 		&:before{
 			content: @icon-left;			
 		}
 	}
 	&.right{
-		right: -50px;
-    	@media @media-size-xxl{right: -80px;}
+		/*right: -50px;
+    	@media @media-size-xxl{right: -80px;}*/
+		right: 20px;
 		&:before{
 			content: @icon-right;
 		}
@@ -223,22 +236,30 @@
 }
 ._sipc__text-block{
 	line-height: @b-lh - 5px;
-	max-width: 99%;
-	margin-bottom: 30px;
+	max-width: 99%;	
 	p{
 		text-align: left;
 	}
 }
-._sipc__cost{
+._sipc__panel{
+	margin-bottom: 30px;
+}
+._sipc__panel-row{
+	align-items: center;
+}
+._sipc__panel-cols{
+	@media @media-size-xs-p{width: 100%;}
+}
+._sipc__cost{ 
 	font-family: @proxima;
 	font-weight: bold;
-	margin-bottom: 5px;
+	//margin-bottom: 5px;
 	font-size: @b-fs + 16px; //32
 	line-height: @b-lh + 16px; //40
+	@media @media-size-xs-p{margin-bottom: 15px;}
 	@media @media-size-xs{
-		font-size: @b-fs + 4px; //20px;
-		line-height: @b-lh + 4px; //38px;
-		margin-bottom: 15px;
+		font-size: @b-fs + 10px; //26px;
+		line-height: @b-lh + 10px; //34px; 
 	}
 	@media @media-size-sml{
 		font-size: @b-fs + 10px; //26px;
