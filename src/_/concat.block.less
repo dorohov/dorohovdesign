@@ -643,6 +643,32 @@ textarea._frms__form-control{
 		}
 	}
 }
+._msv__dialog{
+    width: 100%;
+    height: 100%;
+    transform: translate(0,0%)
+}
+._msv__content{
+    width: 100%;
+    height: 100%;	
+}
+._msv__body{
+    width: 100%;
+    height: 100%;
+	background: none;
+	.modal-btn-close{z-index: 10}
+}
+._msv__block{
+    width: 100%;
+    @media @media-screen{
+    	height: 100%;
+    }	
+}
+._msv__video{
+	width: 100%;
+	height: auto;
+    max-height: 100%;	
+}
 .navbar-site{
 	background: @b-nav-bg; 
 	z-index: 100;
@@ -3204,6 +3230,197 @@ textarea._frms__form-control{
 	letter-spacing: 0.5px;
 	margin-bottom: 10px;
 }
+._apc__video-block{
+    //height: 83.5vh;
+    position: relative;
+    overflow: hidden;
+    @media @media-size-xs{
+    	background: @white;
+    	padding-top: 25px; 
+    }
+    @media @media-notsmart{
+	    background-color: @white;
+    	color: @white;
+    }
+    @media @media-size-sm-p{height: 35vh;}
+    @media @media-size-sm-l{height: 63vh;}
+    @media @media-screen{height: 83.5vh;}
+}
+._apc__bg-video{
+    @media @media-size-xs{display: none}
+    @media @media-notsmart{
+    	width: 100%;
+   		//height: 135%;
+    	z-index: 1;
+    	transform: translateY(-50%) scale(1.15);
+    	position: absolute;
+    	top: 50%;
+    	left: 0;
+    }
+}
+._apc__video-note{
+    @media @media-size-xs{margin-bottom: 35px;}
+    @media @media-notsmart{
+		position: absolute;
+		left: 0px;
+		top: 0px;
+		width: 100%;
+		height: 100%;
+		z-index: 2;
+    }
+    @media @media-device{padding: 0 20px;}
+}
+._apc__video-note-inner{
+	display: flex;
+	//justify-content: center;
+	//padding-top: 230px;
+    //max-width: 1290px;
+    //max-width: 70%;
+	align-items: center;
+	width: 100%;
+	height: 100%;
+    margin: 0 auto;
+    //@media @media-device{max-width: 95%;}
+    @media @media-screen{max-width: 80%;}
+    @media @media-size-md{max-width: 90%;}
+    @media @media-size-xxl{max-width: 70%;}
+}
+._apc__vn-row{
+	align-items: center;
+   	//margin-bottom: 60px;
+    @media @media-device{
+    	margin-bottom: 3vh;
+    }
+    @media @media-screen{
+    	margin-top: 10vh;
+    	margin-bottom: 6.5vh;
+    }
+}
+._apc__vn-cols-left{
+	font-family: @bender;
+	text-transform: uppercase;
+	//font-size: 165px;
+    //line-height: 145px;
+    //width: 40%;
+    @media @media-size-xs-p{
+    	width: 100%;
+    	margin-bottom: 10px;
+		span{display: none}
+    } 
+    @media @media-device-l{
+		font-size: 17vh;
+		line-height: 15vh;    	
+    }    	
+    @media @media-device-p{    	
+		font-size: 8vh;
+		line-height: 6vh;
+    } 
+    @media @media-screen{
+		font-size: 17vh;
+		line-height: 15vh;
+    }
+}
+._apc__vn-cols-right{
+	width: 60%;
+	font-family: @proxima-bold;
+	//font-size: 48px;
+	//line-height: 50px;
+    @media @media-size-xs-p{
+    	width: 100%;
+    }
+    @media @media-device-p{    	
+		font-size: 2.5vh;
+    	line-height: 3vh;
+    }
+    @media @media-device-l{    	
+		font-size: 4.88vh;
+    	line-height: 5.2vh;
+    }
+    @media @media-screen{
+		font-size: 4.88vh;
+    	line-height: 5.2vh;
+    	width: 60%;
+    }
+}
+._apc__vn-row-2{
+    @media @media-size-sm-p{
+    	margin-bottom: 2vh;
+    }
+    @media @media-size-sm-l{
+    	margin-bottom: 4vh;
+    }
+    @media @media-screen{
+    	margin-bottom: 10vh;
+    }
+	@media @media-size-xxl{
+		margin-left: -35px;
+		margin-right: -35px;
+	}
+}
+._apc__vn-cols-4{
+    @media @media-size-xs-p{
+		width: 100%;
+		margin-bottom: 15px;
+    }
+    @media @media-size-xs-l{
+		width: 33.333%;
+    }
+    @media @media-size-sm{
+		font-size: 14px;
+		line-height: 18px;
+		width: 33.333%;
+		font-family: @proxima-bold;
+    }
+    @media @media-screen{
+		font-size: 18px;
+		line-height: 22px;
+		width: 33.333%;
+		font-family: @proxima-bold;
+    }
+	@media @media-size-xxl{
+		padding: 0 35px;
+	}
+}
+._apc__play-block{
+    @media @media-notsmart{
+		text-align: center;
+	}
+}
+._apc__btn-play{
+	position: relative;
+	max-width: 185px;
+	min-height: 75px;
+	padding-left: 90px;
+	text-align: left;
+	font-family: @proxima;
+	transition: @transition-site;
+	font-size: 18px;
+	line-height: 20px;
+	._icon{
+		position: absolute;
+		top: 50%;
+		left: 0;
+		transform: translateY(-50%);
+		width: 75px;
+		height: 77px;
+		svg{
+			width: 100%;
+			height: 100%;
+			transition: @transition-site;
+			fill: @white;
+    		@media @media-size-xs{fill: @black;}
+		}
+	}
+	&:hover{
+		color: @cyan-dark2;
+		._icon{
+			svg{
+				fill: @cyan-dark2;
+			}
+		}
+	}
+}
+
 .blog-item-page-content{
 	position: relative;
 	overflow: hidden;
