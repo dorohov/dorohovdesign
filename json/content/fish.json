@@ -15,7 +15,15 @@
 		"instagram":"https://www.instagram.com/dorohovdesign/",
 		"behance":"https://www.behance.net/hello8640"
 	},
-	"url-path-img": "/img",
+	"url-path-css": "/wp-content/themes/azbnbasetheme/css",
+	"url-path-css":"/css",
 	"url-path-img": "/wp-content/themes/azbnbasetheme/img",
+	"url-path-img":"/img",
+	"url-path-js": "/wp-content/themes/azbnbasetheme/js",
+	"url-path-js":"/js",
+	"url-path-plugins": "/wp-content/themes/azbnbasetheme/plugins",
+	"url-path-plugins":"/plugins",
+	"url-path-favicon": "/wp-content/themes/azbnbasetheme/favicon",
+	"url-path-favicon":"/favicon",
 	"wp-theme": ""
 }

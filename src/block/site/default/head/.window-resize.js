@@ -28,4 +28,4 @@ if (device.mobile()) {
 
 
 $(".navbar-fixed-top").autoHidingNavbar();
-$(".scroller").mCustomScrollbar();
+//$(".scroller").mCustomScrollbar();

@@ -11,27 +11,8 @@ if(url != "/"){
 $('.text-block table').addClass('table table-bordered');
 $('.text-block .table.table-bordered').parent().addClass('table-responsive');
 $('.text-block img').parent().addClass('_tb__img'); 
-$('.fancybox').fancybox({
-	prevEffect : 'none',
-	nextEffect : 'none',
-});
-// конструкция для активации fancybox <a class="fancybox-buttons" data-fancybox-group="button" href="" data-title=""><img src="" alt="" /></a>
-$('.fancybox-buttons').fancybox({
-	openEffect  : 'none',
-	closeEffect : 'none',
-	prevEffect : 'none',
-	nextEffect : 'none',
-	closeBtn  : false,
-	helpers : {
-		title : {
-			type : 'inside'
-		},
-		buttons	: {}
-	},
-	afterLoad : function() {
-		this.title = this.title;
-	}
-});
+
+
 if (device.mobile() || device.tablet()) {
 //if (device.tablet()) {
 	$('._fs__soc-block').clone().appendTo('.navbar-collapse');
@@ -45,40 +26,24 @@ $('#portfolio-filter').on('change', function () {
 });
 $("form.form-site").validationEngine(
 	'attach', {
-		promptPosition : "bottomLeft",
-		scroll: false
+		promptPosition : "bottomLeft"
 	}
 );
-$('._picp__owl').owlCarousel({
-	margin: 0,
-	loop: true,
-	items:1,	
-	navText: [],
-	autoplay:true,
-	smartSpeed: 500,
-	autoplayTimeout:10000,
-	responsive:{
-	   	0:{
-			nav: false,
-			dots: true,
-	   	},
-	   	768:{
-			nav: true,
-			dots: false,
-	   	},
-	}
-});
+
 retinajs();
+
+//index.html bootstrap-carousel
 $('._ipc__slider-carousel').carousel({
 	interval: 4500,
 	pause: null
 });
+
 var nsro = $('.navbar-site-right');
 if(nsro.hasClass('open')){
 	$(this).siblings('.navbar-site').toggleClass('visible');
 }
-
-//landing-star
+/*
+//landing-star owlCarousel
 $('._sbnb__owl').owlCarousel({
 	margin: 0,
 	items:1,	
@@ -100,7 +65,7 @@ $('._sbtb__tablet-l-owl').owlCarousel({
 	nav: false,
 	dots: true
 });
-//landing-roza
+//landing-roza owlCarousel
 $('._rbr__owl').owlCarousel({
 	margin: 0,
 	items:1,	
@@ -119,4 +84,4 @@ $('._rbr__owl').owlCarousel({
 			dots: true,
 	   	},
 	}
-});
+});*/
