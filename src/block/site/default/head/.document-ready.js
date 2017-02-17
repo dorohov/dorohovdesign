@@ -29,7 +29,12 @@ $("form.form-site").validationEngine(
 		promptPosition : "bottomLeft"
 	}
 );
-
+$('#modal-video').on('shown.bs.modal', function (e) {
+	$("._msv__video").get(0).play();
+});
+$('#modal-video').on('hidden.bs.modal', function (e) {
+	$("._msv__video").get(0).pause();
+})
 retinajs();
 
 //index.html bootstrap-carousel
