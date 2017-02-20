@@ -31,9 +31,11 @@ $("form.form-site").validationEngine(
 );
 $('#modal-video').on('shown.bs.modal', function (e) {
 	$("._msv__video").get(0).play();
+	$("._apc__bg-video").get(0).pause();
 });
 $('#modal-video').on('hidden.bs.modal', function (e) {
 	$("._msv__video").get(0).pause();
+	$("._apc__bg-video").get(0).play();
 })
 retinajs();
 
