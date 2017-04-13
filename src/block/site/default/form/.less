@@ -11,8 +11,14 @@
 		max-width: 410px;
 	}
 	&.inline{
+		@media @media-size-xs{			
+			display: flex;
+			flex-wrap: wrap;
+			._frms__input{width: 100%}
+		}
 		@media @media-notsmart{
 			display: flex;
+			flex-wrap: wrap;
 			margin-left: -15px;
 			margin-right: -15px;	
 			._frms__input{
@@ -21,6 +27,12 @@
 				&:after{right: 15px;}
 				width: 40%;
 				&._msr__form-btn{width: 20%;}
+				&.full{width: 100%!important;}
+			}
+		}
+		@media @media-size-xs{
+			._frms__input{
+				&.btn{order: 1;}
 			}
 		}
 	}
