@@ -25,80 +25,144 @@
 		}
 	}
 }
-._frms__input{
-	margin-bottom: 30px;
-	position: relative;
-	@media @media-size-lg1{margin-bottom: 20px;}
-	&::after{
-		font-family: @icon;
-		position: absolute;
-		top: 50%;
-		right: 0px;
-		transform: translateY(-50%);
+._frms__{
+	&input{
+		margin-bottom: 30px;
+		position: relative;
+		@media @media-size-lg1{margin-bottom: 20px;}
+		@media @media-size-xl{margin-bottom: 20px;}
+		&::after{
+			font-family: @icon;
+			position: absolute;
+			top: 50%;
+			right: 0px;
+			transform: translateY(-50%);
+			color: @white;
+			font-size: 24px;
+			list-style: 24px;
+			@media @media-size-xs{
+				font-size: 20px;
+				list-style: 20px;
+			}
+		}
+		&.icon-user{
+			&::after{content: @icon-user}
+		}
+		&.icon-phone{
+			&::after{content: @icon-phone}
+		}
+		&.icon-comment{
+			&::after{content: @icon-comment}
+		}
+	}
+	&form-control{
+		background:	none;
+		border: 0;    
+		border-bottom: 1px solid @white;    
+		height: 50px;
+	    padding: 10px 40px 10px 0;
+		font-size: 18px;
+		line-height: 30px;
 		color: @white;
-		font-size: 24px;
-		list-style: 24px;
+		transition: @transition-site;
+		text-shadow: 2px 2px fadeout(@black, 10%);
+	    &::-moz-placeholder{
+			color: @white;
+			transition: @transition-site;
+			text-shadow: none;
+	    }
+		&::-webkit-input-placeholder {
+			color: @white;
+			transition: @transition-site;
+			text-shadow: none;
+		}
 		@media @media-size-xs{
-			font-size: 20px;
-			list-style: 20px;
-		}
-	}
-	&.icon-user{
-		&::after{content: @icon-user}
-	}
-	&.icon-phone{
-		&::after{content: @icon-phone}
-	}
-	&.icon-comment{
-		&::after{content: @icon-comment}
-	}
-}
-._frms__form-control{
-	background:	none;
-	border: 0;    
-	border-bottom: 1px solid @white;    
-	height: 50px;
-    padding: 10px 40px 10px 0;
-	font-size: 18px;
-	line-height: 30px;
-	color: @white;
-	transition: @transition-site;
-	text-shadow: 2px 2px fadeout(@black, 10%);
-    &::-moz-placeholder{
-		color: @white;
-		transition: @transition-site;
-		text-shadow: none;
-    }
-	&::-webkit-input-placeholder {
-		color: @white;
-		transition: @transition-site;
-		text-shadow: none;
-	}
-	@media @media-size-xs{
-		height: 36px;
-		font-size: 14px;
-		line-height: 26px;
-	    &::-moz-placeholder{
+			height: 36px;
 			font-size: 14px;
 			line-height: 26px;
-	    }
-		&::-webkit-input-placeholder {
-			font-size: 14px;
-			line-height: 26px;
+		    &::-moz-placeholder{
+				font-size: 14px;
+				line-height: 26px;
+		    }
+			&::-webkit-input-placeholder {
+				font-size: 14px;
+				line-height: 26px;
+			}
+		}
+		&:focus{
+			border-bottom: 1px solid @orchid-dark; 
+			outline: none;	
+			color: @white;
+			text-shadow: 1px 1px fadeout(@black, 50%);
+		    &::-moz-placeholder{
+				color: @white;
+				text-shadow: 1px 1px fadeout(@black, 50%);
+		    }
+			&::-webkit-input-placeholder {
+				color: @white;
+				text-shadow: 1px 1px fadeout(@black, 50%);
+			}
 		}
 	}
-	&:focus{
-		border-bottom: 1px solid @orchid-dark; 
-		outline: none;	
+	&agreement{
+		display: flex;
+		align-items: center;
+		flex-wrap: wrap;
+	}
+	&agreement-checkbox{
+		width: 1px;
+		margin: 0;
+		visibility: hidden;
+		&:checked{
+			+ ._frms__agreement-label{
+				background: @white;				
+				&::before,
+				&::after{background: @black}
+				&::before{
+					transform: rotate(45deg) translate(90%,230%) scale(0.6, 1)
+				}
+				&::after{
+					transform: rotate(-45deg) translate(-10%,560%);
+				}
+			}
+		}
+	}
+	&agreement-label{
+		display: inline-block;
+		width: 22px;
+		height: 22px;
+		border: 1px solid @white;
+		position: relative;
+		transition: @transition-site;
+		margin-right: 15px;
+		@media @media-size-xs{margin-bottom: 10px;}
+		&::before,
+		&::after{
+			content: '';
+			position: absolute;
+			width: 10px;
+			height: 2px;
+			background: @white;
+			top: 0;
+			left: 0;
+			transition: @transition-site;
+		}
+		&::before{
+			transform: rotate(45deg) translate(100%,100%);
+		}
+		&::after{
+			transform: rotate(-45deg) translate(-20%, 480%);
+		}
+	}
+	&agreement-text{
 		color: @white;
-		text-shadow: 1px 1px fadeout(@black, 50%);
-	    &::-moz-placeholder{
+		a{
 			color: @white;
-			text-shadow: 1px 1px fadeout(@black, 50%);
-	    }
-		&::-webkit-input-placeholder {
-			color: @white;
-			text-shadow: 1px 1px fadeout(@black, 50%);
+			border-bottom: 1px solid fadeout(@white, 40%);
+			transition: @transition-site;
+			&:hover{
+				border-bottom-color: fadeout(@white, 100%);
+			}
 		}
 	}
 }
