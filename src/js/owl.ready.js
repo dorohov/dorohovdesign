@@ -62,4 +62,31 @@ $(function() {
 		   	},
 		}
 	});
+	//lp-msk76
+	$('.msk_rvb__owl').owlCarousel({
+		navText: [],
+		loop: true,
+		center: true,
+		//autoplay: true,
+		autoplayTimeout: 3500,
+		smartSpeed: 500,
+		dots: true,
+		responsive:{
+			0:{
+				nav: false,
+				items: 1,
+				margin: 0
+			},
+			560:{
+				nav: false,
+				items: 2,
+				margin: 30,
+			},
+			768:{
+				nav: true,	
+				items: 2,
+				margin: 30,
+			},
+		}
+	});
 });

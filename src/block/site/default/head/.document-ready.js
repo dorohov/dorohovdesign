@@ -24,6 +24,7 @@ $('#portfolio-filter').on('change', function () {
 		return false;			
 	}
 });
+$("._apc__form-input[type='tel']").mask("+7 (999) 999-99-99",{placeholder:"+7 (___) ___-__-__"});
 $("form.form-site").validationEngine(
 	'attach', {
 		promptPosition : "bottomLeft"
