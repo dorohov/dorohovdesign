@@ -1033,16 +1033,21 @@
 		}
 	}
 	&dot{
+		margin: 0 7px;
+	}
+	&dot-btn{
 		width: 17px;
 		height: 17px;
-		margin: 0 7px;
 		border-radius: 50%;
 		background-color: @lp-blue-light;
 		transition: @transition-site;
 		cursor: pointer;
-		&.is--active{
+		border: 0;
+		outline: none;
+		display: block;
+		.iphone-slider__dot.is--active &{
+			background-color: @lp-blue;			
 			cursor: default;
-			background-color: @lp-blue;
 		}
 	}
 }

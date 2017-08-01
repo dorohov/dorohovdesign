@@ -925,7 +925,10 @@ textarea._frms__form-control{
 }
 //navbar-header
 .navbar-header__row{
-	@media @media-device-lg{align-items: center;}
+	@media @media-device-lg{
+		align-items: center;
+		//justify-content: space-between;
+	}
 	@media @media-size-xs{
 		margin-left: -10px;
 		margin-right: -10px;
@@ -938,9 +941,10 @@ textarea._frms__form-control{
 .navbar-brand__cols{
 	@media @media-device-lg{width: 60%}
 	@media @media-size-xs{
-		width: 40%;
+		//width: 40%;
 		img{width: 100px;}
 	}
+	@media @media-size-xs-p{width: 40%;}
 	@media @media-screen-lg{width: 100%}
 }
 .navbar-brand{
@@ -986,10 +990,11 @@ textarea._frms__form-control{
 }
 .navbar-btn__cols{
     width: 12.5%;
+    text-align: right;
 	@media @media-size-xs-p{width: 42%;}
 	@media @media-size-xs-l{width: 50%;}
 	@media @media-device-lg{width: 30%}
-	@media @media-screen-lg{text-align: right;}
+	@media @media-screen-lg{}
 	@media @media-size-lg{width: 18%}
 	@media @media-size-xl{width: 18%}
     
