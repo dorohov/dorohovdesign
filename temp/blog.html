@@ -32,7 +32,7 @@
 	</head>
 	<body>	
  
-		<nav class="navbar navbar-site second-navbar logo-hover">
+		<nav class="navbar navbar-site navbar-index logo-hover">
 	<div class="container-fluid navbar-container-fluid">
 		<div class="row navbar__row">
 			<div class="cols navbar__cols-left">				
@@ -97,16 +97,16 @@
 	</div>
 </nav>
 		
-		<div class="blog-block__block">	
-	<div class="blog-block__panel  is--gradient">	
-		<div class="container-fluid blog-block__container">
-			<div class="blog-block__row  is--space-between">
-				<div class="blog-block__cols  is--left">
-					<div class="blog-block__inner">
+		<div class="{{block_prefix}}block">	
+	<div class="{{block_prefix}}panel  is--gradient">	
+		<div class="container-fluid {{block_prefix}}container">
+			<div class="{{block_prefix}}row  is--space-between">
+				<div class="{{block_prefix}}cols  is--left">
+					<div class="{{block_prefix}}inner">
 						<h1 class="page-heading  is--cyan">Блог</h1>		
-						<button type="button" class="blog-block__modal-btn" data-toggle="modal" data-target="#modal-blog"><span>Навигация по разделу</span></button>
-						<div class="blog-block__list-row">
-							<div class="blog-block__list-cols">
+						<button type="button" class="{{block_prefix}}modal-btn" data-toggle="modal" data-target="#modal-blog"><span>Навигация по разделу</span></button>
+						<div class="{{block_prefix}}list-row">
+							<div class="{{block_prefix}}list-cols">
 								<div class="blog-item__item  is--inline">
 	<div class="blog-item__row  is--inline">
 		<div class="blog-item__cols  is--preview  is--inline">
@@ -131,7 +131,7 @@
 	</div>
 </div>
 							</div>  
-							<div class="blog-block__list-cols">
+							<div class="{{block_prefix}}list-cols">
 								<div class="blog-item__item  is--inline  is--even">
 	<div class="blog-item__row  is--inline  is--even">
 		<div class="blog-item__cols  is--preview  is--inline  is--even">
@@ -159,8 +159,8 @@
 						</div>
 					</div>
 				</div>
-				<div class="blog-block__cols  is--right">
-					<div class="blog-block__navbar">
+				<div class="{{block_prefix}}cols  is--right">
+					<div class="{{block_prefix}}navbar">
 						<div class="modal fade modal__modal" id="modal-blog" tabindex="-1" role="dialog" aria-hidden="true">
 	<div class="modal-dialog modal__dialog">
 		<div class="modal-content modal__content">
@@ -254,10 +254,10 @@
 			</div>
 		</div>
 	</div>
-	<div class="blog-block__panel  is--white">	
+	<div class="{{block_prefix}}panel  is--white">	
 		<div class="container-fluid"> 
-			<div class="blog-block__row">
-				<div class="blog-block__cols  is--cols-3">
+			<div class="{{block_prefix}}row">
+				<div class="{{block_prefix}}cols  is--cols-3">
 					<div class="blog-item__item  is--block">
 	<div class="blog-item__row  is--block">
 		<div class="blog-item__cols  is--preview  is--block">
@@ -282,7 +282,7 @@
 	</div>
 </div>
 				</div>		
-				<div class="blog-block__cols  is--cols-3">
+				<div class="{{block_prefix}}cols  is--cols-3">
 					<div class="blog-item__item  is--block">
 	<div class="blog-item__row  is--block">
 		<div class="blog-item__cols  is--preview  is--block">
@@ -307,7 +307,7 @@
 	</div>
 </div>
 				</div>		
-				<div class="blog-block__cols  is--cols-3">
+				<div class="{{block_prefix}}cols  is--cols-3">
 					<div class="blog-item__item  is--block">
 	<div class="blog-item__row  is--block">
 		<div class="blog-item__cols  is--preview  is--block">
@@ -332,7 +332,7 @@
 	</div>
 </div>
 				</div>			
-				<div class="blog-block__cols  is--cols-3">
+				<div class="{{block_prefix}}cols  is--cols-3">
 					<div class="blog-item__item  is--block">
 	<div class="blog-item__row  is--block">
 		<div class="blog-item__cols  is--preview  is--block">
@@ -357,7 +357,7 @@
 	</div>
 </div>
 				</div>			
-				<div class="blog-block__cols  is--cols-3">
+				<div class="{{block_prefix}}cols  is--cols-3">
 					<div class="blog-item__item  is--block">
 	<div class="blog-item__row  is--block">
 		<div class="blog-item__cols  is--preview  is--block">
@@ -382,7 +382,7 @@
 	</div>
 </div>
 				</div>			
-				<div class="blog-block__cols  is--cols-3">
+				<div class="{{block_prefix}}cols  is--cols-3">
 					<div class="blog-item__item  is--block">
 	<div class="blog-item__row  is--block">
 		<div class="blog-item__cols  is--preview  is--block">
@@ -415,71 +415,63 @@
 
 
  
- 	 
-
-		<footer class="footer-site notop">
-	<div class="_fs__bg-btn-left"></div>
-	<div class="_fs__bg-btn-right"></div>
-	<div class="_fs__bg-btn-center"></div>
-	<a href="body" class="_fs__btn-top go-to-top active"></a>
-	<div class="_fs__inner">	
-		<div class="container">
-
-			<div class="form-site__footer">
-	<h2 class="_fsf__heading">Хотите работать с нами?</h2>
-	<div class="_fsf__note">
-		Заполните форму ниже и мы свяжемся с вами в ближайшее время.
+ 	
+		
+		<div class="modal fade" id="modal-servises-reviews" tabindex="-1" role="dialog" aria-hidden="true">
+	<div class="modal-dialog _msr__dialog">
+		<div class="modal-content _msr__content">
+			<div class="modal-body _msr__body" >
+				<button type="button" class="btn-site btn-close modal-btn-close" data-dismiss="modal" aria-hidden="true"></button>
+				<div class="modal-block _msr__block">					
+					<form action="#" class="_apc__form form-site form-site__inline">
+	<div class="_apc__form-item">		
+		<label class="_apc__form-label" for=""> 
+			Здравствуйте, меня зовут
+		</label>
+		<input type="text" class="_apc__form-input validate[required]" data-css="name"> ,
 	</div>
-	<form action="#" class="form-site inline">
-	<div class="_frms__input icon-user">
-		<input type="text" class="_frms__form-control form-control validate[required]"" id="" placeholder="Ваше имя*">
-	</div>	
-	<div class="_frms__input icon-phone">
-		<input type="text" class="_frms__form-control form-control validate[required]"  id="" placeholder="Ваше телефон или email*">
-	</div>	
-	<div class="_frms__input icon-comment">
-		<input type="text" class="_frms__form-control form-control validate[required]"  id="" placeholder="Ваш коментарий*">
-	</div>		
-	<div class="_frms__input _msr__form-btn btn">
-		<button type="submit" class="btn-site btn-white-line btn-line">Отправить</button>
-	</div>	
-	<div class="_frms__input full">
+	<div class="_apc__form-item">
+		<label class="_apc__form-label" for="">
+			из компании
+		</label>
+		<input type="text" class="_apc__form-input" data-css="company"> .
+	</div>
+	<div class="_apc__form-item">
+		<label class="_apc__form-label" for="">
+			Я хочу заказать у вас
+		</label>
+		<input type="text" class="_apc__form-input validate[required]" data-css="services"> .				
+	</div>
+	<div class="_apc__form-item">					
+		<label class="_apc__form-label" for="">
+			Вы можете связаться со мной	по телефону
+		</label>
+		<input type="tel" class="_apc__form-input validate[required,custom[phone]]" data-css="tel">	
+	</div>
+	<div class="_apc__form-item">	
+		<label class="_apc__form-label" for="">
+			или по электронной почте
+		</label>
+		<input type="email" class="_apc__form-input validate[required,custom[email]]" data-css="email">
+	</div>
+	<div class="_apc__form-item">		
 		<div class="_frms__agreement">
-            <input class="_frms__agreement-checkbox validate[required]" id="f[processing-footer]" name="f[processing-footer]" checked type="checkbox">
-            <label for="f[processing-footer]" class="_frms__agreement-label"></label>
-			<label for="f[processing-footer]" class="_frms__agreement-text">
+            <input class="_frms__agreement-checkbox validate[required]" id="f[processing]" name="f[processing]" checked type="checkbox">
+            <label for="f[processing]" class="_frms__agreement-label"></label>
+			<label for="f[processing]" class="_frms__agreement-text">
 				Я согласен на обработку <a href="/agreement.html">персональных данных</a>
 			</label>           
 		</div>
-	</div>	
-</form>	
-</div>
-			<div class="row _fs__row">
-				<div class="cols _fs__logotip-cols">
-					<div><a href="/"><img src="/img/default/logotip-white.png" alt="" data-rjs="2"></a></div>
-				</div>
-				<div class="cols _fs__address-cols">
-					г. Орел, ул. Бульвар Победы 6, 4 этаж, офис 52
-				</div>
-				<div class="cols _fs__phone-cols">
-					<div><a href="tel:+74862445115">+7 (4862) 44-51-15</a></div>
-					<div><a href="tel:+79208081543">+7 (920) 808-15-43</a></div>
-				</div>
-				<div class="cols _fs__email-cols">
-					<div><a href="mailto:hello@dorohovdesign.com">hello@dorohovdesign.com</a></div>
+	</div>
+	<div class="_apc__form-item _apc__form-btn">
+		<button type="submit" class="btn-site btn-white-line btn-line">Отправить</button>
+	</div>
+</form>
 				</div>
 			</div>
 		</div>
 	</div>
-	<div class="_fs__soc-block">		
-		<a href="https://www.behance.net/hello8640" target="_blank" class="_fs__soc soc-site icon-be"></a>
-		<a href="https://vk.com/dorohovdesignclub" target="_blank" class="_fs__soc soc-site icon-vk"></a>
-		<!-- <a href="#" target="_blank" class="_fs__soc soc-site icon-drb"></a> -->
-		<a href="https://www.facebook.com/groups/452515194938660/" target="_blank" class="_fs__soc soc-site icon-fb"></a>
-		<a href="https://twitter.com/dorohov_design" target="_blank" class="_fs__soc slider-soc soc-site icon-tw"></a>
-		<a href="https://www.instagram.com/dorohovdesign/" target="_blank" class="_fs__soc soc-site icon-igm"></a> 
-	</div>
-</footer>	
+</div>  						
 		
 		<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 <!--[if lt IE 9]>

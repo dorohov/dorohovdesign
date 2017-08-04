@@ -56,6 +56,20 @@ ul{
 		}
 	}
 }
+.page-heading{
+	&.is--cyan{
+		color: @cyan-dark2;
+		text-transform: uppercase;
+		.calcFontSize(26, 46, 320, 1680);
+		.calcLineHeight(36, 56, 320, 1680);
+		@media @media-device {
+			margin-bottom: 15px;
+		}
+		@media @media-screen {
+			margin-bottom: 2vw;
+		}
+	}
+}
 .soc-site{
 	display: block;
 	&:before{

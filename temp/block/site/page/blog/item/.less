@@ -1,0 +1,95 @@
+.blog-item-page-content{
+	position: relative;
+	overflow: hidden;
+	@media @media-screen{
+		&.padtop{padding-top: 100px;}
+	}
+	
+}
+._bip__container{
+	padding-top: 50px;
+	padding-bottom: 50px;
+	@media @media-screen{width: 780px;}
+}
+.blog-item-pn{
+	//opacity: 0.7;
+}
+._bipn__row{
+	display: flex;
+	@media @media-size-xs{flex-wrap: wrap;}
+}
+._bipn__cols{
+	width: 50%;
+	@media @media-size-xs-p{width: 100%;}
+	&._bipn__cols-left{
+		._bipn__blog-item{
+			text-align: right;
+			@media @media-size-xs-p{text-align: left}
+		}
+		._bipn__blog-item__inner{margin-left: auto;}
+	}
+	&._bipn__cols-right{
+		._bipn__blog-item{
+			@media @media-size-xs-p{text-align: right}
+		}
+	}
+}
+._bipn__blog-item{
+	display: block;
+	color: @white;
+	position: relative;
+	padding: 55px 60px;
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	height: 100%;
+	transition: @transition-site;
+	@media @media-size-xs{padding: 15px 20px;}
+	@media @media-size-sm{padding: 25px 30px;}
+	@media @media-size-lg{padding: 35px 40px;}
+	//@media @media-screen{min-height: 255px}
+	&:before{
+		transition: @transition-site;
+	}
+	&:hover{
+		&:before{background: fadeout(@black, 30%) }
+	
+		.blog-item__heading{			
+			color: darken(@white, 25%);
+			text-shadow: 1px 1px fadeout(@black, 50%);				
+		}
+		color: darken(@white, 25%);
+		text-shadow: 1px 1px fadeout(@black, 50%);
+	}
+}
+._bipn__blog-item__inner{
+    max-width: 480px;
+}
+._bipn__blog-item__inner{
+	position: relative;
+	z-index: 5;
+}
+._bipn__news-item__time{
+	margin-bottom: 7px;
+}
+._bipn__blog-item__heading{
+	font-size: @b-fs + 2px; //18px
+	line-height: @b-lh - 1px; //23px
+	letter-spacing: 0.3px;
+}
+._bipn__blog-item__link{
+	a{
+		color: @white;
+		transition: @transition-site;		
+		&:hover{
+			color: darken(@white, 25%);
+			text-shadow: 1px 1px fadeout(@black, 50%);
+		}
+	}
+}
+.info-panel{
+	border: 5px solid @cyan-dark; 
+    padding: 35px 45px;
+    margin: 20px 0;
+    @media @media-size-xs{padding: 25px 35px;}
+}

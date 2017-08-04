@@ -1,20 +1,131 @@
-<div class="{{class}}" data-slide-id="0">
-	<div class="scroll-page__dots left black50">
-		<button type="button" class="scroll-page__dot active"></button>
-		<button type="button" class="scroll-page__dot"></button>
-		<button type="button" class="scroll-page__dot"></button>
-		<button type="button" class="scroll-page__dot"></button>
-		<button type="button" class="scroll-page__dot"></button>
-		<button type="button" class="scroll-page__dot"></button>
-		<button type="button" class="scroll-page__dot"></button>
-		<button type="button" class="scroll-page__dot"></button>
-		<button type="button" class="scroll-page__dot"></button>
-		<button type="button" class="scroll-page__dot"></button> 
+<div class="{{block_prefix}}block">	
+	<div class="{{block_prefix}}panel  is--gradient">	
+		<div class="container-fluid {{block_prefix}}container">
+			<div class="{{block_prefix}}row  is--space-between">
+				<div class="{{block_prefix}}cols  is--left">
+					<div class="{{block_prefix}}inner">
+						<h1 class="page-heading  is--cyan">Блог</h1>		
+						<button type="button" class="{{block_prefix}}modal-btn" data-toggle="modal" data-target="#modal-blog"><span>Навигация по разделу</span></button>
+						<div class="{{block_prefix}}list-row">
+							<div class="{{block_prefix}}list-cols">
+								[[azbntple 
+									tpl="/src/block/site/page/blog/block-item.html" 
+									blog_prefix="blog-item__"
+									blog_mod="is--inline"
+									blog_link="/blog-item.html"
+									blog_date="26.12.2016"
+									blog_preview="https://placeholdit.imgix.net/~text?txtsize=30&txt=720x345&w=720&h=345"
+									blog_heading="Распространенные ошибки при разработке дизайна сайтов"
+									blog_note="<p>Ни для кого не секрет, что прибыль любого сайта<br>  зависит от конверсии. Ее высокие показатели напрямую связаны с юзабилити и дизайном сервиса.</p><p>При удачной взаимосвязи этих двух элементов ресурс становится удобным и комфортным, приятным внешне и эффективным в работе.</p>"
+								]]
+							</div>  
+							<div class="{{block_prefix}}list-cols">
+								[[azbntple 
+									tpl="/src/block/site/page/blog/block-item.html" 
+									blog_prefix="blog-item__"
+									blog_mod="is--inline  is--even"
+									blog_link="/blog-item.html"
+									blog_date="26.12.2016"
+									blog_preview="https://placeholdit.imgix.net/~text?txtsize=30&txt=720x345&w=720&h=345"
+									blog_heading="Распространенные ошибки при разработке дизайна сайтов"
+									blog_note="<p>Ни для кого не секрет, что прибыль любого сайта<br>  зависит от конверсии. Ее высокие показатели напрямую связаны с юзабилити и дизайном сервиса.</p><p>При удачной взаимосвязи этих двух элементов ресурс становится удобным и комфортным, приятным внешне и эффективным в работе.</p>"
+								]]
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="{{block_prefix}}cols  is--right">
+					<div class="{{block_prefix}}navbar">
+						[[azbntple 
+							tpl="/src/block/site/default/modals/blog-navbar.html" 
+							modal_prefix="modal__"
+							modal_id="modal-blog" 
+						]] 
+					</div>
+				</div>
+			</div>
+		</div>
 	</div>
-	[[azbntple tpl="/src/block/site/page/blog/slides/.html" class="" ]] 	
-	<div class="index-page-slide scroll-page__slide" data-slide-id="3" data-slide-cont="footer">
-		[[azbntple tpl="/src/block/site/default/footer/.html" class="footer-site index notop" ]]
+	<div class="{{block_prefix}}panel  is--white">	
+		<div class="container-fluid"> 
+			<div class="{{block_prefix}}row">
+				<div class="{{block_prefix}}cols  is--cols-3">
+					[[azbntple 
+						tpl="/src/block/site/page/blog/block-item.html" 
+						blog_prefix="blog-item__"
+						blog_mod="is--block" 
+						blog_link="/blog-item.html"
+						blog_date="26.12.2016"
+						blog_preview="https://placeholdit.imgix.net/~text?txtsize=30&txt=420x365&w=420&h=365"
+						blog_heading="Распространенные"
+						blog_note="<p>Ни для кого не секрет, что прибыль любого сайта<br>  зависит от конверсии. Ее высокие показатели напрямую связаны с юзабилити и дизайном сервиса.</p>"
+					]]
+				</div>		
+				<div class="{{block_prefix}}cols  is--cols-3">
+					[[azbntple 
+						tpl="/src/block/site/page/blog/block-item.html" 
+						blog_prefix="blog-item__"
+						blog_mod="is--block" 
+						blog_link="/blog-item.html"
+						blog_date="26.12.2016"
+						blog_preview="https://placeholdit.imgix.net/~text?txtsize=30&txt=420x365&w=420&h=365"
+						blog_heading="Распространенные"
+						blog_note="<p>Ни для кого не секрет, что прибыль любого сайта<br>  зависит от конверсии. Ее высокие показатели напрямую связаны с юзабилити и дизайном сервиса.</p>"
+					]]
+				</div>		
+				<div class="{{block_prefix}}cols  is--cols-3">
+					[[azbntple 
+						tpl="/src/block/site/page/blog/block-item.html" 
+						blog_prefix="blog-item__"
+						blog_mod="is--block" 
+						blog_link="/blog-item.html"
+						blog_date="26.12.2016"
+						blog_preview="https://placeholdit.imgix.net/~text?txtsize=30&txt=420x365&w=420&h=365"
+						blog_heading="Распространенные"
+						blog_note="<p>Ни для кого не секрет, что прибыль любого сайта<br>  зависит от конверсии. Ее высокие показатели напрямую связаны с юзабилити и дизайном сервиса.</p>"
+					]]
+				</div>			
+				<div class="{{block_prefix}}cols  is--cols-3">
+					[[azbntple 
+						tpl="/src/block/site/page/blog/block-item.html" 
+						blog_prefix="blog-item__"
+						blog_mod="is--block" 
+						blog_link="/blog-item.html"
+						blog_date="26.12.2016"
+						blog_preview="https://placeholdit.imgix.net/~text?txtsize=30&txt=420x365&w=420&h=365"
+						blog_heading="Распространенные"
+						blog_note="<p>Ни для кого не секрет, что прибыль любого сайта<br>  зависит от конверсии. Ее высокие показатели напрямую связаны с юзабилити и дизайном сервиса.</p>"
+					]]
+				</div>			
+				<div class="{{block_prefix}}cols  is--cols-3">
+					[[azbntple 
+						tpl="/src/block/site/page/blog/block-item.html" 
+						blog_prefix="blog-item__"
+						blog_mod="is--block" 
+						blog_link="/blog-item.html"
+						blog_date="26.12.2016"
+						blog_preview="https://placeholdit.imgix.net/~text?txtsize=30&txt=420x365&w=420&h=365"
+						blog_heading="Распространенные"
+						blog_note="<p>Ни для кого не секрет, что прибыль любого сайта<br>  зависит от конверсии. Ее высокие показатели напрямую связаны с юзабилити и дизайном сервиса.</p>"
+					]]
+				</div>			
+				<div class="{{block_prefix}}cols  is--cols-3">
+					[[azbntple 
+						tpl="/src/block/site/page/blog/block-item.html" 
+						blog_prefix="blog-item__"
+						blog_mod="is--block" 
+						blog_link="/blog-item.html"
+						blog_date="26.12.2016"
+						blog_preview="https://placeholdit.imgix.net/~text?txtsize=30&txt=420x365&w=420&h=365"
+						blog_heading="Распространенные"
+						blog_note="<p>Ни для кого не секрет, что прибыль любого сайта<br>  зависит от конверсии. Ее высокие показатели напрямую связаны с юзабилити и дизайном сервиса.</p>"
+					]]
+				</div>			
+			</div>
+		</div>
 	</div>
-	[[azbntple tpl="/src/block/site/default/navbar-right/.html" class="fixed" ]]
+</div>	
+	[[azbntple tpl="8/src/block/site/default/navbar-right/.html" class="fixed" ]]
 
-</div>
+
+ 
