@@ -20,6 +20,7 @@
 			|| get_field('post_add_type', get_post()->ID) == 'landing-msk76'
 			|| get_field('post_add_type', get_post()->ID) == 'landing-roza'
 			|| get_field('post_add_type', get_post()->ID) == 'landing-zenit'
+			|| get_field('post_add_type', get_post()->ID) == 'landing-enerfit'
 			){
 				$this->tpl('_/footer-lp-nav', array());	
 			}	
@@ -392,6 +393,24 @@ if(is_front_page() || ($this->post['id'] == 17)) {?>
 	<script src="<? echo $this->path('js');?>/iphone-slider.js"></script>
 <? } ?>
 <?if(is_single() && get_field('post_add_type', get_post()->ID) == 'landing-zenit') {
+	
+	?>
+	<script src="<? echo $this->path('js');?>/jquery-plugin/jquery.appear.js"></script>
+	<script>
+		$(document).ready(function(){
+			$(document.body).on('appear', '.lp-video', function(e, $affected) {
+				$(this).get(0).play();
+			});
+			$(document.body).on('disappear', '.lp-video', function(e, $affected) {
+				$(this).get(0).pause();
+			});
+			$(".lp-video").appear({force_process: true});
+		});
+	</script>
+		
+	<script src="<? echo $this->path('js');?>/iphone-slider-new.js"></script> 
+<? } ?>
+<?if(is_single() && get_field('post_add_type', get_post()->ID) == 'landing-enerfit') {
 	
 	?>
 	<script src="<? echo $this->path('js');?>/jquery-plugin/jquery.appear.js"></script>
