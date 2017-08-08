@@ -1,5 +1,13 @@
 $(function() {		
 	
+	var __getDoubleNum = function(num) {
+		num = num || 0;
+		if(num < 10) {
+			num = '0' + num;
+		}
+		return num;
+	}
+	
 	$('.iphone-slider').each(function(index){
 		
 		var block = $(this);
@@ -29,12 +37,20 @@ $(function() {
 			
 		});
 		
+		if($('.iphone-slider__count-item_amount').length) {
+			$('.iphone-slider__count-item_amount').html(__getDoubleNum(dots.find('.iphone-slider__dot').length));
+		}
+		
 		dots.on('click', '.iphone-slider__dot .iphone-slider__dot-btn', null, function(event){
 			event.preventDefault();
 			
 			var button = $(this);
 			var li = button.closest('li');
-			var _index = button.attr('data-item-index') || 0;
+			var _index = parseInt(button.attr('data-item-index') || 0);
+			
+			if($('.iphone-slider__count-item_number').length) {
+				$('.iphone-slider__count-item_number').html(__getDoubleNum(_index + 1));
+			}
 			
 			var item = block.find('.iphone-slider__item[data-item-index="' + _index + '"]');
 			
