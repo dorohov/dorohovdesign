@@ -14,6 +14,10 @@ $(function() {
 		var cont = block.find('.iphone-slider__container');
 		var dots = block.find('.iphone-slider__dots');
 		
+		var sliderIntv = null,
+			sliderIntv_interval_ms = parseInt(block.attr('data-interval-ms')) || 0
+		;
+		
 		dots.empty();
 		
 		cont.find('.iphone-slider__item').each(function(_index){
@@ -37,8 +41,8 @@ $(function() {
 			
 		});
 		
-		if($('.iphone-slider__count-item_amount').length) {
-			$('.iphone-slider__count-item_amount').html(__getDoubleNum(dots.find('.iphone-slider__dot').length));
+		if(block.find('.iphone-slider__count-item_amount').length) {
+			block.find('.iphone-slider__count-item_amount').html(__getDoubleNum(dots.find('.iphone-slider__dot').length));
 		}
 		
 		dots.on('click', '.iphone-slider__dot .iphone-slider__dot-btn', null, function(event){
@@ -48,8 +52,8 @@ $(function() {
 			var li = button.closest('li');
 			var _index = parseInt(button.attr('data-item-index') || 0);
 			
-			if($('.iphone-slider__count-item_number').length) {
-				$('.iphone-slider__count-item_number').html(__getDoubleNum(_index + 1));
+			if(block.find('.iphone-slider__count-item_number').length) {
+				block.find('.iphone-slider__count-item_number').html(__getDoubleNum(_index + 1));
 			}
 			
 			var item = block.find('.iphone-slider__item[data-item-index="' + _index + '"]');
@@ -77,7 +81,7 @@ $(function() {
 			
 		});
 		
-		$(document.body).on('click', '.iphone-slider__btn.is--right', {}, function(event){
+		block.find('.iphone-slider__btn.is--right').on('click', function(event){
 			event.preventDefault();
 			
 			var item = dots.find('.iphone-slider__dot.is--active');
@@ -95,7 +99,8 @@ $(function() {
 			}
 			
 		});
-		$(document.body).on('click', '.iphone-slider__btn.is--left', {}, function(event){
+		
+		block.find('.iphone-slider__btn.is--left').on('click', function(event){
 			event.preventDefault();
 			
 			var item = dots.find('.iphone-slider__dot.is--active');
@@ -114,102 +119,36 @@ $(function() {
 			
 		});
 		
+		block.find('.iphone-slider__btn.is--left, .iphone-slider__btn.is--right, .iphone-slider__dots').on('mouseover', function(event){
+			
+			block.data('interval-pause', 1);
+			
+		});
+		
+		block.find('.iphone-slider__btn.is--left, .iphone-slider__btn.is--right, .iphone-slider__dots').on('mouseout', function(event){
+			
+			block.data('interval-pause', 0);
+			
+		});
+		
 		dots.find('.iphone-slider__dot').eq(0).find('.iphone-slider__dot-btn').trigger('click');
 		
-	});
-	
-	
-	
-	
-	/*
-	var iphone = $('.iphone-slider__container');
-	
-	$(document.body).on('azbn.setActive', '.iphone-slider__container .iphone-slider__item', {}, function(event){
-		event.preventDefault();
-		
-		var el = $(this);
-		el.addClass('is--active');
-		
-		var next = el.next('.iphone-slider__item');
-		if(next.size()) {			
-			$('.iphone-slider .iphone-slider__blurscreen .iphone-slider__blurscreen-inner')
-				.attr('style', next.attr('data-style'));
+		if(sliderIntv_interval_ms > 0) {
 			
-		} else {			
-			$('.iphone-slider .iphone-slider__blurscreen .iphone-slider__blurscreen-inner')
-				.attr('style', iphone.find('.iphone-slider__item').eq(0).attr('data-style'));
-			
-		}
-		var prev = el.prev('.iphone-slider__item');
-		if(prev.size()) {			
-			$('.iphone-slider .iphone-slider__blurscreen .iphone-slider__blurscreen-inner')
-				.attr('style', prev.attr('data-style'));
-			
-		} else {			
-			$('.iphone-slider .iphone-slider__blurscreen .iphone-slider__blurscreen-inner')
-				.attr('style', iphone.find('.iphone-slider__item').eq(0).attr('data-style'));
+			sliderIntv = setInterval(function(){
+				
+				var _hover = parseInt(block.data('interval-pause')) || 0;
+				
+				if(!_hover) {
+					
+					block.find('.iphone-slider__btn.is--right').trigger('click');
+					
+				}
+				
+			}, sliderIntv_interval_ms);
 			
 		}
 		
 	});
-	$(document.body).on('click', '.iphone-slider__btn.is--right', {}, function(event){
-			event.preventDefault();
-			
-			var screens = iphone.find('.iphone-slider__item');
-			var active = screens.filter('.is--active');
-			
-			if(active.size()) {
-				
-				var next = active.next('.iphone-slider__item');
-				if(next.size()) {
-					
-					screens.removeClass('is--active');
-					next.trigger('azbn.setActive');
-					
-				} else {
-					
-					screens.removeClass('is--active');
-					screens.eq(0).trigger('azbn.setActive');
-					
-				}
-				
-			} else {
-				
-				screens.eq(0).trigger('azbn.setActive');
-				
-			}
-			
-	});
-	$(document.body).on('click', '.iphone-slider__btn.is--left', {}, function(event){
-			event.preventDefault();
-			
-			var screens = iphone.find('.iphone-slider__item');
-			var active = screens.filter('.is--active');
-			
-			if(active.size()) {
-				
-				var prev = active.prev('.iphone-slider__item');
-				if(prev.size()) {
-					
-					screens.removeClass('is--active');
-					prev.trigger('azbn.setActive');
-					
-				} else {
-					
-					screens.removeClass('is--active');
-					screens.eq(0).trigger('azbn.setActive');
-					
-				}
-				
-			} else {
-				
-				screens.eq(0).trigger('azbn.setActive');
-				
-			}
-			
-	});
-	$('.iphone-slider__btn').trigger('click');
-	*/
-	
 	
 });
