@@ -411,6 +411,18 @@
 <script src="/plugins/owl.carousel/owl.carousel.min.js"></script> 
 <script src="/js/owl.ready.js"></script> 
 		
+		<script src="/js/jquery-plugin/jquery.appear.js"></script>
+		<script>
+			$(document).ready(function(){
+				$(document.body).on('appear', '.lp-video', function(e, $affected) {
+					$(this).get(0).play();
+				});
+				$(document.body).on('disappear', '.lp-video', function(e, $affected) {
+					$(this).get(0).pause();
+				});
+				$(".lp-video").appear({force_process: true});
+			});
+		</script>
 		<script src="/js/iphone-slider-new.js" ></script>
 		<script src="/js/svg4everybody.min.js" ></script>
 		<script>svg4everybody();</script> 
