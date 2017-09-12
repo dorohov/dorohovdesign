@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="ru-RU"> 
+	<head>
+		[[azbntple tpl="/src/block/site/default/head/.html" ]] 
+		<link rel="stylesheet" type="text/css" href="/css/lp-orelstroy.css">
+	</head>
+	<body>	
+		[[azbntple tpl="/src/block/site/default/navbar/.html" class="navbar-site second-navbar logo-hover" ]]
+		<div class="orelstroy-page-content padtop">
+			[[azbntple 
+				tpl="/src/block/site/page/landing/orelstroy/.html"
+				block_class="orelstroy__block-content" 
+				block_prefix="lp-orelstroy__" 
+			]]  
+		</div>
+		[[azbntple tpl="/src/block/site/default/footer/landing.html" class="footer-site notop" ]]
+					
+		
+		[[azbntple tpl="/src/block/site/default/modals/servises-review.html" class="" ]]
+		
+		[[azbntple tpl="/src/block/site/default/head/script.html" ]]
+		[[azbntple tpl="/src/block/site/default/head/owl.html" ]]
+		
+		<script src="/js/jquery-plugin/jquery.appear.js"></script>
+		<script>
+			$(document).ready(function(){
+				$(document.body).on('appear', '.lp-video', function(e, $affected) {
+					//$(this).get(0).play();
+				});
+				$(document.body).on('disappear', '.lp-video', function(e, $affected) {
+					$(this).get(0).pause();
+				});
+				$(".lp-video").appear({force_process: true});
+			});
+		</script>
+		<script src="/js/iphone-slider-new.js" ></script>
+		<script src="/js/svg4everybody.min.js" ></script>
+		<script>svg4everybody();</script> 
+	</body>
+</html> 
