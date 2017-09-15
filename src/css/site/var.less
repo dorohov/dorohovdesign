@@ -7,6 +7,7 @@
 @url-path-js:'@{url-path}/js'; 
 
 @white:				#fff;
+@white4:				darken(@white, 4.6%); //#f3f3f3
 @black: 			#000;
 @blue-dark:			#5286b4;
 @blue-purple:		#7331af;
@@ -117,7 +118,7 @@
 	@percentage: percentage((@columns / @grid-columns ));
     margin-left: ~"calc(@{percentage})";
 }
-.makeColsOffset(@columns, @grid-columns, @gutter) {
+.makeColsOffset(@columns, @grid-columns) {
 	@percentage: percentage((@columns / @grid-columns ));
     margin-left: ~"calc(@{percentage})";
 }
