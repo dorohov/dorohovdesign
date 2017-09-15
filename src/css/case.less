@@ -160,7 +160,7 @@
 		}
 	}
 	&text-block {
-		p,div{
+		p,div, ul, ol{
 			margin-bottom: 10px;
 		}
 		h2,h3{
@@ -185,6 +185,13 @@
 		ul > li{
 			margin-bottom: 10px;
 			&:last-child{margin-bottom: 0}
+		}
+		ol > li{
+			margin-bottom: 10px;
+			&:last-child{margin-bottom: 0}
+			ul{
+				margin-top: 10px;
+			}
 		}
 	}
 	&bg{		
@@ -393,6 +400,14 @@
 			@media @media-screen {
 				.makeCols(5, 12);
 			}
+			&.is--orionprint{
+				@media @media-size-sm {
+					.makeCols(9, 12);
+				}
+				@media @media-screen {
+					.makeCols(9, 12);
+				}
+			}
 		}
 	}
 	&after{
@@ -548,6 +563,12 @@
 		@media @media-device {
 			margin-top: -30px;
 		}
+		&.is--align-top{
+			align-items: flex-start;
+		}
+		&.is--marginbottom{
+			margin-bottom: 30px;
+		}
 	}
 	&cols{
 		@media @media-device {
@@ -630,6 +651,11 @@
 			@media @media-screen {
 				padding-left: 3vw;
 			}
+		}
+		&.is--paddingleft{
+			@media @media-screen {
+				padding-left: 3vw;
+			}			
 		}
 	}
 	&item-row{
@@ -725,6 +751,12 @@
 			@media @media-screen {padding-left: 3vw;}
 			img{box-shadow: 5px 5px 18px fadeout(@black, 60%);}
 		}
+		&.is--shadow{
+			img{box-shadow: 5px 5px 18px fadeout(@black, 60%);}
+		}
+		&.is--center{
+			img{margin: 0 auto}
+		}
 	}
 	&preview-row{
 		margin-top: -20px;
@@ -753,24 +785,29 @@
 		position: relative;
 		//max-width: 480px;
 		margin: 0 auto;
-		@media @media-screen {
-			max-width: 100%;
-			position: absolute;
-			right: 3vw;
-			top: 50%;
-			transform: translateY(-50%);
+		&.is--photo-jk{
+			@media @media-screen {
+				max-width: 100%;
+				position: absolute;
+				right: 3vw;
+				top: 50%;
+				transform: translateY(-50%);
+			}			
 		}
 	}
 	&mac-slider-indicators{
 		position: absolute;
 		z-index: 2;
 		top: 45.5%;
-		right: 6%;
+		right: 1.5%;
 		list-style: none;
 		margin: 0;
 		padding: 0;	
 		transform: translateY(-50%);
 		font-size: @b-fs + 2;
+		&.is--photo-jk{
+			right: 6%;
+		}
 		@media @media-size-xs-p {
 			right: 0%;
 		}
@@ -806,23 +843,31 @@
 	}
 	&mac-slider-bg{
 		background-image: url("@{url-path-img}/case-photo-jk/bg-mackbook.png");
-		max-width: 930px;
-		max-height: 500px;
+		max-width: 827px;
+		max-height: 445px;
 		width: 50.15vw;
 		height: 27vw;
+		width: 45.15vw;
+    	height: 24vw;
 		position: relative;
 		margin: 0 auto;			
 		@media @media-device {			
 			width: 90.65vw;
 			height: 50vw;
 		}
+		&.is--photo-jk{
+			max-width: 930px;
+			max-height: 500px;
+			width: 50.15vw;
+			height: 27vw;
+		}
 	}
 	&mac-slider-inner{
 		position: absolute;
-		max-width: 601px;
-		max-height: 375px;
-		width: 32.4vw;
-		height: 20.22vw;
+		max-width: 536px;
+		max-height: 336px;
+		width: 29.4vw;
+   	 	height: 18.22vw;
 		top: 8.4%;
 		left: 17.7%;
 		@media @media-device {
@@ -830,6 +875,12 @@
 			height: 37.22vw;
 			top: 9.6%;
 			left: 17.8%;
+		}
+		&.is--photo-jk{
+			max-width: 601px;
+			max-height: 375px;
+			width: 32.4vw;
+			height: 20.22vw;
 		}
 	}
 	&mac-slider-item{}
@@ -894,6 +945,11 @@
 		}
 		&.is--cols-4{
 			@media @media-screen {
+				.makeCols(4, 12);
+			}
+		}
+		&.is--cols-sm-4{
+			@media @media-size-sm {
 				.makeCols(4, 12);
 			}
 		}
