@@ -89,4 +89,40 @@ $(function() {
 			},
 		}
 	});
+	//lp-dixion
+	$('.dixion_interface__owl').owlCarousel({
+		navText: [],
+		loop: true,
+		center: true,
+		//autoplay: true,
+		autoplayTimeout: 3500,
+		smartSpeed: 500,
+		dots: true,
+		nav: false,
+		responsive:{
+			0:{
+				nav: false,
+				items: 1,
+				autoWidth:false,
+				margin: 10
+			},
+			560:{
+				nav: false,
+				items: 2,
+				autoWidth:false,
+				margin: 30,
+			},
+			768:{
+				nav: true,
+				items: 2,
+				autoWidth:false,
+				margin: 30,
+			},
+			1025:{
+				autoWidth:true,
+				margin: 100,
+				nav: true,
+			}
+		}
+	});
 });
