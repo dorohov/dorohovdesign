@@ -49,43 +49,12 @@
 						</div>
 						<?}?>
 					</div>
-					<?}?>
+					<?}?> 
 				</div>
 				<div class="<?=$param['block_prefix'];?>cols cols  is--cols-6  is--step1-slider">
-					<?
-					if(count($steps__slider)) {						
-					?>
-					<div class="<?=$param['block_prefix'];?>mac-slider  <?=$param['block_mod'];?>">
-						<div id="carousel-example-generic" class="carousel slide carousel-fade <?=$param['block_prefix'];?>mac-slider-carousel" data-ride="carousel">
-							<ol class="carousel-indicators <?=$param['block_prefix'];?>mac-slider-indicators  <?=$param['block_mod'];?>">
-								<?	
-									$i = 1;		
-									foreach($steps__slider as $index => $id) { 
-								?>
-								<li data-target="#carousel-example-generic" data-slide-to="<?=$index;?>" <?if ($index == 0) echo 'class="active"'?>>
-									<?if ($i > 9){?>
-									<?=$i;?>
-									<?}else{?>
-									0<?=$i;?>
-									<?}?>
-								</li>								
-								<?$i++;}?>
-							</ol>
-							<div class="<?=$param['block_prefix'];?>mac-slider-bg  <?=$param['page_prefix'];?>bg  is--contain  <?=$param['block_mod'];?>"> 
-								<div class="carousel-inner <?=$param['block_prefix'];?>mac-slider-inner">
-									<?		
-									foreach($steps__slider as $index => $id) {
-										$preview = $this->Imgs->rawImg($id, '601x375');
-									?>
-									<div class="item <?=$param['block_prefix'];?>mac-slider-item <?if($index == 0) echo "active"?>">
-										<img src="<?=$preview;?>" alt="">
-									</div>
-									<?}?> 
-								</div>
-							</div>
-						</div>
+					<div class="<?=$param['block_prefix'];?>preview">
+						<div class="<?=$param['block_prefix'];?>preview-item  is--center"><img src="<?=$this->path('img');?>/case-orionprint/preview-step1-item1.png" alt=""></div>
 					</div>
-					<?}?>
 				</div>
 			</div>
 		</div>
@@ -118,15 +87,17 @@
 					</div>
 					<?}?>
 				</div>
-				<div class="<?=$param['block_prefix'];?>cols cols  is--cols-6  is--preview-2">
-					<div class="<?=$param['block_prefix'];?>preview  is--step2">
-						<div class="<?=$param['block_prefix'];?>preview-item  is--item1"><img src="<?=$this->path('img');?>/case-photo-jk/preview-step2-item1.png" alt=""></div>
-						<div class="<?=$param['block_prefix'];?>preview-item  is--item2"><img src="<?=$this->path('img');?>/case-photo-jk/preview-step2-item2.png" alt=""></div>
-					</div>
+				<div class="<?=$param['block_prefix'];?>cols cols  is--cols-6">			<?
+						$this->tpl('case/macbook', array(
+							"block_prefix" 	=> "case-steps__",
+							"block_mod" 	=> "is--orionprint",
+							"page_prefix" 	=> "case__",
+						));
+					?>
 				</div>
 				<div class="<?=$param['block_prefix'];?>cols cols  is--cols-6  is--preview-3">
 					<div class="<?=$param['block_prefix'];?>preview  is--step3">
-						<div class="<?=$param['block_prefix'];?>preview-item  is--item3"><img src="<?=$this->path('img');?>/case-photo-jk/preview-step3-item1.png" alt=""></div>
+						<div class="<?=$param['block_prefix'];?>preview-item  is--item3"><img src="<?=$this->path('img');?>/case-orionprint/preview-step3-item1.png" alt=""></div>
 					</div>
 				</div>
 				<div class="<?=$param['block_prefix'];?>cols cols  is--cols-6">		
@@ -155,7 +126,7 @@
 	</div>	
 	<div class="<?=$param['block_prefix'];?>panel  is--bg-bottom">
 		<div class="container <?=$param['block_prefix'];?>container <?=$param['page_prefix'];?>container">
-			<div class="<?=$param['block_prefix'];?>row row">
+			<div class="<?=$param['block_prefix'];?>row row is--align-top  is--marginbottom">
 				<div class="<?=$param['block_prefix'];?>cols cols  is--cols-6">		
 					<?if ($steps__step4_heading != ""){?>
 					<div class="<?=$param['block_prefix'];?>item  is--step4">
@@ -177,32 +148,7 @@
 					</div>
 					<?}?>
 				</div>
-				<div class="<?=$param['block_prefix'];?>cols cols  is--cols-6  is--preview-4">
-					<div class="<?=$param['block_prefix'];?>preview  is--step4">
-						<div class="<?=$param['block_prefix'];?>preview-item  is--item4"><img src="<?=$this->path('img');?>/case-photo-jk/preview-step4-item1.jpg" alt=""></div>
-					</div>
-				</div>
-				<div class="<?=$param['block_prefix'];?>cols cols  is--cols-6  is--preview-5">
-					<div class="<?=$param['block_prefix'];?>preview-heading">
-						<h4>Запустили несколько стилизованных фотопроектов:</h4>
-					</div>
-					<div class="<?=$param['block_prefix'];?>preview-row row">
-						<div class="<?=$param['block_prefix'];?>preview-cols cols  is--cols-6">
-							<p>Иван-купала</p>
-							<div class="<?=$param['block_prefix'];?>preview  is--step5">
-								<div class="<?=$param['block_prefix'];?>preview-item  is--item5"><img src="<?=$this->path('img');?>/case-photo-jk/preview-step5-item1.jpg" alt=""></div>
-							</div>
-						</div>
-						<div class="<?=$param['block_prefix'];?>preview-cols cols  is--cols-6">	
-							<p>Свадебная акция</p>
-							<div class="<?=$param['block_prefix'];?>preview  is--step5">
-								<div class="<?=$param['block_prefix'];?>preview-item  is--item5"><img src="<?=$this->path('img');?>/case-photo-jk/preview-step5-item2.jpg" alt=""></div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="<?=$param['block_prefix'];?>cols cols  is--cols-6">
-					
+				<div class="<?=$param['block_prefix'];?>cols cols  is--cols-6">		
 					<?if ($steps__step5_heading != ""){?>
 					<div class="<?=$param['block_prefix'];?>item  is--step5">
 						<div class="<?=$param['block_prefix'];?>item-row row">
@@ -211,13 +157,81 @@
 							</div>
 							<div class="<?=$param['block_prefix'];?>item-cols cols  is--heading">
 								<h3 class="<?=$param['block_prefix'];?>item-heading">
-									<?=$steps__step1_heading;?>
+									<?=$steps__step5_heading;?>
 								</h3>
 							</div>
 						</div>
 						<?if ($steps__step5_note != ""){?>
 						<div class="<?=$param['page_prefix'];?>text-block <?=$param['block_prefix'];?>item-text">
 							<?=$steps__step5_note;?>
+						</div>
+						<?}?>
+					</div>
+					<?}?>
+				</div>
+			</div>
+			<div class="<?=$param['block_prefix'];?>row row  is--marginbottom">
+				<div class="<?=$param['block_prefix'];?>cols cols  is--cols-6">		
+					<?if ($steps__step6_heading != ""){?>
+					<div class="<?=$param['block_prefix'];?>item  is--step6">
+						<div class="<?=$param['block_prefix'];?>item-row row">
+							<div class="<?=$param['block_prefix'];?>item-cols cols  is--num">
+								<div class="<?=$param['block_prefix'];?>item-num">6</div>
+							</div>
+							<div class="<?=$param['block_prefix'];?>item-cols cols  is--heading">
+								<h3 class="<?=$param['block_prefix'];?>item-heading">
+									<?=$steps__step6_heading;?>
+								</h3>
+							</div>
+						</div>
+						<?if ($steps__step6_note != ""){?>
+						<div class="<?=$param['page_prefix'];?>text-block <?=$param['block_prefix'];?>item-text">
+							<?=$steps__step6_note;?>
+						</div>
+						<?}?>
+					</div>
+					<?}?>
+				</div>
+				<div class="<?=$param['block_prefix'];?>cols cols  is--cols-6  is--preview-4">
+					<div class="<?=$param['block_prefix'];?>preview  is--step4">
+						<div class="<?=$param['block_prefix'];?>preview-item    is--shadow"><img src="<?=$this->path('img');?>/case-orionprint/preview-step4-item1.jpg" alt=""></div>
+					</div>
+				</div>
+			</div>
+			<div class="<?=$param['block_prefix'];?>row row">
+				<div class="<?=$param['block_prefix'];?>cols cols  is--cols-6  is--preview-5">
+					<div class="<?=$param['block_prefix'];?>preview-heading">
+						<h4>Промо посты</h4>
+					</div>
+					<div class="<?=$param['block_prefix'];?>preview-row row">
+						<div class="<?=$param['block_prefix'];?>preview-cols cols  is--cols-6">
+							<div class="<?=$param['block_prefix'];?>preview  is--step5">
+								<div class="<?=$param['block_prefix'];?>preview-item  is--shadow"><img src="<?=$this->path('img');?>/case-orionprint/preview-step5-item1.jpg" alt=""></div>
+							</div>
+						</div>
+						<div class="<?=$param['block_prefix'];?>preview-cols cols  is--cols-6">	
+							<div class="<?=$param['block_prefix'];?>preview  is--step5">
+								<div class="<?=$param['block_prefix'];?>preview-item  is--shadow"><img src="<?=$this->path('img');?>/case-orionprint/preview-step5-item2.jpg" alt=""></div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="<?=$param['block_prefix'];?>cols cols  is--cols-6">		
+					<?if ($steps__step7_heading != ""){?>
+					<div class="<?=$param['block_prefix'];?>item  is--paddingleft">
+						<div class="<?=$param['block_prefix'];?>item-row row">
+							<div class="<?=$param['block_prefix'];?>item-cols cols  is--num">
+								<div class="<?=$param['block_prefix'];?>item-num">5</div>
+							</div>
+							<div class="<?=$param['block_prefix'];?>item-cols cols  is--heading">
+								<h3 class="<?=$param['block_prefix'];?>item-heading">
+									<?=$steps__step7_heading;?>
+								</h3>
+							</div>
+						</div>
+						<?if ($steps__step7_note != ""){?>
+						<div class="<?=$param['page_prefix'];?>text-block <?=$param['block_prefix'];?>item-text">
+							<?=$steps__step7_note;?>
 						</div>
 						<?}?>
 					</div>

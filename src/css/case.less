@@ -340,6 +340,11 @@
 				width: 46vw;
 				min-width: 600px;
 			}
+			&.is--yarus{
+				max-width: 1000px;
+				width: 54vw;
+				min-width: 600px;
+			}
 			&.is--photo-jk{
 				
 			}
@@ -556,6 +561,12 @@
 				padding-top: 4vw;
 			}
 		}
+		&.is--yarus{
+			@media @media-screen {
+				padding-top: 4vw;
+				padding-bottom: 4vw;
+			}
+		}
 	}
 	&row{
 		align-items: center;
@@ -568,6 +579,14 @@
 		}
 		&.is--marginbottom{
 			margin-bottom: 30px;
+		}
+		&.is--margintop{
+			@media @media-screen {
+				margin-top: -30px;
+				& > .cols{
+					padding-top: 30px;
+				}
+			}
 		}
 	}
 	&cols{
@@ -714,6 +733,9 @@
 				z-index: 2;
 			}
 		}
+		&.is--yarus-preview-4{
+			position: relative;
+		}
 	}
 	&preview-item{
 		&.is--item1{
@@ -756,6 +778,14 @@
 		}
 		&.is--center{
 			img{margin: 0 auto}
+		}
+		&.is--yarus-abs-4-2{
+			position: absolute;
+			top: -2vw;
+			right: 3vw;
+			max-width: 285px;
+			min-width: 100px;
+			width: 16vw;
 		}
 	}
 	&preview-row{
