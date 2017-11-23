@@ -1,0 +1,32 @@
+<?
+	$_prefix = $param['block_prefix'];
+	$_prefix_page = $param['page_prefix'];
+	$heading = get_field('packaging_s_heading', $id);
+	$heading_mod = $param['block_heading_mod'];
+	$text = get_field('packaging_s_note', $id);
+	$text_mod = $param['block_text_mod'];
+?>
+<div class="<?=$_prefix_page;?>panel">
+	<div class="<?=$_prefix_page;?>block-inner  <?=$_prefix;?>block">
+		<div class="<?=$_prefix_page;?>block-container  container">
+			<?if($heading !=""){?>
+			<h2 class="<?=$_prefix_page;?>heading  <?=$heading_mod?>"><?=$heading;?></h2>
+			<?}?>
+			<?if($text !=""){?>
+			<div class="<?=$_prefix_page;?>text-block  <?=$_prefix;?>text-block  <?=$text_mod?>"><?=$text;?></div>
+			<?}?>
+		</div>
+		<?
+			$this->tpl('landing/bg', array(
+				"block_prefix" => "lp-hlebzavod__",
+				"block_mod" => "is--drying",
+				"block_bg" => "bg-drying.png",
+			));
+			$this->tpl('landing/bg', array(
+				"block_prefix" => "lp-hlebzavod__",
+				"block_mod" => "is--packaging-item4",
+				"block_bg" => "packaging-item4.png",
+			));
+		?>
+	</div>
+</div>

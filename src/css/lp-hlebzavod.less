@@ -1,0 +1,735 @@
+@site-name : "site";
+@lp-name:	"lp-hlebzavod";
+/* Подключение стилей сайта */
+@import "@{site-name}/var.less";
+
+
+@lp-blue-light:		#2887e0;
+@lp-blue:			#163b60;
+@lp-blue-dark:		#285e89;
+@lp-blue-link:		#0084ff; 
+@lp-grey:			#eaeaec;
+
+@coffe:				#4a2e23;
+@coffe-light:		#816f63;
+@brown:				#9c5c00;
+@grey:				#857269;
+@white10:			darken(@white, 10%); 	//#e6e6e6
+
+//
+@tavolga: 				tavolga-free;
+
+@roboto:				roboto;
+@roboto-light:			robotolight;
+
+@b-ff: @roboto; 
+@b-ff-2: @tavolga;
+.include-custom-font(
+	@family: @tavolga, 
+	@src-name: @tavolga, 
+	@weight: normal, 
+	@style: normal
+	){
+	@font-face{			
+		font-family: "@{family}";			
+		src:	url('@{url-path-fonts}/@{src-name}.woff2') format('woff2'),
+				url('@{url-path-fonts}/@{src-name}.woff') format('woff');
+		font-weight: @weight;
+		font-style: @style;		
+	}
+}
+.include-custom-font(
+	@family: @roboto,
+	@src-name: @roboto-light,
+	@weight: 400, 
+	@style: normal
+	);
+.include-custom-font(
+	@family: @tavolga,
+	@src-name: @tavolga,
+	@weight: 400, 
+	@style: normal
+	);
+
+.hlebzavod-page-content{
+	color: #2a2a2a;
+	background-color: @white;
+	font-family: @b-ff;
+	font-size: @b-fs + 2;
+	line-height: @b-lh;
+	svg{
+		fill: currentColor;
+		width: 100%;
+		height: 100%;
+	}
+	&.padtop{
+		@media @media-screen{padding-top: 105px;} 
+	}
+	h1,h2,h3,h4,h5,h6{
+		//font-family: @b-ff;
+		small{
+			font-weight: 400;
+			font-size: @b-fs + 2;
+		}
+	}
+	h5{
+		text-transform: uppercase;
+		font-size: @b-fs + 2px;
+	}
+	ul{
+		&.ul-site{
+			line-height: @b-lh - 4;
+			li{
+				padding-left: 5px;
+				margin-bottom: 12px;
+				&::before{
+					width: 18px;
+					height: 18px;
+					background-color: @lp-blue;
+					z-index: -1;
+					top: -3px;
+				}
+			}
+		}
+	}
+	*::selection {
+		background-color: @lp-blue;
+	}
+}
+.lp-hlebzavod__{
+	&block-content{	
+		overflow: hidden;
+		position: relative;
+		background-position: center;
+		background-repeat: repeat;
+		background-image: url("@{url-path-img}/lp-hlebzavod/bg-page.jpg");
+		//min-height: 8000px;
+		.container-fluid{height: 100%}
+		
+		@media @media-device {padding-left: 15px; padding-right: 15px;}
+	}
+	&panel{
+		position: relative;
+	}
+	&block-inner{
+		background-position: center;
+		background-repeat: repeat;
+		background-image: url("@{url-path-img}/lp-hlebzavod/bg-inner.jpg");
+		margin: 0 auto;		
+		max-width: 1620px;
+		@media @media-screen {width: 95vw;}
+		&.is--before{
+			padding: 0;
+		}
+	}
+	&block-content-before{
+		@media @media-device {padding-left: 15px; padding-right: 15px;}
+	    @media @media-screen {
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			width: 100%;
+		    transform: translateY(65%);
+	    }
+	}
+	&block-container{
+		max-width: 1620px;
+		position: relative;
+		z-index: 2;
+		@media @media-screen {width: 95vw;}
+		&.is--before{
+			padding-top: 20px;
+			padding-bottom: 20px;
+			height: 124px;
+			position: relative;
+			&::before{
+				content: '';
+				position: absolute;
+				display: block;
+				left: 0px;
+				right: 0px;
+				top: 20px;
+				bottom: 20px;
+				background-position: center;
+				background-repeat: repeat-x;
+				background-image: url("@{url-path-img}/lp-hlebzavod/bg-inner-before.png");
+
+			}
+		}
+	}
+	&container{
+		max-width: 1580px;
+		@media @media-screen {width: 95vw;}
+		//@media @media-size-xxl {width: 85vw;}
+
+	} 
+	&heading{
+		font-family: @b-ff-2;
+		font-weight: 400;
+		&.is--center{
+			text-align: center;
+		}
+		&.is--device-center{
+			@media @media-device {
+				text-align: center;
+			}			
+		}
+		&.is--coffe{
+			color: @coffe;
+		}
+		&.is--brown{
+			color: fadeout(@brown, 50%);
+		}
+		&.is--grey{
+			color: @grey;
+		}
+		&.is--white{
+			color: #e9e5de;
+		}
+		&.is--xl{
+			.calcFontSize(26, 83, 320, 1680);
+			.calcLineHeight(30, 90, 320, 1680);
+		}
+		&.is--lg{
+			.calcFontSize(26, 56, 320, 1680);
+			.calcLineHeight(30, 60, 320, 1680);
+		}
+		&.is--md{
+			.calcFontSize(24, 36, 320, 1680);
+			.calcLineHeight(28, 40, 320, 1680);
+		}
+		&.is--1070{
+			margin-left: auto;
+			margin-right: auto;
+			max-width: 1070px;
+		}
+		&.is--left-cols-6{			
+			@media @media-screen {
+				margin-left: ~"calc(50% + 15px)";
+			}
+		}
+		&.is--left-cols-2{
+			@media @media-screen {
+				margin-left: ~"calc(15% + 15px)";
+			}
+		}
+		&.is--footer{
+			.calcFontSize(26, 54, 320, 1680);
+			.calcLineHeight(30, 58, 320, 1680);
+			@media @media-screen {
+				margin-left: ~"calc(10.5% + 15px)";
+				max-width: 50vw;
+			}
+		}
+	}
+	&text-block {
+		font-size: @b-fs + 2;
+		line-height: @b-lh;
+		&.is--xl{
+			.calcFontSize(18, 23, 320, 1680);
+			.calcLineHeight(22, 31, 320, 1680);
+		}
+		&.is--925{
+			margin-left: auto;
+			margin-right: auto;
+			max-width: 925px;
+		}
+		&.is--1045{
+			margin-left: auto;
+			margin-right: auto;
+			max-width: 1045px;
+		}
+		&.is--center{
+			text-align: center;
+		}
+		&.is--device-center{
+			@media @media-device {
+				text-align: center;
+			}			
+		}
+		&.is--1070{
+			margin-left: auto;
+			margin-right: auto;
+			max-width: 1070px;
+		}
+		&.is--left-cols-6{			
+			@media @media-screen {
+				margin-left: ~"calc(50% + 15px)";
+			}
+		}
+		&.is--left-cols-2{
+			@media @media-screen {
+				margin-left: ~"calc(15% + 15px)";
+			}
+		}
+		p,div{
+			@media @media-size-xxl {margin-bottom: 0;}
+			margin-bottom: 10px;
+		}
+		h2,h3{
+			//font-family: @b-ff-2;
+			margin-bottom: 10px;
+		}
+		h3{
+			.calcFontSize(20, 29, 320, 1680);
+			.calcLineHeight(24, 33, 320, 1680);
+			color: @lp-blue-dark
+		}
+		h4{
+			color: @lp-blue-dark;
+		}
+
+	}
+	&bg{		
+		background-repeat: no-repeat;
+		background-position: center;		
+		background-size: cover;
+		position: absolute;
+		z-index: 1;
+		@media @media-device {display: none;}
+		&.is--bread{
+			max-width: 475px;
+			max-height: 510px;
+			width: 26vw;
+			height: 28vw;
+			top: 10vw;
+			@media @media-size-mdl {
+				display: none;
+			}
+		}
+		&.is--mill-line{
+			max-width: 620px;
+			max-height: 720px;
+			width: 34vw;
+			height: 39vw;
+			right: -10vw;
+			top: 33vw;
+		}
+		&.is--bread-line{
+			max-width: 475px;
+			max-height: 360px;
+			width: 30vw;
+			height: 25vw;
+			left: -4vw;
+			bottom: 0.5vw;
+		}
+		&.is--drying{
+			max-width: 775px;
+			max-height: 525px;
+			width: 42vw;
+			height: 29vw;
+			right: -6.5vw;
+			top: 5.5vw;
+		}
+		&.is--packaging-item4{
+			max-width: 1860px;
+			max-height: 790px;
+			width: 97vw;
+			height: 42vw;
+			@media @media-device {
+				position: relative;
+				display: block;
+				margin: 0 auto;
+			}
+			@media @media-screen {
+				left: 50%;
+				bottom: 3.5vw;
+				transform: translateX(-50%);				
+			}
+		}
+		&.is--packaging-item5{
+			max-width: 1900px;
+			max-height: 850px;
+			width: 99vw;
+			height: 45vw;
+			@media @media-device {
+				position: relative;
+				display: block;
+				margin: 0 auto;
+			}
+			@media @media-screen {
+				left: 50%;
+				bottom: 2.5vw;
+				transform: translateX(-50%);				
+			}
+		}
+		&.is--packaging-item6{
+			max-width: 1430px;
+			max-height: 660px;
+			width: 78vw;
+			height: 36vw;
+			@media @media-device {
+				position: relative;
+				display: block;
+				margin: 0 auto;
+			}
+			@media @media-screen {
+				left: 50%;
+				bottom: -20vw;
+				transform: translateX(-50%);				
+			}
+		}
+		&.is--croissant-line{
+			max-width: 450px;
+			max-height: 450px;
+			width: 25vw;
+			height: 25vw;
+			right: -3vw;
+			bottom: 3.5vw;
+		}
+		&.is--cookies-two{
+			max-width: 480px;
+			max-height: 480px;
+			width: 26vw;
+			height: 26vw;
+			left: -5.5vw;
+			bottom: -12.5vw;
+		}
+		&.is--cookies-left{
+			max-width: 500px;
+			max-height: 500px;
+			width: 27vw;
+			height: 27vw;
+			left: -5vw;
+			bottom: -1vw;
+		}
+		&.is--cookies-right{
+			max-width: 610px;
+			max-height: 610px;
+			width: 33vw;
+			height: 33vw;
+			right: -13.2vw;
+			bottom: -8.6vw
+		}
+		&.is--hand{
+			max-width: 710px;
+			max-height: 450px;
+			width: 39vw;
+			height: 25vw;
+			right: -2.2vw;
+			bottom: 13.1vw;
+		}
+	}
+	&preview{
+		margin-left: auto;
+		margin-right: auto;
+	}
+}
+
+/*===== heading-block =====*/
+.hlebzavod_hb__{
+	&block{		
+		position: relative;
+		z-index: 1;
+		color: @white;
+		background-size: cover;
+		background-position: center;
+		background-repeat: no-repeat;
+	}
+	&container{
+		position: relative;
+		z-index: 2;
+		@media @media-size-xs {
+			padding-top: 40px;
+			padding-bottom: 40px;
+		}
+		@media @media-size-sm {
+			padding-top: 40px;
+			padding-bottom: 40px;
+			height: ~"calc(100vh - 105px)";
+			//min-height: 75vh;	
+		}
+		@media @media-size-sm-l {
+			//min-height: 900px;
+		}
+		@media @media-screen {
+			padding-top: 9.4vw;
+			padding-bottom: 11.7vw;
+			min-height: ~"calc(100vh - 105px)";
+			//max-height: 1080px;
+		}
+
+	}
+	&inner{
+		position: relative;
+		z-index: 2;
+		text-align: center;
+		max-width: 550px;
+		margin: 0 auto;
+		@media @media-size-sm {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			width: 100%;
+			transform: translate(-50%, -50%);
+		}
+		@media @media-size-sm-p {
+			max-width: 550px;
+		}
+		@media @media-size-sm-l {
+			max-width: 850px;
+		}
+		@media @media-screen {
+			max-width: 900px;
+		}
+	}
+	&row{
+		flex-wrap: wrap;
+		@media @media-device {justify-content: center;}
+	}
+	&cols{
+	}
+	&heading{
+		font-family: @b-ff-2;
+		.calcFontSize(28, 76, 320, 1680);
+		.calcLineHeight(34, 70, 320, 1680);
+		margin-bottom: 20px;
+		@media @media-device {
+			br{display: none;}
+		}
+		@media @media-screen {margin-bottom: 1.5vw;}
+	}
+	&heading-small{
+		font-family: @b-ff-2;
+		.calcFontSize(20, 45, 320, 1680);
+		.calcLineHeight(24, 49, 320, 1680);
+	}
+
+	&scrollto{
+		text-align: center;
+		@media @media-size-xs {display: none}
+		@media @media-notsmart {
+			position: absolute;
+			z-index: 2;
+			left: 50%;
+			transform: translateX(-50%);
+			bottom: ~"calc(5% + 124px)";			
+		}
+		@media @media-screen {			
+			bottom: 8.5vw;
+		}
+	}
+	&scrollto-link{
+		display: inline-block;
+		width: 70px;
+		height: 70px;
+		transition: @transition-site;		
+		animation: scroll 1.5s infinite ease-in-out;
+		color: @white;
+		&:hover{color: @coffe-light;}	
+		svg{
+			width: 100%;
+			height: 100%;
+			display: block;
+			fill: currentColor;						
+		}
+	}
+	@keyframes scroll {
+		0%   {transform: translateY(0);}
+		50%   {transform: translateY(5px);}
+		100% {transform: translateY(0);}
+	}
+}
+/*===== logotip =====*/
+.hlebzavod_logotip__{	
+	&block{
+		padding-top: 35px;
+		padding-bottom: 35px;
+		@media @media-screen {
+			padding-top: 9.2vw;
+			padding-bottom: 4vw;
+		}
+	}
+	&text-block{
+		margin-bottom: 30px;
+		@media @media-screen {margin-bottom: 2.3vw;}
+	}
+	&step{		
+		margin: 0 auto;
+		max-width: 925px;
+		max-width: 1045px;
+	}
+	&step-row{
+		align-items: center;
+	}
+	&step-cols{
+		@media @media-size-xs-p {
+			.makeCols(12, 12);
+		}
+		@media @media-size-xs-l {
+			.makeCols(12, 12);
+			&.is--item{
+				.makeCols(3, 12);
+			}
+			&.is--plus{
+				.makeCols(1.4, 12);
+			}
+		}
+		@media @media-size-xxl {
+			&.is--logotip{min-width: 255px;}
+		}
+	}
+	&step-item{
+		text-align: center;
+		font-size: @b-fs + 2;
+		line-height: @b-lh - 4;
+	}
+	&step-preview{
+		color: @coffe-light;
+		margin: 0 auto 20px;		
+		width: 60px;
+		height: 60px;
+		@media @media-screen {	
+			width: 75px;
+			height: 75px;
+		}
+	}
+	&step-plus{
+		color: @coffe-light;
+		width: 26px;
+		height: 26px;
+		margin: 0 auto;
+		@media @media-size-xs-p {
+			margin: 20px auto;
+		}
+	}
+	&step-arrow{
+		color: @coffe-light;
+		@media @media-size-xs {				
+			width: 80px;
+			height: 80px;
+			transform: rotate(90deg);
+			margin: 20px auto;
+		}
+		@media @media-size-sm {				
+			width: 80px;
+			height: 80px;
+		}
+		@media @media-screen {				
+			width: 150px;
+			height: 150px;
+		}
+	}
+	&step-note{
+		color: @coffe;
+	}
+	&logotip img{
+		margin: 0 auto; 
+	}
+}
+/*===== packaging1 =====*/
+.hlebzavod_packaging1__{
+	&block{
+		padding-top: 35px;
+		padding-bottom: 35px;
+		@media @media-screen {
+			padding-top: 3.5vw;
+			padding-bottom: 3.5vw;
+		}
+	}
+	&text-block{
+		margin-bottom: 25px;
+	}
+}
+/*===== packaging2 =====*/
+.hlebzavod_packaging2__{	
+	&block{
+		overflow: hidden;
+		position: relative;
+		padding-top: 35px;
+		padding-bottom: 35px;
+		@media @media-screen {
+			padding-top: 4.5vw;
+			padding-bottom: 7.5vw;
+		}
+	}
+	&heading-two{
+		padding-top: 40px;
+		@media @media-screen {
+			padding-top: 7.3vw;
+		}
+	}
+}
+/*===== packaging3 =====*/
+.hlebzavod_packaging3__{	
+	&block{
+		padding-top: 35px;
+		padding-bottom: 35px;
+		@media @media-screen {
+			padding-top: 9.5vw;
+			padding-bottom: 42vw;
+		}
+	}
+}
+/*===== packaging4 =====*/
+.hlebzavod_packaging4__{
+	&block{
+		padding-top: 35px;
+		padding-bottom: 35px;
+		@media @media-screen {
+			padding-top: 4vw;
+			padding-bottom: 42vw;
+		}
+	}
+}
+/*===== packaging5 =====*/
+.hlebzavod_packaging5__{
+	&block{
+		padding-top: 35px;
+		padding-bottom: 35px;
+		position: relative;
+		overflow: hidden;
+		@media @media-screen {    
+			padding-top: 8.3vw;
+    		padding-bottom: 16vw;		
+			&::before{
+				content: '';
+				position: absolute;
+				display: block;
+				left: 0px;
+				right: 0px;
+				bottom: 20px;
+				background-position: center;
+				background-repeat: repeat-x;
+				height: 130px;
+				background-image: url("@{url-path-img}/lp-hlebzavod/bg-inner-after.png");
+
+			}
+		}
+	}
+	&panel{
+		@media @media-device {
+			padding-bottom: 160px;
+			position: relative;
+			background-position: center;
+			background-repeat: repeat;
+			background-image: url("@{url-path-img}/lp-hlebzavod/bg-inner.jpg");
+			&::before{
+				content: '';
+				position: absolute;
+				display: block;
+				left: 0px;
+				right: 0px;
+				bottom: 5px;
+				background-position: center;
+				background-repeat: repeat-x;
+				height: 130px;
+				background-image: url("@{url-path-img}/lp-hlebzavod/bg-inner-after.png");
+
+			}
+		}
+	}
+}
+/*===== footer =====*/
+.hlebzavod_footer__{
+	&block{
+		padding-top: 35px;
+		padding-bottom: 35px;
+		position: relative;
+		overflow: hidden;
+		@media @media-screen {    
+			padding-top: 35.5vw;
+			padding-bottom: 14.8vw;
+		}
+	}
+}
