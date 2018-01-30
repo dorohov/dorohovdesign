@@ -1,0 +1,163 @@
+@site-name : "site";
+@lp-name:	"lp-albina-bilbord";
+/* Подключение стилей сайта */
+@import "@{site-name}/var.less";
+
+
+@lp-blue-light:		#2887e0;
+@lp-blue:			#163b60;
+@lp-blue-dark:		#285e89;
+@lp-blue-link:		#0084ff; 
+@lp-grey:			#eaeaec;
+
+@coffe:				#4a2e23;
+@coffe-light:		#816f63;
+@brown:				#9c5c00;
+@grey:				#857269;
+@white10:			darken(@white, 10%); 	//#e6e6e6
+
+//
+
+@lato:					lato-300;
+@lato-500:				lato-500;
+
+@b-ff: @lato; 
+.include-custom-font(
+	@family: @tavolga, 
+	@src-name: @tavolga, 
+	@weight: normal, 
+	@style: normal
+	){
+	@font-face{			
+		font-family: "@{family}";			
+		src:	url('@{url-path-fonts}/@{src-name}.woff2') format('woff2'),
+				url('@{url-path-fonts}/@{src-name}.woff') format('woff');
+		font-weight: @weight;
+		font-style: @style;		
+	}
+}
+.include-custom-font(
+	@family: @lato,
+	@src-name: @lato,
+	@weight: 400, 
+	@style: normal
+	);
+.include-custom-font(
+	@family: @lato,
+	@src-name: @lato-500,
+	@weight: 500, 
+	@style: normal
+	);
+
+.albina-bilbord-page-content{
+	color: #fefefe;
+	background-color: @white;
+	font-family: @b-ff;
+	font-size: @b-fs + 2;
+	line-height: @b-lh;
+	svg{
+		fill: currentColor;
+		width: 100%;
+		height: 100%;
+	}
+	&.padtop{
+		@media @media-screen{padding-top: 105px;} 
+	}
+	*::selection {
+		background-color: @lp-blue;
+	}
+	h1,h2,h3,h4,h5,h6{
+		font-family: @b-ff;		
+	}
+}
+.lp-albina-bilbord__{
+	&block-content{	
+		overflow: hidden;
+		position: relative;
+	}
+	&panel{
+		position: relative;
+	}
+	&container{
+		max-width: 1580px;
+		@media @media-screen {width: 95vw;}
+		//@media @media-size-xxl {width: 85vw;}
+
+	} 
+	&heading-group{
+		position: absolute;
+		z-index: 2;
+		bottom: 4vw;
+		right: 15px;
+		text-align: right;
+		text-transform: uppercase;
+		letter-spacing: 1px;
+		@media @media-screen {
+			letter-spacing: 3px;
+			right: 7.7vw;
+		}
+	}
+	&heading{
+		font-weight: 500;
+		.calcFontSize(12, 65, 320, 1680);
+		.calcLineHeight(12, 65, 320, 1680);
+		margin-bottom: 10px;
+		@media @media-screen {
+			margin-bottom: 25px;
+		}
+	}
+	&heading-small{
+		.calcFontSize(10, 36, 320, 1680);
+		.calcLineHeight(10, 36, 320, 1680);
+	}
+	&bg{		
+		background-repeat: no-repeat;
+		background-position: center;		
+		background-size: cover;
+		position: absolute;
+		z-index: 1;
+		//@media @media-device {display: none;}
+		&.is--ipad{
+			max-width: 1035px;
+			max-height: 800px;
+			width: 54vw;
+			height: 42vw;
+			left: 0vw;
+			bottom: -14%;
+			z-index: 2;
+		}
+		&.is--mackbook{
+			max-width: 750px;
+			max-height: 500px;
+			width: 40vw;
+			height: 27vw;
+			right: 0vw;
+			bottom: -12.5%;
+			z-index: 2;
+		}
+		&.is--blik-item1{
+			max-width: 840px;
+			max-height: 1260px;
+			width: 44vw;
+			height: 66vw;
+			right: 0vw;
+			bottom: -2.5%;
+		}
+		&.is--blik-item2{
+			max-width: 1035px;
+			max-height: 2060px;
+			width: 54vw;
+			height: 108vw;
+			left: 0vw;
+			bottom: -60%;
+		}
+		&.is--blik-item3{
+			max-width: 890px;
+			max-height: 1715px;
+			width: 47vw;
+			height: 90vw;
+			right: 0vw;
+			bottom: -60%;
+		}
+	}
+}

@@ -1,0 +1,342 @@
+@site-name : "site";
+@lp-name:	"lp-aegospotami";
+/* Подключение стилей сайта */
+@import "@{site-name}/var.less";
+
+@lp-blue: 				#061b4a;
+@lp-blue-light: 		#a5bfe0;
+//
+@lp-yellow:			#fcf06d;
+@lp-green:			#7dc5bb;
+@lp-green-dark:		#dee8a9;
+@lp-yellow-dark:	#e7c564;
+//@lp-blue:			#8bcee4;
+@white10:			darken(@white, 10%); 	//#e6e6e6
+@black-light:		#303030;
+@green: 			#36784f;
+
+@geometria:			geometria;
+
+@b-ff: 				@geometria;
+.include-custom-font(
+	@family: @geometria, 
+	@src-name: @geometria, 
+	@weight: normal, 
+	@style: normal
+	){
+	@font-face{			
+		font-family: "@{family}";			
+		src:	url('@{url-path-fonts}/@{src-name}.woff2') format('woff2'),
+				url('@{url-path-fonts}/@{src-name}.woff') format('woff');
+		font-weight: @weight;
+		font-style: @style;		
+	}
+}
+.include-custom-font(
+	@family: @geometria,
+	@src-name: @geometria,
+	@weight: 400, 
+	@style: normal
+	);
+
+.aegospotami-page-content{
+	color: @black;
+	background-color: #f7f7f7;
+	font-family: @b-ff;
+	font-size: @b-fs + 2;
+	line-height: @b-lh;
+	&.padtop{
+		@media @media-screen{padding-top: 105px;} 
+	}
+	h1,h2,h3,h4,h5,h6{font-family: @b-ff;}
+	h5{
+		text-transform: uppercase;
+		font-size: @b-fs + 2px;
+	}
+	ul{
+		&.ul-site{
+			line-height: @b-lh - 4;
+			li{
+				padding-left: 5px;
+				margin-bottom: 12px;
+				&::before{
+					width: 18px;
+					height: 18px;
+					background-color: @green;
+					z-index: -1;
+					top: -3px;
+				}
+			}
+		}
+	}
+}
+.lp-aegospotami__{
+	&block-content{	
+		overflow: hidden;
+		position: relative;
+		//min-height: 8000px;
+		.container-fluid{height: 100%}
+	}
+	&container{
+    	max-width: 1570px;
+		@media @media-screen {width: 95vw;}
+		@media @media-size-xxl {width: 85vw;}
+
+	} 
+	&panel{
+		position: relative;
+	}		
+	&bg{		
+		background-repeat: no-repeat;
+		background-position: center;		
+		background-size: cover;
+		position: absolute;
+		z-index: 1;
+		&.is--mackbook{
+			z-index: 2;
+			max-width: 1500px;
+			max-height: 1025px;
+			width: 79vw;
+			height: 54vw;
+			left: 50%;
+			top: -13vw;
+			transform: translateX(-50%);
+		}
+		&.is--iphone{
+			z-index: 3;
+			max-width: 650px;
+			max-height: 1170px;
+			width: 34vw;
+			height: 61vw;
+			right: 0;
+			top: 4.5vw;
+		}
+		&.is--hand{
+			max-width: 930px;
+			max-height: 850px;
+			width: 49vw;
+			height: 45vw;
+			left: 0;
+			bottom: 31.5vw;
+		}
+		&.is--flag{
+			z-index: 3;
+			max-width: 375px;
+			max-height: 775px;
+			width: 20vw;
+			height: 41vw;
+			left: 3.5vw;
+			top: 19vw;
+		}
+	}
+	&heading{
+		text-align: center;
+		color: #636363;
+		margin-bottom: 0;
+		font-weight: 400;
+		.calcFontSize(24, 56, 320, 1680);
+		.calcLineHeight(24, 56, 320, 1680);
+		&.is--abs{
+			position: absolute;
+			top: 0px;
+			z-index: 5;
+			left: 0px;
+			width: 100%;
+			padding: 0 15px;
+
+		}
+	}
+}
+
+.iphone-slider{
+	position: relative;
+	transform: translate(-0.3vw, -7.8vw);
+}
+.iphone-slider__{
+	&bg{
+		z-index: 1;
+		position: relative;
+		max-width: 1465px;
+		max-height: 1120px;
+		width: 76.31vw;
+		height: 58.34vw;
+		margin: 0 auto;
+		background-image: url("@{url-path-img}/lp-aegospotami-fs/bg-imac-1465-1120.png");
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: contain;
+	}
+	&container{
+		position: absolute;
+		z-index: 1;
+		max-width: 1160px;
+		max-height: 665px;
+		top: 4%;
+		left: 10.5%;
+		width: 60.5vw;
+		height: 34.64vw;
+		border-radius: 5px;
+	}
+	&item{
+		position: absolute;
+		left: 0;
+		top: 0;
+		width: 100%;
+		height: 100%;
+		opacity: 0;
+		background-size: contain;
+		background-position: center;
+		background-repeat: no-repeat;
+		transition: @transition-site;
+		transition: all 0.5s;
+		//transform-origin: 0% center;
+		//transform: scale(0, 1);
+		//transition: transform 0.5s;
+		&.is--active{
+			opacity: 1;
+			//transform: scale(1, 1);
+			//transform-origin: 100% center;
+		}
+	}
+	&blurscreen{	
+		display: none;
+		/*position: relative;	
+		background-size: contain;
+		background-position: center;
+		background-repeat: no-repeat;
+		@media @media-size-xs {display: none;} 
+		@media @media-size-xs-l {
+			top: 35%;
+			left: 45%;
+		} 
+		@media @media-notsmart {
+			max-width: 1410px;
+			max-height: 725px;
+			top: 0;
+			left: 0;	
+			width: 77vw;
+			height: 40vw;
+		}*/
+	}
+	&blurscreen-inner{
+		/*background-size: contain;
+		background-position: center;
+		background-repeat: no-repeat;
+		position: absolute;
+		left: 0;
+		top: 0;
+		width: 100%;
+		height: 100%;
+		transition: @transition-site;
+		transition: all 0.5s;*/
+	}
+	&btn{
+		//display: none;
+		background: none;
+		border: none;
+		color: #a88443; 
+		position: absolute;
+		width: 34px;
+		height: 34px;
+		z-index: 5;
+		top: 33.5%;
+		transform: translateY(-50%);
+		transition: @transition-site;
+		@media @media-notsmart {			
+			width: 50px;
+			height: 50px;
+		}
+		&.is--left{
+			left: 15px;
+			@media @media-screen {
+				left: 9.5vw;
+			}
+			&:hover{
+				margin-left: -5px;
+			}
+		}
+		&.is--right{
+			right: 15px;
+			@media @media-screen {
+				right: 9.5vw;
+			}
+			&:hover{
+				margin-right: -5px;
+			}
+		}
+	}
+	&btn-arrow{    
+		display: block;
+		width: 100%;
+		height: 100%;
+		svg{    
+			display: block;
+			width: 100%;
+			height: 100%;
+			fill: currentColor;
+		}
+	}
+	&dots{
+		//display: none;
+		display: flex;
+		margin: 0;
+		padding: 0;
+		justify-content: center;
+		list-style: none;
+		position: absolute;
+		top: 58.3%;
+		z-index: 2;
+		left: 50%;
+		transform: translateX(-50%);		
+	}
+	&dot{
+		margin: 0 4px;
+		@media @media-notsmart {
+			margin: 0 8px;
+		}
+	}
+	&dot-btn{
+		width: 8px;
+		height: 8px;
+		border-radius: 50%;
+		background-color: #d4d4d4;			
+		transition: @transition-site;
+		cursor: pointer;
+		border: 0;
+		outline: none;
+		display: block;
+		@media @media-notsmart {
+			width: 16px;
+			height: 16px;
+		}
+		.iphone-slider__dot.is--active &{
+			background-color: #d4d4d4;			
+			cursor: default;
+			transform: scale(1.5);
+		}
+	}
+	&count{
+		display: none;
+		/*@media @media-size-xs {display: none;}
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		display: flex;
+		justify-content: center;
+		align-items: flex-end;
+		position: absolute;
+		bottom: 0;
+		left: 50%;
+		transform: translateX(-50%);*/
+	}
+	&count-item{
+		/*.calcFontSize(24, 28, 320, 1680);
+		.calcLineHeight(24, 28, 320, 1680);
+		&.is--active{
+			.calcFontSize(54, 58, 320, 1680);
+			.calcLineHeight(46, 50, 320, 1680);
+			color: @green;
+			font-weight: 700;
+		}*/
+	}
+}
