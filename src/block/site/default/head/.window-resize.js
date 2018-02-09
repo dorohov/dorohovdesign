@@ -11,7 +11,7 @@ var h_window = $(window).height(),
 
 if (device.mobile() || device.tablet()) {
 	$('.navbar').addClass('navbar-fixed-top');
-	$('.navbar-btn__cols').appendTo('.navbar-header__row');	 
+	//$('.navbar-btn__cols').appendTo('.navbar-header__row');	 
 } else {
 }
 if (device.mobile()) {

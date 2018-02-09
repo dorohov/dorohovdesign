@@ -15,7 +15,7 @@ $('.text-block img').parent().addClass('_tb__img');
 
 if (device.mobile() || device.tablet()) {
 //if (device.tablet()) {
-	$('._fs__soc-block').clone().appendTo('.navbar-collapse');
+	//$('._fs__soc-block').clone().appendTo('.navbar-collapse');
 }
 $('#portfolio-filter option[value="'+url+'"]').attr('selected' , 'selected'); 
 $('#portfolio-filter').on('change', function () {

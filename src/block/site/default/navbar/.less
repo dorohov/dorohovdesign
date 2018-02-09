@@ -257,6 +257,17 @@
 			padding: 0 15px;
 		}
 	}
+	&.is--hidden{
+		display: none;
+		@media @media-device-lg {
+			display: block;
+		}
+	}
+	&.is--visible{
+		@media @media-device-lg {
+			display: none;
+		}
+	}
 }
 .navbar-collapse{
 	padding: 0;	

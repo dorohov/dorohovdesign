@@ -265,7 +265,11 @@
 }
 ._fs__soc-block{
 	display: flex;
-	@media @media-device{flex-wrap: wrap;}
+	@media @media-device-lg{flex-wrap: wrap;}
+	&.is--hidden{
+		@media @media-device-lg{display: flex;}
+		display: none;
+	}
 }
 ._fs__soc{
 	width: 20%;
@@ -1221,6 +1225,17 @@ textarea._frms__form-control{
 			line-height: 36px;
 			border-radius: 30px;
 			padding: 0 15px;
+		}
+	}
+	&.is--hidden{
+		display: none;
+		@media @media-device-lg {
+			display: block;
+		}
+	}
+	&.is--visible{
+		@media @media-device-lg {
+			display: none;
 		}
 	}
 }

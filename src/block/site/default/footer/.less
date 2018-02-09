@@ -147,7 +147,11 @@
 }
 ._fs__soc-block{
 	display: flex;
-	@media @media-device{flex-wrap: wrap;}
+	@media @media-device-lg{flex-wrap: wrap;}
+	&.is--hidden{
+		@media @media-device-lg{display: flex;}
+		display: none;
+	}
 }
 ._fs__soc{
 	width: 20%;
