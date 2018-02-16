@@ -73,10 +73,14 @@ $(function() {
 			if(next.length) {			
 				block.find('.iphone-slider__blurscreen .iphone-slider__blurscreen-inner')
 					.attr('style', next.attr('data-style'));
+				block.find('.iphone-slider__blurscreen .iphone-slider__blurscreen-inner')
+					.html(next.attr('data-text'));
 				
 			} else {			
 				block.find('.iphone-slider__blurscreen .iphone-slider__blurscreen-inner')
 					.attr('style', block.find('.iphone-slider__item').eq(0).attr('data-style'));
+				block.find('.iphone-slider__blurscreen .iphone-slider__blurscreen-inner')
+					.html(block.find('.iphone-slider__item').eq(0).attr('data-text'));
 			}
 			
 		});

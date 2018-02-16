@@ -279,6 +279,7 @@
 		&.is--table{
 			padding-right: 25px;
 			background-size: 16px;
+			display: inline-block;
 		}
 		&.is--income{
 			display: inline-block;
@@ -310,6 +311,9 @@
 				padding-left: 10px;
 			}
 		}
+	}
+	&preview{
+		img{margin: 0 auto}
 	}
 }
 
@@ -552,6 +556,13 @@
 				}
 			}
 		}
+		&.is--top{
+			&.is--manikur{
+				@media @media-screen {
+					padding-bottom: 9.5vw;
+				}
+			}
+		}			
 		&.is--bg-bottom{			
 			background-color: @white4;
 			z-index: 1;
@@ -564,6 +575,12 @@
 			}
 			@media @media-size-md {
 				padding-top: 4vw;
+			}
+			&.is--manikur{
+				@media @media-screen {
+					padding-top: 5vw;
+				}
+
 			}
 		}
 		&.is--yarus{
@@ -596,6 +613,14 @@
 				}
 			}
 		}
+		&.is--line1{
+			&.is--manikur{
+				margin-bottom: 40px;
+				@media @media-screen {
+					margin-bottom: 8.2vw;
+				}
+			}
+		}
 	}
 	&cols{
 		@media @media-device {
@@ -608,6 +633,18 @@
 			}
 			@media @media-screen {
 				.makeCols(6, 12);
+			}
+		}
+		&.is--cols-4{
+			.makeCols(12, 12);
+			@media @media-screen {
+				.makeCols(4, 12);
+			}
+		}
+		&.is--cols-8{
+			.makeCols(12, 12);
+			@media @media-screen {
+				.makeCols(8, 12);
 			}
 		}
 		&.is--step1-note{
@@ -661,6 +698,9 @@
 	&item{
 		&.is--step1{
 			max-width: 640px;
+			&.is--manikur{
+				max-width: 700px;
+			}
 		}
 		&.is--step2{
 			position: relative;
@@ -716,6 +756,34 @@
 		}
 	}
 	&preview{
+		&.is--item1{
+			&.is--manikur{
+				margin-bottom: 5px;
+			}
+		}
+		&.is--item2-2{
+			&.is--manikur{
+				padding-top: 15px;
+			}
+		}
+		&.is--item3-1{
+			&.is--manikur{
+				margin-bottom: 20px;
+				@media @media-screen {
+					padding-left: 3vw;
+				}
+			}
+		}
+		&.is--item3-2,
+		&.is--item3-3{
+			&.is--manikur{
+				@media @media-screen {
+					margin-bottom: 5vw;
+				}
+			}
+		}
+
+
 		&.is--step2{
 			position: relative;
 			@media @media-screen {
@@ -953,6 +1021,11 @@
 		@media @media-screen {
 			padding: 4vw 0;
 		}
+		&.is--manikur{
+			@media @media-screen {
+				padding-top: 6vw;
+			}
+		}
 	}
 	&container{}
 	&inner{}
@@ -1022,6 +1095,9 @@
     	@media @media-screen {
 		    margin-bottom: 6.3vw;
     	}
+		&.is--manikur{
+			margin-bottom: 0;
+		}
 	}
 	&adv{
 		*{			

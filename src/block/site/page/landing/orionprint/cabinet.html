@@ -1,0 +1,62 @@
+<div class="{{block_prefix}}block">
+	<div class="container {{page_prefix}}container  {{block_prefix}}container">
+		<div class="{{block_prefix}}elem">
+			<h2 class="{{page_prefix}}heading {{block_prefix}}heading  {{heading_mod}}">Личный кабинет</h2>			
+			<div class="iphone-slider" data-interval-ms="0">
+				<div class="iphone-slider__bg">
+					<div class="iphone-slider__container">
+						<div class="iphone-slider__item" 
+							style="background-image:url({{url-path-img}}/lp-orionprint/slider-item1-865x540.jpg)"
+							data-text="<h4>Описание </h4><p>В&nbsp;профиле личного кабинете все шаги последовательны, довольно стандартны и&nbsp;понятны пользователю. </p><p>После введения своих личных данных и&nbsp;добавления товаров в&nbsp;корзину, следуют способы доставки и&nbsp;оплаты. </p><p>Для юридических лиц предусмотрена загрузка реквизитов компании.</p>"
+						></div>
+						<div class="iphone-slider__item" 
+							style="background-image:url({{url-path-img}}/lp-orionprint/slider-item2-865x540.jpg)"
+							data-text="<h4>Возможность повторить заказ</h4><p>Так&nbsp;же в&nbsp;личном кабинете есть история заказов, где указаны все параметры предыдущих заказов и&nbsp;в&nbsp;обработке. Здесь&nbsp;же можно и&nbsp;повторить заказ со&nbsp;статусом «выполнен», добавив его в&nbsp;корзину.</p><h4>Поиск по&nbsp;заказам</h4><p>Для удобства пользователей, был предусмотрен поиск по&nbsp;заказам, а&nbsp;так&nbsp;же можно отфильтровать заказы по&nbsp;дате оформления.</p>"
+						></div>
+					</div>
+				</div>
+				<div class="iphone-slider__blurscreen">
+					<div class="iphone-slider__blurscreen-inner  {{page_prefix}}text-block"></div>
+				</div>
+				<button type="button" class="iphone-slider__btn  is--right ">
+					<span class="iphone-slider__btn-arrow">[[azbntple tpl="/src/block/site/default/svg-sprite/.html" icon-name="lp-orionprint-slider-right" ]]</span>
+				</button>
+				<button type="button" class="iphone-slider__btn  is--left ">
+					<span class="iphone-slider__btn-arrow">[[azbntple tpl="/src/block/site/default/svg-sprite/.html" icon-name="lp-orionprint-slider-left" ]]</span>
+				</button>
+				<ul class="iphone-slider__dots">
+					<li class="iphone-slider__dot is--active">
+						<button class="iphone-slider__item-btn" ></button>
+					</li>
+					<li class="iphone-slider__dot">
+						<button class="iphone-slider__item-btn" ></button>
+					</li>
+				</ul>
+				<ul class="iphone-slider__count">
+					<li class="iphone-slider__count-item iphone-slider__count-item_number is--active ">03</li>
+					<li class="iphone-slider__count-item">/</li>
+					<li class="iphone-slider__count-item iphone-slider__count-item_amount">03</li>
+				</ul>
+			</div>	
+		</div>
+		<div class="{{block_prefix}}elem">
+			<h2 class="{{page_prefix}}heading {{block_prefix}}heading  is--heading  is--small">Корзина</h2>	
+			<div class="{{page_prefix}}heading-small {{block_prefix}}heading-small">Пошаговое оформление товаров</div>	
+			<div class="{{block_prefix}}preview">
+				<img src="{{url-path-img}}/lp-orionprint/bg-ipad-1100x560.png" alt="">
+			</div> 
+		</div> 
+	</div> 
+	[[azbntple
+		tpl="/src/block/site/page/landing/orionprint/bg.html"
+		block_prefix="{{page_prefix}}" 
+		block_mod="is--basket-preview"
+		block_bg="basket-preview.jpg" 
+	]]
+	[[azbntple
+		tpl="/src/block/site/page/landing/orionprint/bg.html"
+		block_prefix="{{page_prefix}}" 
+		block_mod="is--round-2080x2080"
+		block_bg="bg-round-2080x2080.png" 
+	]]
+</div>
