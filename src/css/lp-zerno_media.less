@@ -1,0 +1,221 @@
+@site-name : "site";
+@lp-name:	"lp-zerno";
+/* Подключение стилей сайта */
+@import "@{site-name}/var.less";
+
+@lp-blue: 				#061b4a;
+@lp-blue-light: 		#a5bfe0;
+//
+@lp-yellow:			#fcf06d;
+@lp-green:			#7dc5bb;
+@lp-green-dark:		#dee8a9;
+@lp-yellow-dark:	#e7c564;
+//@lp-blue:			#8bcee4;
+@white10:			darken(@white, 10%); 	//#e6e6e6
+@black-light:		#303030;
+@green: 			#36784f;
+
+@phenomena:			'Phenomena-Bold';
+
+h1, h2, h3 {
+	font-family: @phenomena;
+	color: #6d6866;
+}
+
+.include-custom-font(
+	@family: @phenomena,
+	@src-name: @phenomena,
+	@weight: normal,
+	@style: normal
+	){
+	@font-face{
+		font-family: "@{family}";
+		src:	url('@{url-path-fonts}/@{src-name}.woff2') format('woff2'),
+		url('@{url-path-fonts}/@{src-name}.woff') format('woff');
+		font-weight: @weight;
+		font-style: @style;
+	}
+}
+.include-custom-font(
+	@family: @phenomena,
+	@src-name: @phenomena,
+	@weight: 400,
+	@style: normal
+	);
+@media screen and (max-width:360px){
+  h1, h2, h3 {
+  	font-family: @phenomena;
+  	color: #6d6866;
+    font-size: 1em;
+  }
+  .wrestbild__item__hover  .is--hover{
+    display: none;
+  }
+  .element_img_container {
+      position: relative;
+      height: 275px;
+      background: 0 0;
+      top: -70px;
+  }
+  .logotip__dev__text {
+    top: 59px;
+    position: relative;
+    font-size: 1.8em;
+    font-family:@phenomena;
+}
+
+.style_color_first_simbol {
+    color: #c0d842;
+    margin-left: 10px;
+    margin-right: 5px;
+}
+.item_text_with_background {
+    width: 50%;
+    top: -55px;
+    position: relative;
+    font-family: @phenomena;
+    padding-left: 7px;
+      h2.background_text {
+        font-size: 1.6em !important;
+        line-height: 18px;
+
+      }
+
+  }
+  .lp-zerno__bg {
+    background:url('/img/lp-zerno/Side__content__wrestbild.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: 50% 50%;
+    height: 215px;
+}
+.logotip__dev__text_alt_variant {
+    top: -30px;
+    position: relative;
+    font-family: Phenomena-Bold;
+    font-size: 2.1em;
+}
+.wrestbild__flex__img__container {
+    max-width: 100%;
+    height: 330px;
+    display: -ms-flex;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    flex-direction: column;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-top: 50px;
+
+}
+.wrestbild__img_opacity_item {
+  margin: 0;
+}
+.wrestbild__img_opacity_item {
+  .wrestbild__img_opacity_item:hover {
+		-moz-transform: scale(1);
+		-webkit-transform: scale(1);
+		-o-transform: scale(1);
+		-ms-transform: scale(1);
+		transform: scale(1);
+}
+
+
+
+
+}
+
+}
+@media screen and (max-width:320px){
+  h1, h2, h3 {
+  	font-family: @phenomena;
+  	color: #6d6866;
+    font-size: 1em;
+  }
+  .wrestbild__item__hover  .is--hover{
+    display: none;
+  }
+  .element_img_container {
+      position: relative;
+      height: 275px;
+      background: 0 0;
+      top: -70px;
+  }
+  .logotip__dev__text {
+    top: 59px;
+    position: relative;
+    font-size: 1.8em;
+    font-family:@phenomena;
+}
+
+.style_color_first_simbol {
+    color: #c0d842;
+    margin-left: 10px;
+    margin-right: 5px;
+}
+.item_text_with_background {
+    width: 50%;
+    top: -55px;
+    position: relative;
+    font-family: @phenomena;
+    padding-left: 7px;
+      h2.background_text {
+        font-size: 1.6em !important;
+        line-height: 18px;
+
+      }
+
+  }
+  .lp-zerno__bg {
+    background:url('/img/lp-zerno/Side__content__wrestbild.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: 50% 50%;
+    height: 215px;
+}
+.logotip__dev__text_alt_variant {
+    top: -30px;
+    position: relative;
+    font-family: Phenomena-Bold;
+    font-size: 2.1em;
+}
+.wrestbild__flex__img__container {
+    max-width: 100%;
+    height: 330px;
+    display: -ms-flex;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    flex-direction: column;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-top: 50px;
+
+}
+.wrestbild__img_opacity_item {
+  margin: 0;
+}
+  .wrestbild__img_opacity_item:hover {
+		-moz-transform: scale(1);
+		-webkit-transform: scale(1);
+		-o-transform: scale(1);
+		-ms-transform: scale(1);
+		transform: scale(1);
+}
+
+
+
+
+}

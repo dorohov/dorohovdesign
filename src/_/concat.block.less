@@ -2478,6 +2478,134 @@ textarea._frms__form-control{
 }
 ._epc__text{
 }
+.about-page-content{
+	//opacity: 0.6;
+	padding: 0;
+	overflow-x: hidden; 
+	@media @media-screen{
+		&.padtop{padding-top: 100px;}
+	}
+}
+._apc__text-block{
+	padding: 160px 0 125px;
+	background: @white;
+	position: relative;
+	@media @media-size-xs{padding: 35px 0 55px}
+	
+	&:before {
+		content: "dorohovdesign"; 
+		position: absolute; 
+		z-index: 1; 
+		text-transform: uppercase; 
+		font-family: @bender; 
+		color: rgba(0, 0, 0, 0.05); 
+		top: 50%; 
+		left: 50%; 
+		transform: translate(-50%, -50%); 
+		font-size: 9vw; 
+		line-height: 9vw; 
+		letter-spacing: 0.2vw;
+	}
+	
+} 
+._apc__text-block__inner{
+	padding: 0 20px;
+	max-width: 1170px;
+	margin: 0 auto;
+	text-align: center;
+    z-index: 5;
+    position: relative;
+	@media @media-screen{
+		font-size: @b-fs + 2px;
+		line-height: @b-lh - 2px;
+	}
+}
+
+._apc__form-block{
+	position: relative;
+	color: @white;
+	@media @media-size-xs{
+		padding: 35px 0px;
+		font-size: @b-fs + 4px; //24px
+		line-height: @b-lh + 4px; //30px;
+	}
+	@media @media-notsmart{
+		font-size: @b-fs + 8px; //24px
+		line-height: @b-lh + 6px; //30px;
+		padding: 180px 0 110px;
+	}
+	&:before{
+		content: 'пишите нам';
+		position: absolute;
+		z-index: 1;
+		text-transform: uppercase;
+		font-family: @bender;
+		color: fadeout(@white, 90%);
+		top: 39%;
+		left: 50%;
+		width: 100%;
+		text-align: center;
+		transform: translate(-50%, -50%);
+		font-size: 10.6vw;
+		line-height: 10.6vw;
+		letter-spacing: .5vw;
+	}
+}
+._apc__fb__inner{
+    padding: 0 20px;
+    margin: 0 auto;
+    max-width: 1060px;
+    position: relative;
+    z-index: 2;
+}
+._apc__form-item{
+	margin-bottom: 10px;
+}
+._apc__form-label{
+	display: inline-block;
+	letter-spacing: 1.2px;
+	margin: 0;
+}
+._apc__form-input{
+	margin: 0 10px;
+	@media @media-size-xs{margin: 0 5px 15px 0;}
+	display: inline-block;
+	background: none;
+	border:0;
+	border-bottom:1px solid @white;
+	text-shadow: 1px 2px fadeout(@black, 10%);
+	transition: @transition-site;
+	&:focus{
+		text-shadow: 1px 1px fadeout(@black, 50%);
+	}
+	&[data-css="name"],
+	&[data-css="company"]{
+		width: 100%;
+		max-width: 230px;
+	}
+	&[data-css="services"]{
+		width: 100%;
+		max-width: 525px;
+		@media @media-size-xs{max-width: 85%;}
+		@media @media-size-sm-p{max-width: 400px;}
+	}
+	&[data-css="tel"]{
+		width: 100%;
+		max-width: 200px;
+		@media @media-size-xs{max-width: 85%;}
+		@media @media-size-sm-p{max-width: 300px;}
+		@media @media-size-sm-l{max-width: 160px;}
+	}
+	&[data-css="email"]{
+		width: 100%;
+		max-width: 290px;
+		@media @media-size-xs{max-width: 85%;}
+	}
+}
+._apc__form-btn{
+	padding-top: 35px;
+	@media @media-size-xs{padding-top: 20px;}
+}
 .blog-block__{
 	&block{ 
 		@media @media-screen {
@@ -2851,134 +2979,6 @@ textarea._frms__form-control{
 .blog-item__
 .blog-item__link{}
 */
-.about-page-content{
-	//opacity: 0.6;
-	padding: 0;
-	overflow-x: hidden; 
-	@media @media-screen{
-		&.padtop{padding-top: 100px;}
-	}
-}
-._apc__text-block{
-	padding: 160px 0 125px;
-	background: @white;
-	position: relative;
-	@media @media-size-xs{padding: 35px 0 55px}
-	
-	&:before {
-		content: "dorohovdesign"; 
-		position: absolute; 
-		z-index: 1; 
-		text-transform: uppercase; 
-		font-family: @bender; 
-		color: rgba(0, 0, 0, 0.05); 
-		top: 50%; 
-		left: 50%; 
-		transform: translate(-50%, -50%); 
-		font-size: 9vw; 
-		line-height: 9vw; 
-		letter-spacing: 0.2vw;
-	}
-	
-} 
-._apc__text-block__inner{
-	padding: 0 20px;
-	max-width: 1170px;
-	margin: 0 auto;
-	text-align: center;
-    z-index: 5;
-    position: relative;
-	@media @media-screen{
-		font-size: @b-fs + 2px;
-		line-height: @b-lh - 2px;
-	}
-}
-
-._apc__form-block{
-	position: relative;
-	color: @white;
-	@media @media-size-xs{
-		padding: 35px 0px;
-		font-size: @b-fs + 4px; //24px
-		line-height: @b-lh + 4px; //30px;
-	}
-	@media @media-notsmart{
-		font-size: @b-fs + 8px; //24px
-		line-height: @b-lh + 6px; //30px;
-		padding: 180px 0 110px;
-	}
-	&:before{
-		content: 'пишите нам';
-		position: absolute;
-		z-index: 1;
-		text-transform: uppercase;
-		font-family: @bender;
-		color: fadeout(@white, 90%);
-		top: 39%;
-		left: 50%;
-		width: 100%;
-		text-align: center;
-		transform: translate(-50%, -50%);
-		font-size: 10.6vw;
-		line-height: 10.6vw;
-		letter-spacing: .5vw;
-	}
-}
-._apc__fb__inner{
-    padding: 0 20px;
-    margin: 0 auto;
-    max-width: 1060px;
-    position: relative;
-    z-index: 2;
-}
-._apc__form-item{
-	margin-bottom: 10px;
-}
-._apc__form-label{
-	display: inline-block;
-	letter-spacing: 1.2px;
-	margin: 0;
-}
-._apc__form-input{
-	margin: 0 10px;
-	@media @media-size-xs{margin: 0 5px 15px 0;}
-	display: inline-block;
-	background: none;
-	border:0;
-	border-bottom:1px solid @white;
-	text-shadow: 1px 2px fadeout(@black, 10%);
-	transition: @transition-site;
-	&:focus{
-		text-shadow: 1px 1px fadeout(@black, 50%);
-	}
-	&[data-css="name"],
-	&[data-css="company"]{
-		width: 100%;
-		max-width: 230px;
-	}
-	&[data-css="services"]{
-		width: 100%;
-		max-width: 525px;
-		@media @media-size-xs{max-width: 85%;}
-		@media @media-size-sm-p{max-width: 400px;}
-	}
-	&[data-css="tel"]{
-		width: 100%;
-		max-width: 200px;
-		@media @media-size-xs{max-width: 85%;}
-		@media @media-size-sm-p{max-width: 300px;}
-		@media @media-size-sm-l{max-width: 160px;}
-	}
-	&[data-css="email"]{
-		width: 100%;
-		max-width: 290px;
-		@media @media-size-xs{max-width: 85%;}
-	}
-}
-._apc__form-btn{
-	padding-top: 35px;
-	@media @media-size-xs{padding-top: 20px;}
-}
 .contacts-page-content{
 	//opacity: 0.7;
 	position: relative;
@@ -3097,6 +3097,13 @@ textarea._frms__form-control{
 		}
 	}
 }
+.index-page-content{
+	padding-bottom: 0;
+	@media @media-device{padding: 0}
+	@media @media-screen{
+		&.padtop{padding-top: 105px;}
+	}
+}
 .portfolio-page-content{}
 ._ppc__btn-block{}
 ._ppc__row{
@@ -3121,13 +3128,6 @@ textarea._frms__form-control{
 	border-color: fadeout(@black, 20%); 
 	color: fadeout(@black, 0%); 
 	@media @media-size-xs{width: 100%;}
-}
-.index-page-content{
-	padding-bottom: 0;
-	@media @media-device{padding: 0}
-	@media @media-screen{
-		&.padtop{padding-top: 105px;}
-	}
 }
 @c-logotip: 	#00acec;
 @c-firm-style: 	#f8d995;
