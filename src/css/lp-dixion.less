@@ -7,7 +7,7 @@
 @lp-blue-light:		#2887e0;
 @lp-blue:			#163b60;
 @lp-blue-dark:		#285e89;
-@lp-blue-link:		#0084ff; 
+@lp-blue-link:		#0084ff;
 @lp-grey:			#eaeaec;
 @white10:			darken(@white, 10%); 	//#e6e6e6
 
@@ -18,44 +18,44 @@
 @roboto-bold:			robotobold;
 @roboto-ebold:			robotoblack;
 
-@b-ff: @roboto; 
+@b-ff: @roboto;
 @b-ff-2: @proxima;
 .include-custom-font(
-	@family: @proxima, 
-	@src-name: @proxima, 
-	@weight: normal, 
+	@family: @proxima,
+	@src-name: @proxima,
+	@weight: normal,
 	@style: normal
 	){
-	@font-face{			
-		font-family: "@{family}";			
+	@font-face{
+		font-family: "@{family}";
 		src:	url('@{url-path-fonts}/@{src-name}.woff2') format('woff2'),
 				url('@{url-path-fonts}/@{src-name}.woff') format('woff');
 		font-weight: @weight;
-		font-style: @style;		
+		font-style: @style;
 	}
 }
 .include-custom-font(
 	@family: @roboto,
 	@src-name: @roboto,
-	@weight: 400, 
+	@weight: 400,
 	@style: normal
 	);
 .include-custom-font(
 	@family: @roboto,
 	@src-name: @roboto-bold,
-	@weight: 700, 
+	@weight: 700,
 	@style: normal
 	);
 .include-custom-font(
 	@family: @roboto,
 	@src-name: @roboto-ebold,
-	@weight: 900, 
+	@weight: 900,
 	@style: normal
 	);
 .include-custom-font(
 	@family: @proxima,
 	@src-name: @proxima,
-	@weight: 400, 
+	@weight: 400,
 	@style: normal
 	);
 
@@ -66,7 +66,7 @@
 	font-size: @b-fs + 2;
 	line-height: @b-lh;
 	&.padtop{
-		@media @media-screen{padding-top: 105px;} 
+		@media @media-screen{padding-top: 105px;}
 	}
 	h1,h2,h3,h4,h5,h6{
 		font-family: @b-ff;
@@ -100,7 +100,7 @@
 	}
 }
 .lp-dixion__{
-	&block-content{	
+	&block-content{
 		overflow: hidden;
 		position: relative;
 		//min-height: 8000px;
@@ -117,7 +117,7 @@
 		@media @media-screen {width: 95vw;}
 		//@media @media-size-xxl {width: 85vw;}
 
-	} 
+	}
 	&heading{
 		//text-align: center;
 		&.is--heading{
@@ -127,7 +127,7 @@
 			font-weight: 900;
 			text-transform: uppercase;
 			.calcFontSize(26, 54, 320, 1680);
-			.calcLineHeight(30, 56, 320, 1680);	
+			.calcLineHeight(30, 56, 320, 1680);
 			letter-spacing: 3px;
 			@media @media-device {margin-bottom: 25px;}
 			@media @media-screen {
@@ -167,9 +167,9 @@
 			color: @lp-blue-dark;
 		}
 	}
-	&bg{		
+	&bg{
 		background-repeat: no-repeat;
-		background-position: center;		
+		background-position: center;
 		&.is--contain{background-size: contain;}
 		&.is--cover{background-size: cover;}
 		&.is--center-top{background-position: center top;}
@@ -191,7 +191,7 @@
 
 /*===== heading-block =====*/
 .dixion_hb__{
-	&block{		
+	&block{
 		position: relative;
 		color: @white;
 		background-color: @lp-blue-light;
@@ -221,7 +221,7 @@
 			padding-top: 40px;
 			padding-bottom: 40px;
 			//height: ~"calc(100vh - 105px)";
-			min-height: 75vh;	
+			min-height: 75vh;
 		}
 		@media @media-size-sm-l {
 			min-height: 900px;
@@ -272,7 +272,7 @@
 			display: block;
 			max-width: 420px;
 			max-height: 120px;
-			min-width: 290px; 
+			min-width: 290px;
 			min-height: 83px;
 			width: 22.65vw;
     		height: 6.47vw;
@@ -302,7 +302,7 @@
 			margin-bottom: 10px;
 		}
 		@media @media-screen-lg {
-			padding-top: 1.4vw; 
+			padding-top: 1.4vw;
 		}
 		@media @media-size-md {
 			font-size: @b-fs - 2;
@@ -322,22 +322,22 @@
 			position: absolute;
 			bottom: 3vw;
 			left: 50%;
-			transform: translateX(-50%);			
+			transform: translateX(-50%);
 		}
 	}
 	&scrollto-link{
 		display: inline-block;
 		width: 70px;
 		height: 70px;
-		transition: @transition-site;		
+		transition: @transition-site;
 		animation: scroll 1.5s infinite ease-in-out;
 		color: @white;
-		&:hover{color: @lp-blue;}	
+		&:hover{color: @lp-blue;}
 		svg{
 			width: 100%;
 			height: 100%;
 			display: block;
-			fill: currentColor;						
+			fill: currentColor;
 		}
 	}
 	@keyframes scroll {
@@ -347,7 +347,7 @@
 	}*/
 }
 /*===== video =====*/
-.dixion_video__{	
+.dixion_video__{
 	&block{
 		position: relative;
 		background-color: @white;
@@ -358,7 +358,7 @@
 			padding-bottom: 4.2vw;
 		}
 	}
-	&video{		 
+	&video{
 		background-repeat: no-repeat;
 		background-position: center;
 		background-size: contain;
@@ -368,14 +368,14 @@
 		max-width: 1025px;
 		max-height: 925px;
 		width: 55.26vw;
-		height: 49.87vw; 
+		height: 49.87vw;
 		position: relative;
 		@media @media-size-xs-p {
 			width: 130vw;
 			height: 80vw;
 			margin-left: ~"calc(-15px - 11vw)";
 		}
-		@media @media-size-xs-l {			
+		@media @media-size-xs-l {
 			width: 100vw;
 			height: 60vw;
 		}
@@ -391,7 +391,7 @@
 			width: 83.5vw;
 			height: 48vw;
 		}
-		@media @media-size-xs-l {	
+		@media @media-size-xs-l {
 			width: 64.5vw;
 			height: 36.5vw;
 		}
@@ -404,7 +404,7 @@
 		background-image: url("@{url-path-img}/@{lp-name}/bg-iphone.png");
 		display: none;
 		@media @media-notsmart {
-			position: absolute;	
+			position: absolute;
 			z-index: 1;
 			bottom: 0.5vw;
 			right: 7vw;
@@ -418,11 +418,11 @@
 	}
 	&pans{
 		background-image: url("@{url-path-img}/@{lp-name}/bg-pans.png");
-		
+
 		display: none;
 		@media @media-notsmart {
 			max-width: 205px;
-			max-height: 500px; 
+			max-height: 500px;
 			position: absolute;
 			z-index: 1;
 			bottom: 5vw;
@@ -439,7 +439,7 @@
 		display: none;
 		@media @media-notsmart {
 			max-width: 745px;
-			max-height: 455px; 
+			max-height: 455px;
 			position: absolute;
 			z-index: 1;
 			bottom: 4vw;
@@ -475,12 +475,12 @@
 		.makeCols(12, 12);
 		&.is--cols-5{
 			@media @media-screen {
-				.makeCols(5, 12); 
+				.makeCols(5, 12);
 			}
 		}
 		&.is--cols-6{
 			@media @media-screen {
-				.makeCols(6, 12); 
+				.makeCols(6, 12);
 			}
 		}
 		&.is--cols-7{
@@ -511,16 +511,16 @@
 .dixion_mobile__{
 	&block{
 		background-color: @lp-blue-dark;
-		@media @media-notsmart {			
+		@media @media-notsmart {
 			background: linear-gradient(
-				to bottom, 
+				to bottom,
 				@lp-grey 0%,
 				@lp-grey 20%,
 				@lp-blue-dark 20%,
 				@lp-blue-dark 80%,
 				@lp-grey 80%,
-				@lp-grey 100%); 
-			position: relative;			
+				@lp-grey 100%);
+			position: relative;
 		}
 	}
 	&container{
@@ -561,11 +561,11 @@
 	&block{
 		background-color: @lp-grey;
 		position: relative;
-	}	
-	&container{		
-		position: relative; 
+	}
+	&container{
+		position: relative;
 		padding-top: 35px;
-		padding-bottom: 35px;		
+		padding-bottom: 35px;
 		@media @media-screen{
 			padding-top: 4.2vw;
 			padding-bottom: 1.5vw;
@@ -602,7 +602,7 @@
 			padding-left: 0px;
 			padding-right: 0px;
 		}
-		@media @media-screen {	
+		@media @media-screen {
 			&::before{
 				content: '';
 				position: absolute;
@@ -630,7 +630,7 @@
 			transition: @transition-site;
 			div{
 				position: absolute;
-				top: 50%;    
+				top: 50%;
 				transition: @transition-site;
 				transform: translateY(-50%) rotate(-90deg);
 				&:before{
@@ -701,13 +701,13 @@
 		}
 	}
 	&owl{
-		@media @media-screen {			
+		@media @media-screen {
 			max-height: 704px;
 	    	height: 38vw;
 		}
 	}
 	&owl-item{
-		@media @media-screen {	
+		@media @media-screen {
 			max-width: 1129px;
 			width: 60.87vw;
 		}
@@ -727,7 +727,7 @@
 	}
 	&container{
 		padding-top: 35px;
-		padding-bottom: 35px;		
+		padding-bottom: 35px;
 		@media @media-notsmart {
 			padding-top: 4.4vw;
 			padding-bottom: 7vw;
@@ -758,7 +758,7 @@
 			}
 		}
 	}
-	&inner{	
+	&inner{
 	}
 	&heading{
 		@media @media-size-xs {
@@ -837,7 +837,7 @@
 		@media @media-notsmart {
 			padding-top: 6.5vw;
 			padding-bottom: 3.5vw;
-		}		
+		}
 	}
 	&row{
 		flex-wrap: wrap;
@@ -877,8 +877,8 @@
 	}
 	&preview-block{
 		position: relative;
-	} 
-	&preview{ 
+	}
+	&preview{
 		&.is--hand{
 			position: relative;
 			left: -15px;
@@ -892,8 +892,8 @@
 			}
 		}
 		&.is--macbook{
-			z-index: 2; 
-			position: relative;   
+			z-index: 2;
+			position: relative;
 			max-width: 1170px;
 			width: 64vw;
 			margin: 0 auto;
