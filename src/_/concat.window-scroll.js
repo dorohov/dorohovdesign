@@ -1,3 +1,3 @@
-$(function(){var a=$(document).scrollTop(),o=$(".go-to-top");o.hasClass("active")?a<200&&o.removeClass("active"):200<a&&o.addClass("active")});
-var topPos=$(document).scrollTop(),snb=$(".navbar-site");snb.hasClass("scroll-sidebar")?topPos<100?snb.removeClass("scroll-sidebar"):snb.hasClass("open-scroll-sidebar")&&snb.removeClass("open-scroll-sidebar"):100<topPos&&snb.addClass("scroll-sidebar");
-var topPosR=$(document).scrollTop(),snbr=$(".navbar-site-right");snbr.hasClass("scroll")?topPosR<100&&snbr.removeClass("scroll"):100<topPosR&&snbr.addClass("scroll");
+$(function(){var a=$(document).scrollTop(),o=$(".go-to-top");o.hasClass("active")?a<200&&o.removeClass("active"):a>200&&o.addClass("active")});
+var topPosR=$(document).scrollTop(),snbr=$(".navbar-site-right");snbr.hasClass("scroll")?topPosR<100&&snbr.removeClass("scroll"):topPosR>100&&snbr.addClass("scroll");
+var topPos=$(document).scrollTop(),snb=$(".navbar-site");snb.hasClass("scroll-sidebar")?topPos<100?snb.removeClass("scroll-sidebar"):snb.hasClass("open-scroll-sidebar")&&snb.removeClass("open-scroll-sidebar"):topPos>100&&snb.addClass("scroll-sidebar");

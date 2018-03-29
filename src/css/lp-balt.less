@@ -31,13 +31,14 @@
         font-weight: @weight;
         font-style: @style;
 
-        src: url('@{url-path-fonts}/@{src-name}.woff2') format('woff2'),
-        url('@{url-path-fonts}/@{src-name}.woff') format('woff');
+        src: url('@@{url-path-fonts}/@{src-name}.woff2') format('woff2'),
+        url('@@{url-path-fonts}/@{src-name}.woff') format('woff');
     }
 }
 body
 {
     background: #f9f9f9;
+    padding-top: 0 !important;
 }
 .include-custom-font(
     @family: @geometria,
@@ -121,16 +122,26 @@ body
 {
     background: #f9f9f9;
 }
+.arrow {
+  display: block;
+  position: absolute;
+  bottom: 30px;
+  left: 49%;
+
+}
 
    .wrestbild-div {
     max-width: 100%;
     height: 960px;
     /* top: 50px; */
     /* position: relative; */
-    background: url(/img/lp-balt/1-bg.png) no-repeat fixed;
+    background: url('@{url-path-img}/lp-balt/1-bg.png') no-repeat fixed;
     /* background-size: cover; */
+    background-size: cover;
+    background-position: 50%;
+
+
     background-color: white;
-    background-position: 50% -15%;
 }
 
 .is--large_title
@@ -204,6 +215,15 @@ body
     box-shadow: 0 0 30px 1px rgba(0,0,0, .5);
 }
 
+@media screen and (max-width: 1440px){
+  .wrestbild-div {
+    max-width: 100%;
+    height: 690px;
+    background: url('@{url-path-img}/lp-balt/1-bg.png') no-repeat fixed;
+    background-color: #f9f9f9;
+    background-size: 100%;
+}
+}
 
 
 @media screen and (max-width: 1399px)
@@ -280,11 +300,11 @@ body
 
   .wrestbild-div {
     max-width: 100%;
-    height: 860px;
-    background: url(/img/lp-balt/1-bg.png) no-repeat fixed;
-    background-color: #fff;
-    background-size: cover;
-    background-position: 50% -50%;
+    height: 615px;
+    background: url('@{url-path-img}/lp-balt/1-bg.png') no-repeat fixed;
+    background-color: #f9f9f9;
+    background-size: 100%;
+    background-position: 50% 10%;
 }
 
 .is--large_title {
@@ -386,14 +406,12 @@ body
         background: #fff;
     }
 
-    .wrestbild-div
-    {
+    .wrestbild-div {
         position: relative;
         width: 100%;
         height: 490px;
-        background: url(/img/lp-balt/1-bg.png) no-repeat fixed;
-        background-position: 0 25%;
-        background-size: 100%;
+        background: url('@{url-path-img}/lp-balt/1-bg.png') no-repeat fixed;
+        background-size: contain;
     }
 
     .iss-wrestbild--panel
@@ -479,10 +497,10 @@ body
 
         width: 100%;
         height: 457px;
-        background: url(/img/lp-balt/1-bg.png) no-repeat;
-        background-size: 100%;
+        background: url('@{url-path-img}/lp-balt/1-bg.png') no-repeat;
+        background-size: contain;
         /* position: relative; */
-        /* background-position: 0 12%; */
+        background-position: 50%;
     }
 }
 
@@ -566,14 +584,188 @@ body
     {
 
         width: 100%;
-        height: 180px;
-        background: url(/img/lp-balt/1-bg.png) no-repeat;
+        max-height: 330px;
+        background: url('@{url-path-img}/lp-balt/1-bg.png') no-repeat;
         background-size: 100%;
+        background-position: 50%;
     }
 }
+@media screen and (max-width: 640px){.wrestbild-div{height:397px;}}
+@media screen and (max-width: 384px){.wrestbild-div{height:320px;}}
 
 
+@media screen and (max-width: 375px)
+{
+    .is--large_title
+    {
+        font-family: @geometria-bold;
+        position: relative;
+        top: 10px;
+        left: 0;
+        width: 50vh;
+        text-align: center;
+        letter-spacing: 2px;
+        color: #555656;
 
+        .heavy__wrestbild--title
+        {
+            font-size: 1em;
+            margin: 0;
+        }
+
+        hr
+        {
+            width: 46vh;
+            height: 1px;
+            margin: 0 auto;
+            border: none;
+            background-color: #609bbf;
+        }
+    }
+    .is--small_title
+    {
+        font-family: @geometria-bold;
+
+        position: relative;
+        top: 10px;
+        left: 0;
+        width: 50vh;
+        text-align: center;
+        letter-spacing: 2px;
+        color: #555656;
+
+
+        h3
+        {
+            margin: 0;
+        }
+    }
+
+    .is--wrestbild--inline
+    {
+        font-family: @geometria-bold;
+        position: relative;
+        top: -30px;
+        left: 0;
+        max-width: 220px;
+        margin: 0 auto;
+        text-align: center;
+        letter-spacing: 1.4px;
+        color: #555656;
+    }
+    .heavy__wrestbild--title
+    {
+        margin-top: 0;
+        margin-bottom: 0;
+        letter-spacing: 1.4px;
+    }
+
+    .is--wrestbild--inline hr
+    {
+        /* width: 39vh; */
+        width: 100%;
+        height: 1px;
+        margin: -6 auto;
+        border: none;
+        background-color: #609bbf;
+    }
+
+    .wrestbild-div
+    {
+        width: 100%;
+            height: 275px;
+        background: url('@{url-path-img}/lp-balt/1-bg.png') no-repeat ;
+        background-size: 100%;
+        background-position: 50%;
+
+    }
+}
+@media screen and (max-width: 360px)
+{
+    .is--large_title
+    {
+        font-family: @geometria-bold;
+        position: relative;
+        top: 10px;
+        left: 0;
+        width: 50vh;
+        text-align: center;
+        letter-spacing: 2px;
+        color: #555656;
+
+        .heavy__wrestbild--title
+        {
+            font-size: 1em;
+            margin: 0;
+        }
+
+        hr
+        {
+            width: 46vh;
+            height: 1px;
+            margin: 0 auto;
+            border: none;
+            background-color: #609bbf;
+        }
+    }
+    .is--small_title
+    {
+        font-family: @geometria-bold;
+
+        position: relative;
+        top: 10px;
+        left: 0;
+        width: 50vh;
+        text-align: center;
+        letter-spacing: 2px;
+        color: #555656;
+
+
+        h3
+        {
+            margin: 0;
+        }
+    }
+
+    .is--wrestbild--inline
+    {
+        font-family: @geometria-bold;
+        position: relative;
+        top: -30px;
+        left: 0;
+        max-width: 220px;
+        margin: 0 auto;
+        text-align: center;
+        letter-spacing: 1.4px;
+        color: #555656;
+    }
+    .heavy__wrestbild--title
+    {
+        margin-top: 0;
+        margin-bottom: 0;
+        letter-spacing: 1.4px;
+    }
+
+    .is--wrestbild--inline hr
+    {
+        /* width: 39vh; */
+        width: 100%;
+        height: 1px;
+        margin: -6 auto;
+        border: none;
+        background-color: #609bbf;
+    }
+
+    .wrestbild-div
+    {
+        width: 100%;
+        height: 310px;
+        background: url('@{url-path-img}/lp-balt/1-bg.png') no-repeat ;
+        background-size: 100%;
+        background-position: 50%;
+
+    }
+}
 
 @media screen and (max-width: 321px)
 {
@@ -654,9 +846,10 @@ body
     .wrestbild-div
     {
         width: 100%;
-        height: 157px;
-        background: url(/img/lp-balt/1-bg.png) no-repeat ;
+        height: 250px;
+        background: url('@{url-path-img}/lp-balt/1-bg.png') no-repeat ;
         background-size: 100%;
+        background-position: 50%;
     }
 }
 
