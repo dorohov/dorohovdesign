@@ -137,8 +137,6 @@
 		background-size: contain;
 		@media @media-size-xs {
 			width: 100%;
-			padding: 0 15px;
-			margin-bottom: 35px;
 		}
 		@media @media-notsmart {
 			position: absolute;
@@ -146,9 +144,12 @@
 	}
 }
 
-
 /*===== heading-block =====*/
 .crema_hb__{
+	*{
+		margin: 0 ;
+		padding: 0;
+	}
 	&block{
 		position: relative;
 		color: @white;
@@ -189,6 +190,7 @@
 		}
 
 	}
+
 
 	&container-text{
 		position: relative;
@@ -315,6 +317,12 @@
 
 }
 //content
+.logs__image--item{
+	display: block;
+	position: relative;
+	margin: 0 auto;
+	margin-bottom: 30px;
+}
 		.image_logotip {
 			margin: 0 auto;
 		}
@@ -328,6 +336,7 @@
 	    font-family: lato, sans-serif;;
 	}
 
+	.logs__image--item{display: none;}
 
 		.logotips_block {
 			position: relative;
@@ -348,6 +357,7 @@
 	position: relative;
 	left: -130px;
 	top: 160px;
+	margin-bottom: 30px;
 
 }
 
@@ -429,6 +439,7 @@ height: 1px;
 		position: relative;
 		padding-left: 15px;
 		padding-right: 15px;
+		margin-bottom: 280px;
 	 @media-screen {
 			padding-left: 0px;
 			padding-right: 0px;
@@ -594,27 +605,26 @@ height: 1px;
 }
 
 .number_behandler__mobile {
-	position: relative;
-  display: inline-block;
-  float: left;
-  font-family: lato, sans-serif;;
-  color:  #fff;
-	left: 330px;
-	top: 6px;
-  font-size: 107.82px;/* Приближение из-за подстановки шрифтов */
-  font-weight: 900;
-  line-height: 24px;/* Приближение из-за подстановки шрифтов */
+    position: relative;
+    display: inline-block;
+    float: left;
+    font-family: lato,sans-serif;
+    color: #fff;
+    left: 200px;
+    top: 6px;
+    font-size: 107.82px;
+    font-weight: 900;
+    line-height: 24px;
 }
 
 .logs__text--item__mobile {
-  position: relative;
-  z-index: 3;
-  font-size: 60px;
-  left:235px;
-  top: 5px;
-	color: #1e201e;
-	font-family: lato, sans-serif;
-
+    position: relative;
+    z-index: 3;
+    font-size: 60px;
+    left: 75px;
+    top: 5px;
+    color: #1e201e;
+    font-family: lato,sans-serif;
 }
 
 
@@ -676,7 +686,7 @@ height: 1px;
     display: flex;
     position: relative;
     left: -50px;
-    top: 0;
+        top: 200px;
 }
 
 .span_text--block__item_site{
@@ -722,18 +732,32 @@ height: 1px;
 
 .container_ahref{
 	position: absolute;
-	bottom: 0;
+	bottom:115px;
 	right: 30px;
 
 }
-.container--inner {
-  display: flex;
 
+.aly_variant--item{
+	display: none;
+}
+.container--inner {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: 100vw;
+    justify-content: center;
+    margin-bottom: 100px;
+
+		h3{
+			font-family: lato, sans-serif;
+			font-size: 64px;
+
+		}
 }
 #site_href {
-  font-size: 3em;
-  color:#fff;
-	text-decoration: underline;
+    font-size: 6em;
+    color: #fff;
+    text-decoration: underline;
 }
 #site_href:hover{
   transition: all 2s ;
