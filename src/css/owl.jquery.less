@@ -160,3 +160,40 @@
 		}
 	}
 }
+.lp-bars__owl{
+	.owl-nav{
+		div{
+			position: absolute;
+			top: 51%;    
+			transition: @transition-site;
+			transform: translateY(-50%);
+			width: 32px;
+			height: 32px;
+			padding: 8px;
+			border-radius: 50%;
+			color: @white;
+			border: 3px solid @white;
+			svg{display: block;}
+			@media @media-point-screen {
+				width: 60px;
+				height: 60px;
+				padding: 15px;
+			}
+			&:hover{
+				transform: translateY(-50%) scale(1.1);
+			}
+		}
+		.owl-prev{
+			left: 10px;
+			@media @media-point-screen {
+				left: 7.4vw;
+			}
+		}
+		.owl-next{
+			right: 10px;
+			@media @media-point-screen {
+				right: 7.4vw;
+			}
+		}
+	}
+}

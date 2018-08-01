@@ -182,6 +182,13 @@ $(function() {
 							nav: !0
 					}
 			}
-});
+}),//lp-orionprint
+    $('.lp-bars__owl').owlCarousel({
+        //navText: ['<svg class="icon-svg lp-orionprint-slider-left" role="img"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/img/svg/sprite.svg#lp-orionprint-slider-left"></use></svg>', '<svg class="icon-svg icon-lp-orionprint-slider-right" role="img"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/img/svg/sprite.svg#lp-orionprint-slider-right"></use></svg>'],
+        navText: ['<svg class="icon-svg lp-orionprint-slider-left" role="img"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/wp-content/themes/azbnbasetheme/img/svg/sprite.svg#lp-orionprint-slider-left"></use></svg>', '<svg class="icon-svg icon-lp-orionprint-slider-right" role="img"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/wp-content/themes/azbnbasetheme/img/svg/sprite.svg#lp-orionprint-slider-right"></use></svg>'],
+        loop: true,
+        nav: true,
+        items: 1,
+    });
 
 });
