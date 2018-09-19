@@ -225,16 +225,16 @@
 	@media @media-screen-lg {justify-content: flex-end;}
 }
 .navbar-contacts__cols{
-	width: 37.5%;
+	width: 30.5%;
 	@media @media-device-lg{width: 100%; margin-bottom: 30px;}
 	@media @media-size-xs{margin-bottom: 15px;}
-	@media @media-size-lg{width: 20%}
+	@media @media-size-lg{width: 18%}
 	@media @media-size-xl{width: 20%}
 }
 .navbar-nav__cols{
-	width: 50%;
+	width: 57%;
 	@media @media-device-lg{width: 100%;}
-	@media @media-size-lg{width: 62%}
+	@media @media-size-lg{width: 66.5%}
 	@media @media-size-xl{width: 62%}
 }
 .navbar-btn__cols{
@@ -244,7 +244,7 @@
 	@media @media-size-xs-l{width: 50%;}
 	@media @media-device-lg{width: 30%}
 	@media @media-screen-lg{}
-	@media @media-size-lg{width: 18%}
+	@media @media-size-lg{width: 15.5%}
 	@media @media-size-xl{width: 18%}
     
 	.btn-site{
@@ -255,6 +255,9 @@
 			line-height: 36px;
 			border-radius: 30px;
 			padding: 0 15px;
+		}
+		@media @media-point-lg {
+			width: 125px;
 		}
 	}
 	&.is--hidden{
@@ -347,9 +350,12 @@
 	> li{	
 		&:first-child{margin-left: 0}		
 		@media @media-size-xs{width: 100%;}
-		@media @media-screen-lg{margin-left: 44px;}
-		@media @media-size-sml{margin-left: 30px;}
-		@media @media-size-xl{margin-left: 35px;}
+		@media @media-screen-lg{
+			//margin-left: 44px;
+			margin-left: 2.2vw;
+		}
+		//@media @media-size-sml{margin-left: 30px;}
+		//@media @media-size-xl{margin-left: 35px;}
 		> a{
 			font-size: @b-fs - 2px; //14px
 			line-height: @b-lh - 5px; //19px
@@ -370,8 +376,11 @@
 				padding: 0px 0 35px;
 				color: @black; 
 				border-bottom: 6px solid fadeout(@orchid-dark, 100%);
+				.calcFontSize(12, 14, 1200, 1680);
+				.calcLineHeight(17, 19, 1200, 1680);
+
 			}
-			@media @media-size-lg{font-size: @b-fs - 3px; /*13px*/}
+			//@media @media-size-lg{font-size: @b-fs - 3px; /*13px*/}
 			&:hover,
 			&:focus {
 				background: none;
@@ -416,7 +425,7 @@
 	@media @media-size-lg{
 		//margin-top: -10px;
 		margin-top: 5px;
-		font-size: @b-fs - 2px; //14px
+		font-size: @b-fs - 4px; //14px
 	}
 	@media @media-size-xl{
 		//margin-top: -10px;

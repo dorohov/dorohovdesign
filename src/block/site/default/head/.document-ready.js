@@ -25,6 +25,7 @@ $('#portfolio-filter').on('change', function () {
 	}
 });
 $("._apc__form-input[type='tel']").mask("+7 (999) 999-99-99",{placeholder:"+7 (___) ___-__-__"});
+$(".form-control[type='tel']").mask("+7 (999) 999-99-99",{placeholder:"+7 (___) ___-__-__"});
 $("form.form-site").validationEngine(
 	'attach', {
 		promptPosition : "bottomLeft"
